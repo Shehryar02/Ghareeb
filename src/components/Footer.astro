@@ -1,0 +1,98 @@
+---
+// ArchitecturalFooter.astro
+const sectors = [
+  { 
+    id: "NAVIGATION", 
+    links: ["Case Studies", "Infrastructure", "Engineering", "Legacy"] 
+  },
+  { 
+    id: "CONNECT", 
+    links: ["LinkedIn", "GitHub", "Twitter / X", "Instagram"] 
+  },
+  { 
+    id: "LEGAL", 
+    links: ["Privacy", "Terms", "SLA"] 
+  }
+];
+---
+
+<footer class="bg-black text-white pt-24 pb-10 border-t border-white/5 font-sans">
+  <div class="max-w-[1440px] mx-auto px-8 lg:px-16">
+    
+    <div class="flex flex-col lg:flex-row justify-between items-start gap-20 mb-24">
+      
+      <div class="flex-1 grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-24">
+        {sectors.map((s, i) => (
+          <div class="space-y-8">
+            <div class="flex items-center gap-3">
+              <span class="text-[9px] font-black text-[#FB8500] font-mono">0{i+1}</span>
+              <p class="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">{s.id}</p>
+            </div>
+            <ul class="space-y-4">
+              {s.links.map(link => (
+                <li>
+                  <a href="#" class="text-xs font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all flex items-center group">
+                    <span class="w-0 group-hover:w-3 h-[1px] bg-[#FB8500] transition-all mr-0 group-hover:mr-2"></span>
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="lg:text-right">
+        <h2 class="text-white text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.8] mb-6">
+          APEX<span class="text-[#FB8500]">.</span><br />CORE
+        </h2>
+        <div class="flex lg:justify-end items-center gap-3">
+          <div class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FB8500] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#FB8500]"></span>
+          </div>
+          <span class="text-[9px] font-black text-white/40 uppercase tracking-[0.3em]">Precision Verified 2025</span>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="border-t border-white/10 pt-16 mt-16">
+      <div class="flex flex-col md:flex-row items-end justify-between gap-12">
+        <div class="w-full md:max-w-xl">
+            <p class="text-[10px] font-black uppercase tracking-[0.5em] text-[#FB8500] mb-6">Dispatch System</p>
+            <form class="relative group">
+                <input 
+                    type="email" 
+                    placeholder="Enter email for technical updates" 
+                    class="w-full bg-transparent border-b border-white/20 py-4 text-xl md:text-xl font-bold tracking-tighter outline-none focus:border-[#FB8500] transition-colors placeholder:text-white lowercase"
+                />
+                <button class="absolute right-0 bottom-4 text-white/20 hover:text-[#FB8500] transition-all group-hover:translate-x-2">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <div class="flex flex-col items-end text-[9px] font-black text-white/20 uppercase tracking-[0.2em] space-y-2">
+            <span>© All Rights Reserved</span>
+            <span>Architectural Integrity v4.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+    /* Premium text smoothing */
+    footer {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    input::placeholder {
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+</style>

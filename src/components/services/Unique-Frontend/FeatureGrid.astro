@@ -1,0 +1,120 @@
+---
+const column1 = [
+  { label: "Motion", desc: "60fps hardware-accelerated fluid UI transitions." },
+  { label: "Layout", desc: "Adaptive CSS Grid & sub-grid responsive architecture." },
+  { label: "Accessibility", desc: "WCAG 2.1 compliant semantic A11Y orchestration." },
+  { label: "Typography", desc: "Dynamic fluid-type scaling with variable font support." },
+  { label: "Theming", desc: "Real-time CSS variable manipulation for instant mode switching." }
+];
+const column2 = [
+  { label: "Hydration", desc: "Zero-bundle overhead with partial hydration islands." },
+  { label: "Core Web Vitals", desc: "Optimized LCP and CLS for instant visual stability." },
+  { label: "Edge Assets", desc: "Image transformation and delivery at the nearest node." },
+  { label: "Prefetch", desc: "Intelligent speculative loading for zero-latency navigation." },
+  { label: "Bundle Size", desc: "Tree-shaken, code-split modules for sub-second parsing." }
+];
+const column3 = [
+  { label: "Signals", desc: "Reactive state primitives for fine-grained DOM updates." },
+  { label: "Micro-Frontend", desc: "Modular component composition across decoupled teams." },
+  { label: "Design System", desc: "Atomic consistency with enterprise-grade token management." },
+  { label: "Interactivity", desc: "Event-driven paradigms for complex user input handling." },
+  { label: "SSR/SSG", desc: "Hybrid rendering strategies for SEO and dynamic speed." }
+];
+---
+
+<section class="bg-[#050505] py-24 relative border-t border-white/5">
+  <div class="container mx-auto px-6">
+    
+    <div class="mb-20">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-[1px] w-8 bg-orange-600"></div>
+        <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Interface Logic</span>
+      </div>
+      <h2 class="text-white text-5xl md:text-6xl font-black tracking-tight leading-none">
+        FRONTEND <span class="text-orange-600">FORGE.</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3">
+      
+      <div class="pb-10 md:pb-0 md:pr-12">
+        <h3 class="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-12 opacity-50">
+          01. Visuals
+        </h3>
+        <ul class="space-y-6">
+          {column1.map((item) => (
+            <li class="group relative cursor-default">
+              <div class="flex items-center gap-4 transition-all duration-300 group-hover:translate-x-2">
+                <div class="h-1 w-1 bg-orange-600 rounded-full shadow-[0_0_8px_#ea580c] group-hover:scale-150 transition-transform"></div>
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold text-white/90 group-hover:text-orange-500 transition-colors">
+                    {item.label}
+                  </span>
+                  <span class="max-h-0 overflow-hidden text-[11px] text-zinc-500 font-medium transition-all duration-300 group-hover:max-h-10 group-hover:mt-1">
+                    {item.desc}
+                  </span>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="py-10 md:py-0 md:px-12 border-y md:border-y-0 md:border-x border-orange-600/20">
+        <h3 class="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-12 opacity-50">
+          02. Velocity
+        </h3>
+        <ul class="space-y-6">
+          {column2.map((item) => (
+            <li class="group relative cursor-default">
+              <div class="flex items-center gap-4 transition-all duration-300 group-hover:translate-x-2">
+                <div class="h-1 w-1 bg-orange-600 rounded-full shadow-[0_0_8px_#ea580c] group-hover:scale-150 transition-transform"></div>
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold text-white/90 group-hover:text-orange-500 transition-colors">
+                    {item.label}
+                  </span>
+                  <span class="max-h-0 overflow-hidden text-[11px] text-zinc-500 font-medium transition-all duration-300 group-hover:max-h-10 group-hover:mt-1">
+                    {item.desc}
+                  </span>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="pt-10 md:pt-0 md:pl-12">
+        <h3 class="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-12 opacity-50">
+          03. Ecosystem
+        </h3>
+        <ul class="space-y-6">
+          {column3.map((item) => (
+            <li class="group relative cursor-default">
+              <div class="flex items-center gap-4 transition-all duration-300 group-hover:translate-x-2">
+                <div class="h-1 w-1 bg-orange-600 rounded-full shadow-[0_0_8px_#ea580c] group-hover:scale-150 transition-transform"></div>
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold text-white/90 group-hover:text-orange-500 transition-colors">
+                    {item.label}
+                  </span>
+                  <span class="max-h-0 overflow-hidden text-[11px] text-zinc-500 font-medium transition-all duration-300 group-hover:max-h-10 group-hover:mt-1">
+                    {item.desc}
+                  </span>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-24 pt-8 border-t border-white/5 flex justify-between items-center">
+        <span class="text-zinc-700 font-mono text-[9px] uppercase tracking-widest">Client-Centric // Build 8.2.0</span>
+        <div class="h-[1px] flex-1 mx-8 bg-white/[0.03]"></div>
+        <button class="text-white text-[10px] font-bold uppercase tracking-widest hover:text-orange-500 transition-colors group">
+            Experience Audit <span class="inline-block transition-transform group-hover:translate-x-1 ml-1">→</span>
+        </button>
+    </div>
+
+  </div>
+</section>

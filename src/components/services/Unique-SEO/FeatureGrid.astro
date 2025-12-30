@@ -1,0 +1,120 @@
+---
+const column1 = [
+  { label: "Schema", desc: "Advanced JSON-LD rich snippet orchestration." },
+  { label: "Semantic", desc: "HTML5 structural tags for precise machine-reading." },
+  { label: "Metadata", desc: "Dynamic OpenGraph and title tag optimization." },
+  { label: "Hierarchies", desc: "Strict H1-H6 logical nesting for clear data flow." },
+  { label: "Accessibility", desc: "WCAG compliant markup for improved search reach." }
+];
+const column2 = [
+  { label: "Vitals", desc: "LCP, FID, and CLS optimized for 100/100 scores." },
+  { label: "Caching", desc: "Edge-side rendering with sub-20ms TTFB." },
+  { label: "Payload", desc: "Gzip/Brotli compression and asset minification." },
+  { label: "Images", desc: "Next-gen WebP/AVIF format with lazy-load logic." },
+  { label: "Mobile", desc: "Mobile-first responsive fluid grid architecture." }
+];
+const column3 = [
+  { label: "Crawling", desc: "XML Sitemaps and robots.txt automated routing." },
+  { label: "Topology", desc: "Optimized internal link equity distribution." },
+  { label: "Security", desc: "Enforced SSL/TLS protocols for HTTPS ranking." },
+  { label: "Canonicals", desc: "Duplicate content mitigation and URL tagging." },
+  { label: "Redirects", desc: "Clean 301/308 server-side path preservation." }
+];
+---
+
+<section class="bg-[#050505] py-24 relative border-t border-white/5">
+  <div class="container mx-auto px-6">
+    
+    <div class="mb-20">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-[1px] w-8 bg-orange-600"></div>
+        <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Search Performance</span>
+      </div>
+      <h2 class="text-white text-5xl md:text-6xl font-black tracking-tight leading-none">
+        VISIBILITY <span class="text-orange-600">ENGINE.</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3">
+      
+      <div class="pb-10 md:pb-0 md:pr-12">
+        <h3 class="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-12 opacity-50">
+          01. Semantics
+        </h3>
+        <ul class="space-y-6">
+          {column1.map((item) => (
+            <li class="group relative cursor-default">
+              <div class="flex items-center gap-4 transition-all duration-300 group-hover:translate-x-2">
+                <div class="h-1 w-1 bg-orange-600 rounded-full shadow-[0_0_8px_#ea580c] group-hover:scale-150 transition-transform"></div>
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold text-white/90 group-hover:text-orange-500 transition-colors">
+                    {item.label}
+                  </span>
+                  <span class="max-h-0 overflow-hidden text-[11px] text-zinc-500 font-medium transition-all duration-300 group-hover:max-h-10 group-hover:mt-1">
+                    {item.desc}
+                  </span>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="py-10 md:py-0 md:px-12 border-y md:border-y-0 md:border-x border-orange-600/20">
+        <h3 class="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-12 opacity-50">
+          02. Velocity
+        </h3>
+        <ul class="space-y-6">
+          {column2.map((item) => (
+            <li class="group relative cursor-default">
+              <div class="flex items-center gap-4 transition-all duration-300 group-hover:translate-x-2">
+                <div class="h-1 w-1 bg-orange-600 rounded-full shadow-[0_0_8px_#ea580c] group-hover:scale-150 transition-transform"></div>
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold text-white/90 group-hover:text-orange-500 transition-colors">
+                    {item.label}
+                  </span>
+                  <span class="max-h-0 overflow-hidden text-[11px] text-zinc-500 font-medium transition-all duration-300 group-hover:max-h-10 group-hover:mt-1">
+                    {item.desc}
+                  </span>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="pt-10 md:pt-0 md:pl-12">
+        <h3 class="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-12 opacity-50">
+          03. Authority
+        </h3>
+        <ul class="space-y-6">
+          {column3.map((item) => (
+            <li class="group relative cursor-default">
+              <div class="flex items-center gap-4 transition-all duration-300 group-hover:translate-x-2">
+                <div class="h-1 w-1 bg-orange-600 rounded-full shadow-[0_0_8px_#ea580c] group-hover:scale-150 transition-transform"></div>
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold text-white/90 group-hover:text-orange-500 transition-colors">
+                    {item.label}
+                  </span>
+                  <span class="max-h-0 overflow-hidden text-[11px] text-zinc-500 font-medium transition-all duration-300 group-hover:max-h-10 group-hover:mt-1">
+                    {item.desc}
+                  </span>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-24 pt-8 border-t border-white/5 flex justify-between items-center">
+        <span class="text-zinc-700 font-mono text-[9px] uppercase tracking-widest">Algorithm-Aligned // 2025</span>
+        <div class="h-[1px] flex-1 mx-8 bg-white/[0.03]"></div>
+        <button class="text-white text-[10px] font-bold uppercase tracking-widest hover:text-orange-500 transition-colors group">
+            SEO Performance Audit <span class="inline-block transition-transform group-hover:translate-x-1 ml-1">→</span>
+        </button>
+    </div>
+
+  </div>
+</section>

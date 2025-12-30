@@ -1,0 +1,169 @@
+---
+import { Image } from 'astro:assets';
+
+// Imports remain the same
+import imageA from '../../assets/seo.jpg';
+import imageB from '../../assets/web1.jpg';
+import imageC from '../../assets/web2.jpg';
+
+import Security from "../../assets/backend-services/security.jpg";
+import Scaling from "../../assets/backend-services/scaling.jpg";
+import API from "../../assets/backend-services/api.jpg";
+---
+
+<section class="relative w-full min-h-screen bg-white flex flex-col lg:flex-row overflow-hidden">
+  
+  <div class="flex-1 relative flex flex-col justify-center px-10 lg:px-24 py-20 z-20 bg-[#fafafa] ">
+    <div class="absolute inset-0 opacity-[0.4] pointer-events-none" style="background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 40px 40px;"></div>
+    
+    <div class="relative">
+      <div class="flex items-center gap-4 mb-10">
+        <span class="h-0.5 w-10 bg-[#FB8500]"></span>
+        <span class="font-poppins text-[11px] uppercase tracking-[0.4em] text-gray-400 font-bold">Phase 01 // Strategy</span>
+      </div>
+
+<h1 class="text-black text-6xl font-semibold md:text-8xl lg:text-[100px] font-inter tracking-tighter mb-8">
+  Your vision, <br />
+  <span class="inline-flex flex-col h-[1em] overflow-hidden align-bottom">
+    <span class="animate-text-slide text-left w-lg">
+      <span class="block italic font-bold text-[#FB8500] h-[1em] leading-none">precisely</span>
+      <span class="block italic font-bold text-purple-500 h-[1em] leading-none">precisely</span>
+      <span class="block italic font-bold text-blue-500 h-[1em] leading-none">precisely</span>
+      <span class="block italic font-bold text-[#FB8500] h-[1em] leading-none">precisely</span>
+    </span>
+  </span> 
+  scaled.
+</h1>
+
+      <div class="max-w-md border-l-2 border-[#FB8500]/20 pl-8 mb-14">
+        <p class="text-gray-500 text-lg leading-relaxed font-sans">
+          We turn complex problems into seamless digital products. Ready to build something that lasts?
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-6">
+      <a href="/contact" class="group border border-[#FB8500] text-[#FB8500] text-[16px] rounded-md relative px-10 py-5 font-bold uppercase tracking-widest overflow-hidden transition-all hover:text-white hover:border-transparent">
+        
+        <span class="relative z-10">Start a Project</span>
+
+        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-blue-500 via-purple-500 to-[#FB8500] bg-[length:200%_200%] group-hover:animate-gradient-shift"></div>
+
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-1 relative flex items-center justify-center bg-[#fafafa] z-30 group/right">
+    
+
+  <div class="relative w-full h-full flex items-center justify-center perspective-[2000px] transform-style-3d pointer-events-none overflow-visible">
+      
+  <div class="absolute w-64 h-80 lg:w-80 lg:h-[450px] animate-shuffle-1 pointer-events-auto group">
+    <div class="absolute -inset-10 bg-[#FB8500]/30 blur-[60px] rounded-full opacity-0 opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+    
+    <div class="relative w-full h-full p-2 bg-white shadow-2xl rounded-[32px] border border-black/5 z-10 overflow-hidden">
+      <Image src={Security} alt="Portfolio 1" width={1600} height={1600} class="w-full h-full object-cover rounded-[24px]" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+          <span class="text-[#FB8500] font-sans text-xs mb-2 font-bold uppercase tracking-widest">SEO Case Study</span>
+          <h3 class="text-white font-inter font-bold text-2xl">Digital Nexus</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute w-64 h-80 lg:w-80 lg:h-[450px] animate-shuffle-2 pointer-events-auto group">
+    <div class="absolute -inset-10 bg-blue-500/20 blur-[60px] rounded-full opacity-0 opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+    
+    <div class="relative w-full h-full p-2 bg-white shadow-2xl rounded-[32px] border border-black/5 z-10 overflow-hidden">
+      <Image src={Scaling} alt="Portfolio 2" width={1600} height={1600} class="w-full h-full object-cover rounded-[24px]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+        <span class="text-[#FB8500] font-sans text-xs mb-2 font-bold uppercase tracking-widest">Growth Strategy</span>
+        <h3 class="text-white font-inter font-bold text-2xl">Solaris Interface</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute w-64 h-80 lg:w-80 lg:h-[450px] animate-shuffle-3 pointer-events-auto group">
+    <div class="absolute -inset-10 bg-purple-500/20 blur-[60px] rounded-full opacity-0 opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+    
+    <div class="relative w-full h-full p-2 bg-white shadow-2xl rounded-[32px] border border-black/5 z-10 overflow-hidden">
+      <Image src={API} alt="Portfolio 3" width={1600} height={1600} class="w-full h-full object-cover rounded-[24px]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+        <span class="text-[#FB8500] font-sans text-xs mb-2 font-bold uppercase tracking-widest">UX Engineering</span>
+        <h3 class="text-white font-inter font-bold text-2xl">Ether Protocol</h3>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    <a href="/work" class="absolute bottom-12 px-8 py-4 bg-white/80 backdrop-blur-md border border-black/5 rounded-full shadow-lg pointer-events-auto hover:scale-105 transition-transform group/btn">
+        <div class="flex items-center gap-3">
+            <span class="font-bold uppercase tracking-widest text-[10px] text-black">See Portfolio</span>
+            <div class="w-2 h-2 rounded-full bg-[#FB8500] btn:animate-ping"></div>
+        </div>
+    </a>
+  </div>
+
+</section>
+
+
+<!-- Animation Section -->
+
+<style>
+
+
+  @keyframes position-1 {
+    0%, 33.33% { transform: translateZ(160px) translateX(0) rotateY(0deg); opacity: 1; z-index: 50; }
+    38.33%, 66.66% { transform: translateZ(0) translateX(180px) rotateY(-25deg); opacity: 0.4; z-index: 10; }
+    71.66%, 95% { transform: translateZ(0) translateX(-180px) rotateY(25deg); opacity: 0.4; z-index: 10; }
+    100% { transform: translateZ(160px) translateX(0) rotateY(0deg); opacity: 1; z-index: 50; }
+  }
+
+  @keyframes position-2 {
+    0%, 33.33% { transform: translateZ(0) translateX(180px) rotateY(-25deg); opacity: 0.4; z-index: 10; }
+    38.33%, 66.66% { transform: translateZ(0) translateX(-180px) rotateY(25deg); opacity: 0.4; z-index: 10; }
+    71.66%, 95% { transform: translateZ(160px) translateX(0) rotateY(0deg); opacity: 1; z-index: 50; }
+    100% { transform: translateZ(0) translateX(180px) rotateY(-25deg); opacity: 0.4; z-index: 10; }
+  }
+
+  @keyframes position-3 {
+    0%, 33.33% { transform: translateZ(0) translateX(-180px) rotateY(25deg); opacity: 0.4; z-index: 10; }
+    38.33%, 66.66% { transform: translateZ(160px) translateX(0) rotateY(0deg); opacity: 1; z-index: 50; }
+    71.66%, 95% { transform: translateZ(0) translateX(180px) rotateY(-25deg); opacity: 0.4; z-index: 10; }
+    100% { transform: translateZ(0) translateX(-180px) rotateY(25deg); opacity: 0.4; z-index: 10; }
+  }
+
+
+  .animate-shuffle-1 { animation: position-1 9s infinite cubic-bezier(0.42, 0, 0.58, 1); }
+  .animate-shuffle-2 { animation: position-2 9s infinite cubic-bezier(0.42, 0, 0.58, 1); }
+  .animate-shuffle-3 { animation: position-3 9s infinite cubic-bezier(0.42, 0, 0.58, 1); }
+
+  .perspective-[2000px] { 
+    perspective: 2000px; 
+    transform-style: preserve-3d;
+    overflow: visible !important;
+  }
+  
+
+
+@keyframes text-slide {
+  0%, 33.33% { transform: translateY(-2%); filter: blur(0px); }
+  35% { filter: blur(2px); } /* Blur during the jump */
+  38.33%, 66.66% { transform: translateY(-27%); filter: blur(0px); }
+  68% { filter: blur(2px); }
+  71.66%, 95% { transform: translateY(-52%); filter: blur(0px); }
+  100% { transform: translateY(-77%); }
+}
+
+  .animate-text-slide {
+    /* Match the 9s duration and the image cubic-bezier for a perfect lock */
+    animation: text-slide 9s infinite cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  /* Ensure the container height matches the line height of your H1 */
+  .h-\[1\.1em\] {
+    height: 1.1em;
+  }
+
+  
+</style>

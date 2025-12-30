@@ -1,0 +1,29 @@
+/* global.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@700&family=Space+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* --- DARK GREEN BRAND PALETTE --- */
+  --color-primary: #020D0A;
+  --color-secondary: #0A2F1F;
+  --color-cta: #f98502;
+  --color-neutral: #D1D9D6;
+  --color-body-bg: #05140F;
+
+  /* --- UPDATED TYPOGRAPHY --- */
+   --font-poppins: "Poppins", sans-serif;
+   --font-inter: "Inter", sans-serif;
+   --font-mono: "Space Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#fafafa] text-neutral antialiased font-sans;
+  }
+
+  /* Professional Heading Defaults */
+  h1, h2, h3 {
+    /* Use the new display font (Poppins) for headers */
+    @apply font-poppins text-white tracking-tight;
+  }
+}

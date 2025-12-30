@@ -1,0 +1,159 @@
+---
+// Methodology.astro
+const steps = [
+  { 
+    id: '01', 
+    date: 'Phase One',
+    title: 'Technical Audit', 
+    desc: 'Eliminating architecture "silent killers" like indexing loops and crawl budget waste.',
+    position: 'top'
+  },
+  { 
+    id: '02', 
+    date: 'Phase Two',
+    title: 'Semantic Mapping', 
+    desc: 'Aligning user intent with your high-revenue sales funnels through deep keyword research.',
+    position: 'bottom'
+  },
+  { 
+    id: '03', 
+    date: 'Phase Three',
+    title: 'Content Scaling', 
+    desc: 'Building high-authority ranking content engines to outpace competitors efficiently.',
+    position: 'top'
+  },
+  {
+    id: '04',
+    date: 'Phase Four',
+    title: 'Conversion Optimization',
+    desc: 'Fine-tuning user journeys and on-page elements to maximize your sales conversions.',
+    position: 'bottom'
+  },
+  {
+    id: '05',
+    date: 'Phase Five',
+    title: 'Performance Analytics',
+    desc: 'Continuous monitoring, reporting, and adaptive strategy adjustments for sustained growth.',
+    position: 'top'
+  }
+];
+
+// Calculate length in frontmatter to pass to script
+const totalSteps = steps.length;
+---
+
+<section class="py-32 bg-[#0a0a0a] text-white overflow-hidden" id="roadmap-section">
+  <div class="max-w-7xl mx-auto px-6 lg:px-24">
+    
+    <div class="text-center mb-24 reveal opacity-0 transition-all duration-1000">
+        <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-4 leading-tight">
+            Your Path to <span class="text-[#FB8500] relative inline-block">
+                Digital Dominance
+                <span class="absolute -bottom-2 left-0 w-full h-1 bg-[#FB8500] opacity-30 rounded-full"></span>
+            </span>
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg mt-6 font-light">
+            We don't just optimize; we engineer a comprehensive strategy, meticulously moving from foundational audits to market leadership.
+        </p>
+    </div>
+
+    <div class="relative pb-20">
+      <div class="absolute top-1/2 left-0 w-full h-[1px] bg-white/10 -translate-y-1/2"></div>
+      
+      <div 
+        id="progress-line"
+        class="absolute top-1/2 left-0 h-[2px] bg-[#FB8500] -translate-y-1/2 shadow-[0_0_20px_#FB8500] transition-all duration-[2500ms] ease-out w-0"
+      ></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-0 relative">
+        {steps.map((step, index) => (
+          <div class="relative h-72 flex flex-col justify-center items-center milestone opacity-0 translate-y-10 transition-all duration-700" style={`transition-delay: ${index * 300 + 500}ms`}>
+            
+            <div class={`w-4 h-4 rounded-full border-4 border-[#0a0a0a] z-20 ring-1 transition-colors duration-1000 ${index < 2 ? 'bg-[#FB8500] ring-[#FB8500]' : 'bg-gray-800 ring-white/20'}`}></div>
+
+            <div class={`absolute w-full px-4 transition-all duration-500 hover:scale-105 ${step.position === 'top' ? 'bottom-[55%]' : 'top-[55%]'}`}>
+              
+              <div class={`absolute left-1/2 -translate-x-1/2 w-[1px] bg-gradient-to-b from-transparent via-gray-600 to-transparent h-16 border-l border-dashed border-gray-700 ${step.position === 'top' ? 'top-full' : 'bottom-full'}`}></div>
+
+              <div class="text-center group cursor-default">
+                <span class="text-[#FB8500] text-[10px] font-black tracking-[0.2em] uppercase block mb-3 opacity-80 group-hover:opacity-100 transition-opacity">{step.date}</span>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-[#FB8500] transition-colors">{step.title}</h3>
+                <p class="text-gray-500 text-sm leading-relaxed max-w-[220px] mx-auto font-light">
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </div>
+
+<div class="mt-16 flex flex-col items-center reveal opacity-0 transition-all duration-1000">
+        <div class="relative group p-[1px] rounded-full overflow-hidden bg-gradient-to-r from-white/10 via-[#FB8500]/50 to-white/10">
+            <div class="absolute -inset-1 bg-[#FB8500]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <a href="/contact" class="relative flex items-center gap-6 px-4 py-3 bg-[#0a0a0a] rounded-full hover:bg-black transition-all duration-300">
+                <div class="w-12 h-12 rounded-full bg-[#FB8500] flex items-center justify-center text-white shadow-[0_0_15px_#FB8500]/40 group-hover:rotate-[360deg] transition-transform duration-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+                
+                <div class="pr-6">
+                    <p class="text-[10px] font-black tracking-[.25em] text-[#FB8500] uppercase mb-0.5">Ready to Scale?</p>
+                    <span class="text-white font-bold text-lg tracking-tight">Start Your Journey</span>
+                </div>
+            </a>
+        </div>
+        
+        <p class="mt-6 text-gray-500 text-xs font-medium tracking-wide">Join 50+ high-growth brands dominating search today.</p>
+    </div>
+
+  </div>
+</section>
+
+<script define:vars={{ totalSteps }}>
+  const observerOptions = { 
+    threshold: 0.1, // Trigger earlier so the user sees the animation
+    rootMargin: "0px 0px -50px 0px" 
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const progressLine = document.getElementById('progress-line');
+        if (progressLine) {
+            // progressLine now uses 'totalSteps' correctly from define:vars
+            progressLine.style.width = `${(2 / totalSteps) * 100}%`;
+        }
+        
+        // Find all hidden elements in this section and show them
+        const reveals = entry.target.querySelectorAll('.reveal, .milestone');
+        reveals.forEach(el => {
+          el.classList.remove('opacity-0', 'translate-y-10', 'translate-y-30');
+          el.classList.add('opacity-100', 'translate-y-0');
+        });
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const section = document.querySelector('#roadmap-section');
+  if (section) observer.observe(section);
+</script>
+
+<style>
+  /* Base hidden states */
+  .reveal {
+    transform: translateY(30px);
+  }
+
+  .milestone {
+    transform: translateY(10px);
+  }
+
+  /* Active node glow */
+  .bg-\[\#FB8500\] {
+    box-shadow: 0 0 25px rgba(251, 133, 0, 0.5);
+  }
+</style>

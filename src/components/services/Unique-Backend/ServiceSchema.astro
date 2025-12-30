@@ -1,0 +1,104 @@
+---
+import SecurityImg from "../../../assets/backend-services/security.jpg";
+import ScalingImg from "../../../assets/backend-services/scaling.jpg";
+import IntegrationImg from "../../../assets/backend-services/api.jpg";
+
+const differentiators = [
+  {
+    title: "Isolated Security",
+    code: "PHASE-01",
+    image: SecurityImg.src,
+    desc: "We don't just 'encrypt'—we isolate. Every process runs in a hardened sandbox, ensuring zero-day vulnerabilities never reach.",
+    tag: "Hardened Core"
+  },
+  {
+    title: "Elastic Scaling",
+    code: "PHASE-02",
+    image: ScalingImg.src,
+    desc: "Our architecture is fluid. It doesn't just add servers; it reallocates resources in real-time to sub-50ms edge nodes globally.",
+    tag: "Zero Latency"
+  },
+  {
+    title: "Atomic Integration",
+    code: "PHASE-03",
+    image: IntegrationImg.src,
+    desc: "Integration is often an afterthought; for us, it's atomic. We ensure linearizable consistency across every third-party handshake.",
+    tag: "Unified Sync"
+  }
+];
+---
+
+<section class="bg-[#050505] py-32 relative overflow-hidden">
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_#ea580c10_0%,_transparent_70%)] pointer-events-none"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    
+    <div class="max-w-4xl mb-24">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="h-[2px] w-16 bg-orange-600"></div>
+        <span class="text-orange-500 font-mono text-xs font-black uppercase tracking-[0.4em]">The Architecture of Difference</span>
+      </div>
+      <h2 class="text-6xl md:text-[90px] font-black text-white tracking-tighter leading-tight mb-8">
+        PRECISION <br/> <span class="text-orange-500 italic">BY DESIGN.</span>
+      </h2>
+      <p class="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed">
+        Generic backends focus on storage. We focus on <span class="text-white">orchestration</span>. Every layer is engineered with a special obsession for security and performance that standard CRUD apps ignore.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {differentiators.map((item) => (
+        <div class="group relative h-[600px] rounded-[2rem] overflow-hidden bg-zinc-900 border border-white/5">
+          
+          <div class="absolute inset-0 z-0">
+            <img 
+              src={item.image} 
+              alt={item.title} 
+              class="w-full h-full object-cover  opacity-50 transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0 group-hover:opacity-80"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          </div>
+
+          <div class="relative z-10 h-full px-10 flex flex-col justify-end">
+            <div class=" transform transition-all duration-500 translate-y-8 group-hover:translate-y-0">
+              <div class="inline-block px-3 py-1 rounded-full bg-orange-600 text-[10px] font-black text-white uppercase tracking-widest mb-4 shadow-lg shadow-orange-600/20">
+                {item.tag}
+              </div>
+              <h3 class="text-4xl font-black text-white mb-4 tracking-tighter">
+                {item.title}
+              </h3>
+              <p class="text-zinc-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                {item.desc}
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between pt-6 border-t border-white/10 mt-2 transform transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+              <span class="text-[10px] font-mono text-zinc-500 font-bold uppercase">{item.code}</span>
+              <div class="flex gap-1">
+                <div class="w-1 h-1 rounded-full bg-orange-600"></div>
+                <div class="w-8 h-1 rounded-full bg-orange-600 shadow-[0_0_8px_#ea580c]"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* <div class="absolute top-0 right-0 w-24 h-24 bg-white/5 backdrop-blur-3xl border-b border-l border-white/10 rounded-bl-[2rem] flex items-center justify-center transition-all duration-500 group-hover:bg-orange-600">
+             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+             </svg>
+          </div> */}
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-24 flex flex-col md:flex-row items-center justify-between gap-8 p-12 rounded-[3rem] bg-gradient-to-r from-zinc-900 to-black border border-white/5">
+      <div>
+        <h4 class="text-2xl font-black text-white mb-2 uppercase tracking-tighter">Ready for a Technical Audit?</h4>
+        <p class="text-zinc-500 text-sm">We provide a full transparency report on how we handle your data isolation.</p>
+      </div>
+      <button class="px-12 py-5 bg-white text-black font-black uppercase text-xs tracking-[0.2em] rounded-full hover:bg-orange-600 hover:text-white transition-all shadow-2xl">
+        Review Infrastructure
+      </button>
+    </div>
+
+  </div>
+</section>

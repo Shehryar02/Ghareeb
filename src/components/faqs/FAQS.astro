@@ -1,0 +1,191 @@
+---
+const categories = [
+  {
+    name: "Operational Timeline",
+    id: "time",
+    faqs: [
+      {
+        question: "How long does a typical project take?",
+        answer: "Most high-fidelity digital solutions are delivered within 6 to 12 weeks. This includes the full Strategic Discovery and Agile Development cycles."
+      }
+    ]
+  },
+  {
+    name: "Strategic Process",
+    id: "process",
+    faqs: [
+      {
+        question: "Can we integrate with our existing CRM?",
+        answer: "Yes. Our architecture is built to be 'Modular First,' allowing seamless API integrations with platforms like Salesforce, HubSpot, and custom tools."
+      },
+      {
+        question: "Do you provide post-launch support?",
+        answer: "Absolutely. We offer dedicated maintenance tiers to ensure your systems stay updated, secure, and optimized for new market conditions."
+      }
+    ]
+  },
+  {
+    name: "Legal & IP",
+    id: "legal",
+    faqs: [
+      {
+        question: "Who owns the final intellectual property?",
+        answer: "You do. Upon project completion and final payment, 100% of the code, design assets, and IP are transferred to your organization."
+      }
+    ]
+  }
+];
+---
+
+
+<section class="bg-white py-22 px-6 font-sans text-slate-900 relative">
+  <div class="max-w-4xl mx-auto relative z-10">
+    
+<div class="text-center mb-24">
+  <div class="flex items-center justify-center gap-3 mb-6">
+    <span class="h-[1px] w-8 bg-orange-500/40"></span>
+    <span class="text-[10px] font-black uppercase tracking-[0.5em] text-orange-500">Information Desk</span>
+    <span class="h-[1px] w-8 bg-orange-500/40"></span>
+  </div>
+
+  <h2 class="text-7xl md:text-[140px] font-black tracking-tighter uppercase leading-[0.8] text-black">
+    FA<span class="text-orange-500">Q<sub class="text-[35px] md:text-[45px] lowercase italic font-light tracking-tighter -ml-2">s</sub></span>
+  </h2>
+
+  <div class="mt-10 relative inline-block">
+    <h3 class="text-xl md:text-2xl font-bold text-slate-900 uppercase tracking-tight">
+      Frequently Asked <span class="text-orange-500 ">Questions</span>
+    </h3>
+    <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-black rounded-full"></div>
+  </div>
+</div>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-20">
+      {categories.map((cat) => (
+        <a 
+          href={`#${cat.id}`} 
+          class="px-8 py-4 border- rounded-2xl bg-orange-500 border-black text-[12px] text-white uppercase tracking-widest hover:bg-orange-600 transition-all"
+        >
+          {cat.name}
+        </a>
+      ))}
+    </div>
+
+    <div class="space-y-24">
+      {categories.map((cat) => (
+        <div id={cat.id} class="category-group">
+          <div class="flex items-center gap-4 mb-10">
+            <div class="h-[2px] w-8 bg-orange-500"></div>
+            <h4 class="text-xs font-black uppercase tracking-[0.4em] text-slate-400">{cat.name}</h4>
+          </div>
+
+          <div class="space-y-4">
+            {cat.faqs.map((faq, index) => (
+              <div class="faq-card group bg-[#0A0A0A] border border-orange-500/20 rounded-[2rem] overflow-hidden transition-all duration-500 hover:border-orange-500 cursor-pointer">
+                
+                <div class="px-8 py-8 md:px-12 flex items-center justify-between pointer-events-none">
+                  <div class="flex items-center gap-6">
+                    <span class="text-orange-500 font-mono text-xl font-bold opacity-50 group-hover:opacity-100 transition-opacity">
+                      {cat.id.toUpperCase()}-0{index + 1}
+                    </span>
+                    <h3 class="text-xl md:text-2xl font-bold tracking-tight text-white group-hover:text-orange-100 transition-colors">
+                      {faq.question}
+                    </h3>
+                  </div>
+
+                  <div class="relative w-6 h-6 flex items-center justify-center">
+                    <div class="absolute w-full h-[2px] bg-orange-500"></div>
+                    <div class="absolute w-[2px] h-full bg-orange-500 transform origin-center rotate-icon transition-transform duration-500"></div>
+                  </div>
+                </div>
+
+                <div class="faq-content grid grid-rows-[0fr] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] bg-white">
+                  <div class="overflow-hidden">
+                    <div class="px-8 py-12 md:px-12 md:ml-[68px]">
+                      <div class="h-[3px] w-12 bg-orange-500 mb-8"></div>
+                      <p class="text-slate-700 text-xl leading-relaxed font-semibold max-w-2xl">
+                        {faq.answer}
+                      </p>
+                      
+                      <div class="mt-10 flex items-center gap-4">
+                        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Protocol Secure</span>
+                        <div class="flex-1 h-[1px] bg-slate-100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .faq-card.is-active .rotate-icon { transform: rotate(90deg); }
+  .faq-card.is-active .faq-content { grid-template-rows: 1fr; }
+  .faq-card.is-active {
+    border-color: #f97316;
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+  }
+  .faq-card.is-active h3 { color: #f18316; }
+  
+  /* Smooth scroll for the category anchors */
+  html { scroll-behavior: smooth; }
+  
+  .category-group {
+    scroll-margin-top: 100px;
+  }
+</style>
+
+
+
+<script>
+  // Function to handle the accordion logic
+  const initInversionFAQ = () => {
+    const cards = document.querySelectorAll('.faq-card');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const isActive = card.classList.contains('is-active');
+        
+        // 1. Close all other cards
+        cards.forEach(c => c.classList.remove('is-active'));
+        
+        // 2. If the clicked card wasn't active, open it
+        if (!isActive) {
+          card.classList.add('is-active');
+        }
+      });
+    });
+  };
+
+  // Run on initial load
+  initInversionFAQ();
+
+  // Run every time the page swaps (Astro specific)
+  document.addEventListener('astro:after-swap', initInversionFAQ);
+  document.addEventListener('astro:page-load', initInversionFAQ);
+</script>
+
+<style>
+  /* Ensure the content is hidden by default and expands smoothly */
+  .faq-content {
+    grid-template-rows: 0fr;
+    display: grid;
+    transition: grid-template-rows 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .faq-card.is-active .faq-content {
+    grid-template-rows: 1fr;
+  }
+
+  /* Prevent icon from blocking clicks */
+  .rotate-icon, .relative.w-6.h-6 {
+    pointer-events: none;
+  }
+</style>

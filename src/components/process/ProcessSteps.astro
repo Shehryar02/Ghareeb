@@ -1,0 +1,177 @@
+---
+const steps = [
+  { 
+    id: "01", 
+    phase: "Discovery & Strategy", 
+    process: "We conduct deep-tier technical audits and competitor landscape mapping to define project KPIs and market positioning.",
+    value: "A comprehensive Strategy Roadmap and a Data-Audit report that serves as the project's 'North Star'." 
+  },
+  { 
+    id: "02", 
+    phase: "Architecture & Wireframing", 
+    process: "We map out the entire user journey and information architecture, creating high-fidelity wireframes to finalize functionality.",
+    value: "A functional blueprint of your site's structure, ensuring the UX is perfect before development begins." 
+  },
+  { 
+    id: "03", 
+    phase: "Iterative Development", 
+    process: "Coding happens in agile sprints. We push updates to a staging environment where you can track progress live.",
+    value: "A 24/7 staging link and weekly status reports, giving you total transparency during development." 
+  },
+  { 
+    id: "04", 
+    phase: "QA & SEO Testing", 
+    process: "Our team runs 50+ point checks covering mobile responsiveness, Core Web Vitals, and technical SEO schemas.",
+    value: "A high-performance, bug-free site optimized for speed and search engines for a flawless launch." 
+  }
+];
+---
+
+<section class="bg-[#020202] py-32 px-6 font-sans antialiased text-white overflow-hidden scroll-mt-20">
+  
+  <div class="fixed inset-0 pointer-events-none -z-10">
+    <div class="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-orange-600/10 blur-[200px] rounded-full"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-orange-500/5 blur-[150px] rounded-full"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto relative z-10 opacity-0 translate-y-10 transition-all duration-[1200ms]" id="main-container">
+    
+    <div class="mb-56 text-center max-w-4xl mx-auto">
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <div class="w-12 h-[1px] bg-orange-500/40"></div>
+        <span class="text-orange-500 font-black text-xs uppercase tracking-[0.6em]">Process Framework</span>
+        <div class="w-12 h-[1px] bg-orange-500/40"></div>
+      </div>
+      <h2 class="text-6xl md:text-[140px] font-black tracking-tighter leading-none uppercase">
+        The <span class="text-orange-500">Method</span>
+      </h2>
+    </div>
+
+    <div class="space-y-40">
+      {steps.map((step) => (
+        <div class="process-phase relative flex flex-col lg:flex-row items-center gap-16 lg:gap-24 transition-all duration-1000 opacity-20 blur-[2px] scale-[0.98]">
+          
+          <div class="absolute left-0 top-1/2 -translate-y-1/2 -z-10 transition-all duration-1000 phase-bg-id opacity-[0.05]">
+            <span class="text-[12rem] md:text-[16rem] font-black leading-none text-orange-500 italic select-none">
+              {step.id}
+            </span>
+          </div>
+
+          <div class="lg:w-[40%] space-y-6">
+            <div class="flex items-center gap-3">
+              <span class="text-orange-500 font-mono text-sm font-bold">{step.id}</span>
+              <div class="w-10 h-[1px] bg-white/10"></div>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
+              {step.phase}
+            </h3>
+            <p class="text-gray-500 text-base md:text-lg leading-relaxed max-w-sm">
+              {step.process}
+            </p>
+          </div>
+
+          <div class="lg:w-[60%] w-full">
+            <div class="glass-card p-10 md:p-14 rounded-[3rem] relative overflow-hidden border border-white/5 bg-white/[0.01]">
+              
+              <div class="absolute -top-1/2 -right-1/2 w-full h-full bg-orange-500/10 blur-[100px] rounded-full"></div>
+              
+              <div class="relative z-10 flex flex-col gap-8">
+                <div class="flex items-center gap-4">
+                  <div class="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-black shadow-[0_0_20px_rgba(249,115,22,0.3)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span class="text-orange-500 font-bold text-[10px] uppercase tracking-[0.4em]">Client Deliverable</span>
+                </div>
+                
+                <p class="text-white text-xl md:text-3xl font-bold leading-tight tracking-tight">
+                  "{step.value}"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .glass-card {
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    /* Ultra-snappy response */
+    transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* FAST FOCUS LOGIC */
+  .process-phase {
+    /* Instant-start easing (Expo Out) */
+    transition: 
+      opacity 350ms cubic-bezier(0.19, 1, 0.22, 1), 
+      filter 300ms cubic-bezier(0.19, 1, 0.22, 1), 
+      transform 400ms cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: opacity, filter, transform;
+  }
+
+  /* Once triggered, these stay applied */
+  .is-focused {
+    opacity: 1 !important;
+    filter: blur(0px) !important;
+    transform: scale(1) !important;
+  }
+
+  .is-focused .phase-bg-id {
+    opacity: 0.15;
+    transition: transform 350ms cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .is-focused .glass-card {
+    border-color: rgba(249, 115, 22, 0.3);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  /* Main Container Entrance - Reduced to 500ms for speed */
+  .reveal-active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+  }
+</style>
+
+<script>
+  function initStickyFastObserver() {
+    const container = document.getElementById('main-container');
+    const phases = document.querySelectorAll('.process-phase');
+
+    const globalObs = new IntersectionObserver((e) => {
+      if (e[0].isIntersecting && container) {
+        container.classList.add('reveal-active');
+        // Unobserve after firing to keep it active
+        globalObs.unobserve(container);
+      }
+    }, { threshold: 0.01 });
+
+    const focusObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // Only Add class, never Remove it
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-focused');
+          // Optional: Stop watching this element once it's arrived
+          focusObs.unobserve(entry.target);
+        }
+      });
+    }, { 
+      threshold: 0.1, 
+      rootMargin: "15% 0px -5% 0px" 
+    });
+
+    if (container) globalObs.observe(container);
+    phases.forEach(p => focusObs.observe(p));
+  }
+
+  // Window load ensures no "jumpy" calculation during the fast transition
+  window.addEventListener('load', initStickyFastObserver);
+</script>

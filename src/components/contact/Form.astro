@@ -1,0 +1,102 @@
+---
+// Contact.astro - Professional High-Contrast Console
+---
+
+<section class="relative w-full py-24 bg-white flex items-center justify-center p-6">
+  
+  <div class="max-w-6xl w-full bg-[#050505] rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] flex flex-col lg:flex-row min-h-[700px] border border-white/5">
+    
+    <div class="w-full lg:w-1/2 relative p-12 md:p-20 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 bg-[radial-gradient(circle_at_center,_#111_0%,_#050505_100%)]">
+      
+      <div class="flex items-center gap-2">
+        <div class="w-1.5 h-6 bg-[#ea580c]"></div>
+        <span class="text-[10px] font-mono font-bold text-white/60 tracking-[0.3em] uppercase">Connect</span>
+      </div>
+
+      <div class="flex flex-col items-center text-center">
+        <div class="w-20 h-20 mb-10 text-[#ea580c]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold font-display tracking-[-0.05em] text-white leading-tight mb-4">
+          Elevate Your <br/> <span class="text-white/30">Architecture.</span>
+        </h1>
+        <p class="text-sm text-white/40 max-w-xs font-medium leading-relaxed">
+          Partner with us to engineer high-velocity systems built for longevity.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <span class="text-[9px] font-mono text-white/20 uppercase tracking-widest">Global HQ</span>
+        <div class="h-[1px] w-12 bg-white/10"></div>
+        <span class="text-[9px] font-mono text-white/20 uppercase tracking-widest">Available 2025</span>
+      </div>
+    </div>
+
+    <div class="w-full lg:w-1/2 p-12 md:p-16 flex flex-col justify-center bg-[#080808]">
+      
+      <div class="mb-12">
+         <h2 class="text-2xl font-bold text-white tracking-tight uppercase">Let's Build Together</h2>
+         <p class="text-white/40 text-xs mt-2">Submit your project details for a priority review.</p>
+      </div>
+
+      <form class="space-y-6">
+        <div class="group relative">
+          <label class="absolute -top-2.5 left-4 px-2 bg-[#080808] text-[10px] font-bold text-white uppercase tracking-wider z-10">Full Name</label>
+          <input type="text" required class="w-full bg-transparent border border-[#ea580c]/40 rounded-xl px-5 py-4 text-sm text-white focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] outline-none transition-all placeholder:text-white/5" placeholder="Enter your name" />
+        </div>
+
+        <div class="group relative">
+          <label class="absolute -top-2.5 left-4 px-2 bg-[#080808] text-[10px] font-bold text-white uppercase tracking-wider z-10">Email Address</label>
+          <input type="email" inputmode="email" required class="w-full bg-transparent border border-[#ea580c]/40 rounded-xl px-5 py-4 text-sm text-white focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] outline-none transition-all placeholder:text-white/5" placeholder="email@example.com" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+          <div class="group relative">
+            <label class="absolute -top-2.5 left-4 px-2 bg-[#080808] text-[10px] font-bold text-white uppercase tracking-wider z-10">Service</label>
+            <select class="w-full bg-transparent border border-[#ea580c]/40 rounded-xl px-5 py-4 text-sm text-white/80 focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] outline-none transition-all appearance-none cursor-pointer">
+              <option class="bg-black">System Architecture</option>
+              <option class="bg-black">Performance Audit</option>
+              <option class="bg-black">Product Design</option>
+            </select>
+          </div>
+          <div class="group relative">
+            <label class="absolute -top-2.5 left-4 px-2 bg-[#080808] text-[10px] font-bold text-white uppercase tracking-wider z-10">Budget</label>
+            <select class="w-full bg-transparent border border-[#ea580c]/40 rounded-xl px-5 py-4 text-sm text-white/80 focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] outline-none transition-all appearance-none cursor-pointer">
+              <option class="bg-black">$10k - $25k</option>
+              <option class="bg-black">$25k - $50k</option>
+              <option class="bg-black">$50k+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="group relative">
+          <label class="absolute -top-2.5 left-4 px-2 bg-[#080808] text-[10px] font-bold text-white uppercase tracking-wider z-10">Project Brief</label>
+          <textarea rows="4" class="w-full bg-transparent border border-[#ea580c]/40 rounded-xl px-5 py-4 text-sm text-white focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] outline-none transition-all resize-none placeholder:text-white/5" placeholder="Briefly describe your goals..."></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-5 bg-[#ea580c] text-white rounded-xl font-bold uppercase text-[11px] tracking-[0.3em] transition-all hover:bg-[#ff6a1a] hover:shadow-[0_15px_30px_rgba(234,88,12,0.3)] active:scale-[0.98]">
+          Send Message
+        </button>
+
+        <p class="text-center text-[9px] font-mono text-white/10 uppercase tracking-[0.4em] mt-4">Confidential Transmission</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Refined dropdown arrow */
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='rgba(234,88,12,0.5)'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    background-color: rgba(234, 88, 12, 0.03);
+  }
+</style>
