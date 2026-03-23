@@ -1,0 +1,156 @@
+---
+/**
+ * ServiceWhoIsThisFor.astro
+ * Aesthetic: Obsidian High-Contrast / Surgical White
+ */
+
+interface Persona {
+  title: string;
+  desc: string;
+  points: string[];
+}
+
+interface Props {
+  tag?: string;
+  title?: string;
+  subtitle?: string;
+  personas: Persona[];
+  requirementsTitle?: string;
+  requirementsSubtitle?: string;
+  requirementsList?: string[];
+}
+
+const {
+  tag = "Target_Profile_v1.0",
+  title = "IDEAL",
+  subtitle = "FIT.",
+  personas = [], // Default to empty array to prevent .map errors
+  requirementsTitle = "Surgical",
+  requirementsSubtitle = "Requirements.",
+  requirementsList = [
+    "Complex Data Orchestration Needs",
+    "High-Security Compliance Standards",
+    "Infrastructure Technical Debt",
+    "Need for Elastic Cloud Scaling"
+  ]
+} = Astro.props;
+---
+
+<section id="who-is-this-for" class="bg-[#FFFFFF] py-40 overflow-hidden relative">
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-24 relative z-10">
+    
+    <div class="mb-24 reveal text-center lg:text-left">
+        <div class="flex items-center justify-center lg:justify-start gap-4 mb-6">
+            <span class="w-12 h-[2px] bg-orange-500"></span>
+            <span class="text-black font-black uppercase text-[10px] tracking-[0.5em]">{tag}</span>
+        </div>
+        <h2 class="text-6xl md:text-8xl font-[1000] text-black uppercase tracking-tighter leading-none">
+          {title} <span class="text-orange-500 italic">{subtitle}</span>
+        </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <div class="lg:col-span-7 space-y-6">
+        {personas.map((persona, index) => (
+          <div class="reveal group relative bg-white/40 backdrop-blur-xl border border-black/[0.05] rounded-[3rem] p-10 transition-all duration-700 hover:border-orange-500/30 hover:shadow-[0_40px_80px_rgba(0,0,0,0.04)]" style={`transition-delay: ${index * 150}ms`}>
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              <div class="w-16 h-16 rounded-2xl bg-black text-orange-500 flex items-center justify-center shrink-0 font-black text-xl italic group-hover:scale-110 transition-transform">
+                0{index + 1}
+              </div>
+              <div class="space-y-4">
+                <h3 class="text-3xl font-[1000] text-black uppercase tracking-tight group-hover:text-orange-500 transition-colors">
+                  {persona.title}
+                </h3>
+                <p class="text-gray-500 font-medium leading-relaxed max-w-lg">
+                  {persona.desc}
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                  {persona.points.map(point => (
+                    <span class="px-3 py-1 bg-black/[0.03] border border-black/[0.05] rounded-full text-[10px] font-bold uppercase tracking-wider text-black/60">
+                      {point}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="lg:col-span-5 reveal" style="transition-delay: 400ms">
+        <div class="bg-[#0a0a0a] rounded-[4rem] p-12 relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)]">
+          <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/20 via-transparent to-transparent opacity-40"></div>
+          
+          <div class="relative z-10 space-y-12">
+            <div>
+              <span class="text-orange-500 font-black uppercase text-[10px] tracking-[0.5em] block mb-4">Qualification_Metrics</span>
+              <h4 class="text-4xl font-[1000] text-white uppercase tracking-tighter leading-none">
+                {requirementsTitle} <br/> <span class="italic text-orange-500">{requirementsSubtitle}</span>
+              </h4>
+            </div>
+
+            <ul class="space-y-8">
+              {requirementsList.map((req) => (
+                <li class="flex items-center gap-4 group">
+                  <div class="w-5 h-5 rounded-full border border-orange-500/50 flex items-center justify-center group-hover:bg-orange-500 transition-all duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span class="text-white/70 font-bold uppercase text-[11px] tracking-widest leading-none">
+                    {req}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="pt-8 border-t border-white/10">
+                <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></div>
+                    <span class="text-white/30 font-mono text-[9px] tracking-widest uppercase">Target_Match: Required</span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  #who-is-this-for .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  #who-is-this-for .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script is:inline>
+  function initWhoIsFor() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('#who-is-this-for .reveal').forEach(el => observer.observe(el));
+  }
+  document.addEventListener('DOMContentLoaded', initWhoIsFor);
+  document.addEventListener('astro:page-load', initWhoIsFor);
+</script>

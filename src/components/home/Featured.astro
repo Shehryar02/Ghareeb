@@ -5,70 +5,76 @@ const projects = [
     tag: "FinTech Architecture",
     title: "Apex Ledger",
     desc: "Engineered a high-frequency banking dashboard for sub-100ms latency and real-time asset tracking.",
-    image: "",
+    image: "https://images.unsplash.com/photo-1551288049-bbda4833effb?q=80&w=1200",
     link: "#"
   },
   {
     tag: "E-Commerce Engine",
-    title: "Vanguard Store",
+    title: "Vanguard ",
     desc: "A headless commerce solution handling 50k+ daily transactions with a focus on conversion optimization.",
-    image: "",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200",
     link: "#"
   },
   {
     tag: "Search Dominance",
     title: "SEO Core v4",
     desc: "Custom semantic HTML architecture that boosted organic reach by 300% for enterprise-scale platforms.",
-    image: "",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
     link: "#"
   }
 ];
 ---
 
-<section class="py-32 bg-white overflow-hidden relative" id="apple-hover-carousel">
-  <div id="zone-left" class="absolute left-0 top-0 w-[20%] h-full z-30"></div>
-  <div id="zone-right" class="absolute right-0 top-0 w-[20%] h-full z-30"></div>
+<section class="py-24 bg-white overflow-hidden relative" id="apple-hover-carousel">
+  <div id="zone-left" class="absolute left-0 top-0 w-[15%] h-full z-30 cursor-west-resize"></div>
+  <div id="zone-right" class="absolute right-0 top-0 w-[15%] h-full z-30 cursor-east-resize"></div>
 
-  <div class="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row justify-between items-start md:items-end relative z-10 gap-8">
-    <div class="max-w-3xl">
-      <p class="text-[10px] font-black uppercase tracking-[0.4em] text-[#FB8500] mb-4">Precision Engineering</p>
-      <h2 class="text-6xl md:text-8xl font-black text-black uppercase tracking-tighter leading-[0.85]">
-        Digital <br />
-        <span class="text-[#FB8500]">Mastery.</span>
-      </h2>
-    </div>
+  <div class="max-w-7xl mx-auto px-6 mb-20 relative z-10 text-center">
+    <p class="text-[14px] font-mono font-black uppercase tracking-[0.5em] text-[#FB8500] mb-6">
+      Precision Engineering
+    </p>
     
-    <div class="flex gap-4 mb-4">
+    <h2 class="text-7xl md:text-9xl font-black text-black uppercase tracking-tighter leading-[0.85] mb-8">
+      Digital <span class="text-[#FB8500] italic">Mastery.</span>
+    </h2>
+
+    <p class="text-black/60 max-w-2xl mx-auto font-medium text-lg md:text-xl leading-relaxed tracking-tight text-center">
+      <span class="text-black font-bold">A proven track record</span> 
+      of transforming complex technical requirements into 
+      <span class="text-[#FB8500] font-bold">high-performance revenue assets.</span>
+    </p>
+
+    <div class="flex justify-center gap-4 mt-12">
       {projects.map((_, i) => (
-        <div class="carousel-indicator h-1.5 w-16 bg-black/5 rounded-full overflow-hidden">
-          <div class="indicator-progress h-full bg-[#FB8500] w-0 transition-all duration-300"></div>
+        <div class="carousel-indicator h-1 w-20 bg-black/5 rounded-full overflow-hidden">
+          <div class="indicator-progress h-full bg-[#FB8500] w-0 transition-all duration-500"></div>
         </div>
       ))}
     </div>
   </div>
 
   <div class="relative w-full overflow-visible">
-    <div id="apple-track" class="flex transition-transform duration-[1000ms] cubic-bezier(0.23, 1, 0.32, 1)">
+    <div id="apple-track" class="flex transition-transform duration-[1000ms] ease-[cubic-bezier(0.23,1,0.32,1)]">
       {projects.map((project, i) => (
-        <div class="apple-card min-w-[85vw] md:min-w-[70vw] lg:min-w-[65vw] px-6 transition-all duration-[1000ms]" data-index={i}>
-          <div class="relative rounded-[3rem] overflow-hidden aspect-[16/10] bg-black group border-[1px] border-black/10 shadow-2xl ring-1 ring-black/5">
+        <div class="apple-card min-w-[90vw] md:min-w-[75vw] lg:min-w-[70vw] px-4 transition-all duration-1000" data-index={i}>
+          <div class="relative rounded-[3rem] overflow-hidden aspect-[16/9] bg-black group border border-black/5 shadow-2xl">
+            <img src={project.image} alt={project.title} class="w-full h-full object-cover opacity-50 grayscale-[20%] transition-transform duration-1000 group-hover:scale-105" />
             
-            <img src={project.image}  class="w-full h-full object-cover opacity-70 grayscale-[20%] transition-transform duration-1000 group-hover:scale-105" />
-            
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-8 md:p-20">
-              <p class="text-[#FB8500] font-black uppercase tracking-[0.3em] text-[11px] mb-4 drop-shadow-md">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent flex flex-col justify-end p-10 md:p-20">
+              <p class="text-[#FB8500] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs mb-4">
                 {project.tag}
               </p>
-              <h3 class="text-white text-4xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-none drop-shadow-lg">
+              <h3 class="text-white text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8 leading-none">
                 {project.title}
               </h3>
               
-              <div class="apple-reveal opacity-0 translate-y-8 transition-all duration-700 delay-300">
-                <p class="text-white text-lg md:text-2xl max-w-2xl mb-10 font-medium leading-relaxed drop-shadow-sm">
+              <!-- THE REVEAL SECTION -->
+              <div class="apple-reveal opacity-0 translate-y-10 transition-all duration-700 delay-300">
+                <p class="text-white/70 text-lg md:text-2xl max-w-2xl mb-12 font-medium leading-relaxed">
                   {project.desc}
                 </p>
-                <a href={project.link} class="inline-flex items-center gap-4 px-10 py-5 bg-[#FB8500] text-black font-black uppercase text-xs tracking-[0.2em] rounded-full hover:bg-white transition-all shadow-xl">
-                    Explore Study
+                <a href={project.link} class="inline-flex items-center gap-4 px-12 py-5 bg-[#FB8500] text-black font-black uppercase text-[10px] tracking-[0.2em] rounded-full hover:bg-white transition-all transform hover:-translate-y-1 active:scale-95 shadow-2xl">
+                    Explore Case Study
                 </a>
               </div>
             </div>
@@ -80,15 +86,14 @@ const projects = [
 </section>
 
 <style>
-  /* Base Card State (Inactive) */
   .apple-card {
-    opacity: 0.3;
-    transform: scale(0.88);
-    filter: blur(12px);
+    opacity: 0.15;
+    transform: scale(0.85);
+    filter: blur(8px);
     pointer-events: none;
+    transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  /* Active Card State */
   .apple-card.is-active {
     opacity: 1;
     transform: scale(1);
@@ -96,6 +101,7 @@ const projects = [
     pointer-events: auto;
   }
 
+  /* REVEAL LOGIC FIX */
   .apple-card.is-active .apple-reveal {
     opacity: 1;
     transform: translateY(0);
@@ -105,36 +111,31 @@ const projects = [
     width: 100%;
   }
 
-  /* Hide scrollbar for the track */
   #apple-track {
     will-change: transform;
+    display: flex;
+    align-items: center;
   }
 </style>
 
 <script>
   function initHoverCarousel() {
-    // 1. Cast elements to HTMLElement so TS knows they have 'style' and 'offsetLeft'
-    const track = document.getElementById('apple-track') as HTMLElement | null;
-    const cards = document.querySelectorAll('.apple-card') as NodeListOf<HTMLElement>;
-    const indicators = document.querySelectorAll('.indicator-progress') as NodeListOf<HTMLElement>;
-    const zoneLeft = document.getElementById('zone-left') as HTMLElement | null;
-    const zoneRight = document.getElementById('zone-right') as HTMLElement | null;
+    const track = document.getElementById('apple-track');
+    const cards = document.querySelectorAll('.apple-card');
+    const indicators = document.querySelectorAll('.indicator-progress');
+    const zoneLeft = document.getElementById('zone-left');
+    const zoneRight = document.getElementById('zone-right');
     
-    let currentIndex = 0;
+    let currentIndex = 1; // Starts on the second project
     let isMoving = false;
-    
-    // 2. Fix 'interval' red line by typing it for the browser environment
-    let interval: number | undefined | ReturnType<typeof setInterval> = undefined;
+    let interval: any = null;
 
     function updateCarousel() {
       if (!track || cards.length === 0) return;
       isMoving = true;
       
       const viewportCenter = window.innerWidth / 2;
-      const currentCard = cards[currentIndex];
-      
-      if (!currentCard) return;
-
+      const currentCard = cards[currentIndex] as HTMLElement;
       const cardOffset = currentCard.offsetLeft;
       const cardWidth = currentCard.offsetWidth;
       
@@ -145,15 +146,13 @@ const projects = [
       cards.forEach((card, i) => card.classList.toggle('is-active', i === currentIndex));
       indicators.forEach((ind, i) => ind.classList.toggle('is-active', i === currentIndex));
       
-      setTimeout(() => { isMoving = false; }, 1100); 
+      setTimeout(() => { isMoving = false; }, 1000); 
     }
 
-    // 3. Fix 'direction' red line by defining its allowed string values
     function startAutoMove(direction: 'left' | 'right') {
       if (interval) return;
       interval = setInterval(() => {
         if (isMoving) return;
-        
         if (direction === 'right' && currentIndex < cards.length - 1) {
           currentIndex++;
           updateCarousel();
@@ -163,14 +162,13 @@ const projects = [
         } else {
           stopAutoMove();
         }
-      }, 10);
-      // Here to change the delay of hover
+      }, 200); 
     }
 
     function stopAutoMove() {
       if (interval) {
-        clearInterval(interval as number);
-        interval = undefined;
+        clearInterval(interval);
+        interval = null;
       }
     }
 
@@ -180,12 +178,9 @@ const projects = [
     zoneLeft?.addEventListener('mouseleave', stopAutoMove);
 
     window.addEventListener('resize', updateCarousel);
-    
-    // Initial call
-    setTimeout(updateCarousel, 100);
+    setTimeout(updateCarousel, 150);
   }
 
-  // Initialize on load and on Astro view transitions
   initHoverCarousel();
   document.addEventListener('astro:after-swap', initHoverCarousel);
 </script>

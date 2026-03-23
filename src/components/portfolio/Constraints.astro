@@ -1,0 +1,134 @@
+---
+// Constraints & Reality - Funnel Data with Complete Image Cluster
+const reality = {
+  header: {
+    protocol: "System Analysis // 02",
+    title: "Structural",
+    highlight: "Constraints",
+    desc: "Multiple friction points. One single point of failure."
+  },
+  constraints: [
+    { label: "Data Decay", value: "92%", tag: "ADMIN" },
+    { label: "User Blindness", value: "74%", tag: "INSIGHT" },
+    { label: "Scaling Friction", value: "88%", tag: "GROWTH" },
+    { label: "Asset Burn", value: "65%", tag: "EQUIPMENT" }
+  ],
+  gallery: [
+    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800", // Barbell/Chalk
+    "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800", // Modern Gym Rack
+    "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800"  // Athlete in motion
+  ]
+};
+---
+
+<section class="relative bg-white text-black py-24 px-6 font-sans overflow-hidden selection:bg-orange-600 selection:text-white">
+  
+  {/* BACKGROUND TECH ELEMENTS */}
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-50/50 to-transparent pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <div class="grid md:grid-cols-2 gap-16 items-start mb-10">
+      <div>
+        <span class="text-orange-600 font-mono text-xs font-bold tracking-[0.4em] uppercase mb-6 block">
+          {reality.header.protocol}
+        </span>
+        <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tighter text-black leading-[0.85] mb-8 italic">
+          {reality.header.title} <br/>
+          <span class="text-orange-500">{reality.header.highlight}.</span>
+        </h2>
+        <p class="text-xl font-bold text-neutral-400 italic mb-8">{reality.header.desc}</p>
+        
+        {/* THE ENHANCED IMAGE CLUSTER (3 IMAGES) */}
+        <div class="relative h-80 mt-12 hidden md:block">
+            {/* Third Image - Deep Background */}
+            <div class="absolute top-12 left-56 w-36 h-48 rounded-2xl overflow-hidden shadow-lg grayscale-0 brightness-50 rotate-[12deg] z-0 border border-neutral-200">
+                <img src={reality.gallery[2]} class="w-full h-full object-cover" alt="Athlete" />
+            </div>
+
+            {/* Secondary Image - Mid Layer */}
+            <div class="absolute top-8 left-32 w-40 h-56 rounded-2xl overflow-hidden shadow-xl -0 brightness-75 rotate-[6deg] z-10 border-2 border-white">
+                <img src={reality.gallery[1]} class="w-full h-full object-cover" alt="Equipment" />
+                <div class="absolute inset-0 bg-orange-900/10 mix-blend-multiply"></div>
+            </div>
+
+            {/* Primary Image - Top Layer */}
+            <div class="absolute top-0 left-0 w-48 h-64 rounded-2xl overflow-hidden shadow-2xl hover:grayscale-0 transition-all duration-700 rotate-[-4deg] z-20 border-2 border-white">
+                <img src={reality.gallery[0]} class="w-full h-full object-cover" alt="Gym Reality" />
+                <div class="absolute inset-0 bg-orange-600/10 mix-blend-multiply"></div>
+            </div>
+           
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 relative z-20 md:mt-64">
+        {reality.constraints.map((item) => (
+          <div class="group relative bg-black rounded-3xl p-8 border border-white/5 overflow-hidden transition-all hover:border-orange-500/50 hover:-translate-y-2 duration-500">
+             <div class="relative z-10">
+                <span class="text-orange-500 font-mono text-[9px] tracking-[0.3em] uppercase block mb-4">{item.tag}</span>
+                <h3 class="text-white text-xl font-black uppercase tracking-tight leading-none mb-6">{item.label}</h3>
+                <span class="text-5xl font-black italic text-white group-hover:text-orange-500 transition-colors">{item.value}</span>
+             </div>
+             <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-orange-600/10 blur-2xl rounded-full group-hover:bg-orange-600/20 transition-all"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* CONVERGENT FLOW */}
+    <!-- <div class="relative h-40 flex flex-col items-center">
+      <div class="absolute inset-0 grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
+          <div class="h-full border-r border-dashed border-neutral-200 ml-auto opacity-0 md:opacity-100"></div>
+          <div class="h-full border-r border-dashed border-neutral-200 ml-auto opacity-0 md:opacity-100"></div>
+          <div class="h-full border-l border-dashed border-neutral-200 mr-auto"></div>
+          <div class="h-full border-l border-dashed border-neutral-200 mr-auto"></div>
+      </div>
+
+      <div class="relative mt-auto mb-5 flex flex-col items-center">
+         <div class="w-px h-24 bg-gradient-to-b from-transparent via-neutral-300 to-orange-500"></div>
+         <div class="w-4 h-4 rounded-full bg-white border-4 border-orange-600 z-30 shadow-[0_0_15px_rgba(234,88,12,0.5)]"></div>
+      </div>
+    </div> -->
+
+{/* THE FINAL VERDICT - Centered Strategic Summary */}
+    <div class="max-w-3xl mx-auto relative rounded-[2rem] bg-black p-12 md:p-16 border border-orange-600/30 shadow-2xl">
+       
+       {/* Background Glow - Static for Depth */}
+       <div class="absolute inset-0 bg-gradient-to-b from-orange-600/5 to-transparent pointer-events-none"></div>
+       
+       <div class="relative z-10 flex flex-col items-center text-center">
+          
+          {/* Diagnostic Label */}
+          <div class="flex items-center gap-3 mb-8">
+              <span class="h-[1px] w-8 bg-orange-600/50"></span>
+              <span class="text-orange-500 font-mono text-[10px] font-bold tracking-[0.5em] uppercase">The Verdict</span>
+              <span class="h-[1px] w-8 bg-orange-600/50"></span>
+          </div>
+
+          {/* Strong Professional Headline */}
+          <h4 class="text-white text-4xl md:text-5xl font-black uppercase tracking-tight leading-none mb-6">
+            Efficiency is the <span class="text-orange-500 italic">only</span> scale.
+          </h4>
+
+          {/* Centered Minimalist Separator */}
+          <div class="w-16 h-1 bg-orange-600 mb-10 rounded-full"></div>
+
+          {/* High-Impact Insight */}
+          <p class="text-neutral-300 text-xl md:text-2xl font-medium tracking-tight mb-12 max-w-xl italic leading-relaxed">
+            "Until the analog friction is eliminated, every new member is a structural liability. We didn't just add software—we removed the ceiling."
+          </p>
+
+          
+       </div>
+    </div>
+
+  </div>
+
+  <style>
+    @keyframes scan {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  </style>
+</section>

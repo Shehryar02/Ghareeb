@@ -1,0 +1,106 @@
+---
+/**
+ * ServiceDeliverables.astro
+ * Aesthetic: Obsidian Kinetic / Surgical Dark
+ * Features: Laser-border tracing and glass depth
+ */
+interface Props {
+  title?: string;
+  subtitle?: string;
+  items: Array<{
+    title: string;
+    description: string;
+    icon?: string;
+  }>;
+}
+
+const { 
+  title = "SERVICE DELIVERABLES", 
+  subtitle = "Surgical_Outputs_v1.0",
+  items 
+} = Astro.props;
+---
+
+<section class="py-40 bg-[#050505] text-white relative overflow-hidden">
+  <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-orange-500/10 blur-[150px] rounded-full animate-pulse"></div>
+  
+  <div class="max-w-7xl mx-auto px-6 lg:px-24 relative z-10">
+    
+    <div class="mb-32 reveal">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="flex gap-1">
+          <span class="w-1 h-1 bg-orange-500 rounded-full"></span>
+          <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+          <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+        </div>
+        <span class="text-orange-500 font-mono text-[10px] tracking-[0.6em] uppercase">{subtitle}</span>
+      </div>
+      <h2 class="text-7xl md:text-9xl font-[1000] text-white uppercase tracking-tighter leading-[0.8]">
+        CORE <br/> <span class="text-orange-500 italic">SYSTEMS.</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {items.map((item, index) => (
+        <div 
+          class="reveal group relative aspect-[4/5] md:aspect-square bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-12 transition-all duration-700 hover:bg-white/[0.04] hover:border-white/10 overflow-hidden"
+          style={`transition-delay: ${index * 100}ms`}
+        >
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            <div class="absolute bottom-0 right-0 w-full h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent translate-x-full group-hover:-translate-x-full transition-transform duration-1000 delay-100"></div>
+          </div>
+
+          <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-48 h-48 bg-orange-500/10 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+
+          <div class="relative z-10 h-full flex flex-col justify-between">
+            <div class="space-y-6">
+              <div class="flex justify-between items-center">
+                <div class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg">
+                   <span class="text-[9px] font-mono text-white/40 uppercase tracking-widest">Mdl_{index + 1}</span>
+                </div>
+                {item.icon && (
+                  <div class="text-orange-500 group-hover:text-orange-500 transition-colors duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                      <path d={item.icon}></path>
+                    </svg>
+                  </div>
+                )}
+              </div>
+              
+              <h3 class="text-3xl font-black text-white uppercase tracking-tighter leading-none group-hover:text-orange-500 transition-colors">
+                {item.title}
+              </h3>
+            </div>
+
+            <div class="space-y-6">
+              <p class="text-gray-500 text-sm leading-relaxed font-medium group-hover:text-gray-300 transition-colors">
+                {item.description}
+              </p>
+              
+              <div class="flex items-center gap-2">
+                <div class="flex-1 h-[2px] bg-white/5 rounded-full overflow-hidden">
+                  <div class="h-full bg-orange-500 w-0 group-hover:w-full transition-all duration-1000 delay-300 ease-out"></div>
+                </div>
+                <span class="text-[8px] font-mono text-white/10 group-hover:text-orange-500 transition-colors tracking-tighter uppercase">Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  /* Reveal Animation with slight scale up */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+</style>

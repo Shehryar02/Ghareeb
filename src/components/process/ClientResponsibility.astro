@@ -37,7 +37,7 @@ const needs = [
         <span class="text-slate-600 font-bold text-[10px] uppercase tracking-[0.2em]">Workflow Requirements</span>
       </div>
       <h2 class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] text-slate-950">
-        Project <span class="text-orange-500 italic">Sync</span>
+        Client <span class="text-orange-500 italic">Responsibility</span>
       </h2>
     </div>
 
@@ -76,26 +76,7 @@ const needs = [
       ))}
     </div>
 
-    <div class="opacity-0 scale-95 transition-all duration-1000" id="needs-cta">
-      <div class="bg-black rounded-[4rem] p-1 shadow-2xl overflow-hidden">
-        <div class="bg-black rounded-[3.8rem] px-10 py-16 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden">
-          
-          <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#f97316 0.5px, transparent 0.5px); background-size: 24px 24px;"></div>
 
-          <div class="relative z-10 max-w-xl text-center md:text-left">
-            <h4 class="text-white text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4 leading-none">
-              Ready to build <br/> the <span class="text-orange-500">Infrastructure?</span>
-            </h4>
-            <p class="text-slate-400 text-lg">If you have these pillars ready, we can launch the discovery phase immediately.</p>
-          </div>
-
-          <a href="#contact" class="group relative z-10 bg-orange-500 px-12 py-6 rounded-2xl text-white font-black uppercase tracking-widest text-sm overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_20px_40px_-10px_rgba(249,115,22,0.5)]">
-            <span class="relative z-10">Start Project Now</span>
-            <div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-20"></div>
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -109,27 +90,31 @@ const needs = [
 </style>
 
 <script>
-  function initAdvancedGlass() {
+  function initGlassLayout() {
     const header = document.getElementById('needs-header');
     const cards = document.querySelectorAll('.needs-card');
-    const cta = document.getElementById('needs-cta');
 
+    // Configuration for the entrance trigger
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('arrived');
+          // Stop watching once the animation has triggered
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
+    // Observe header if present
     if (header) observer.observe(header);
-    if (cta) observer.observe(cta);
+
+    // Observe cards and apply staggered delay
     cards.forEach((card, i) => {
-      (card as HTMLElement).style.transitionDelay = `${i * 150}ms`;
+      (card as HTMLElement).style.transitionDelay = `${i * 100}ms`;
       observer.observe(card);
     });
   }
 
-  window.addEventListener('load', initAdvancedGlass);
+  // Initialize once the DOM is ready
+  window.addEventListener('load', initGlassLayout);
 </script>

@@ -1,0 +1,221 @@
+---
+/**
+ * ApplePremiumCarousel - Obsidian Edition
+ * Aesthetic: Cinematic Dark / High-Contrast Surgical
+ */
+import { Image } from "astro:assets";
+
+interface Project {
+  tag: string;
+  title: string;
+  desc: string;
+  image: any; // ImageMetadata from Astro
+  link: string;
+}
+
+interface Props {
+  tag?: string;
+  title?: string;
+  titleAccent?: string;
+  projects: Project[];
+}
+
+const {
+  tag = "Precision_Engineering",
+  title = "DIGITAL",
+  titleAccent = "MASTERY.",
+  projects = []
+} = Astro.props;
+---
+
+<section class="py-32 bg-[#FFFFFF] overflow-hidden relative" id="apple-hover-carousel">
+  <div id="zone-left" class="absolute left-0 top-0 w-[15%] h-full z-30 "></div>
+  <div id="zone-right" class="absolute right-0 top-0 w-[15%] h-full z-30 "></div>
+
+  <div class="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row justify-between items-start md:items-end relative z-10 gap-8">
+    <div class="reveal">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></div>
+        <p class="text-[10px] font-mono font-black uppercase tracking-[0.5em] text-black/40">{tag}</p>
+      </div>
+      <h2 class="text-6xl md:text-8xl font-[1000] text-black uppercase tracking-tighter leading-[0.85]">
+        {title} <br />
+        <span class="text-orange-500 italic">{titleAccent}</span>
+      </h2>
+    </div>
+    
+    <div class="flex gap-4 mb-4 reveal" style="transition-delay: 200ms;">
+      {projects.map((_, i) => (
+        <div class="carousel-indicator h-[2px] w-12 bg-black/10 overflow-hidden">
+          <div class="indicator-progress h-full bg-orange-500 w-0 transition-all duration-300"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="relative w-full overflow-visible">
+    <div id="apple-track" class="flex transition-transform duration-[2200ms] ease-[cubic-bezier(0.23,1,0.32,1)]">
+      {projects.map((project, i) => (
+        <div class="apple-card min-w-[90vw] md:min-w-[75vw] lg:min-w-[70vw] px-4 transition-all duration-[1000ms]" data-index={i}>
+          <div class="relative rounded-[3rem] overflow-hidden aspect-[16/9] bg-[#0a0a0a] group border border-black/5 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)]">
+            
+            <div class="absolute inset-0 z-0">
+               <Image 
+                src={project.image} 
+                alt={project.title}
+                class="w-full h-full object-cover opacity-50 grayscale transition-all duration-1000 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-70"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/60 via-transparent to-transparent"></div>
+            </div>
+            
+            <div class="absolute inset-0 z-10 flex flex-col justify-end p-10 md:p-24">
+              <span class="text-orange-500 font-mono font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block">
+                Deployment_Case_{i + 1}
+              </span>
+              
+              <h3 class="text-white text-4xl md:text-7xl font-[1000] uppercase tracking-tighter mb-6 leading-none">
+                {project.title}
+              </h3>
+              
+              <div class="apple-reveal opacity-0 translate-y-8 transition-all duration-700 delay-300">
+                <p class="text-white/60 text-lg md:text-xl max-w-xl mb-10 font-medium leading-relaxed">
+                  {project.desc}
+                </p>
+                
+                <a href={project.link} class="group/btn inline-flex items-center gap-6 px-10 py-5 bg-orange-500 text-black font-black uppercase text-[10px] tracking-[0.3em] rounded-2xl hover:bg-white transition-all duration-500">
+                   Explore Case Study
+                   <span class="group-hover/btn:translate-x-2 transition-transform duration-300">→</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="absolute top-10 right-10 w-16 h-16 border border-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md">
+                <span class="text-white/20 font-mono text-xs">0{i+1}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Obsidian Reveal States */
+  .apple-card {
+    opacity: 0.15;
+    transform: scale(0.9) translateY(40px);
+    filter: grayscale(100%) blur(4px);
+    pointer-events: none;
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .apple-card.is-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: grayscale(0%) blur(0);
+    pointer-events: auto;
+  }
+
+  .apple-card.is-active .apple-reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .indicator-progress.is-active {
+    width: 100%;
+  }
+
+  /* Reveal logic for the header */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  function initHoverCarousel() {
+    const track = document.getElementById('apple-track') as HTMLElement | null;
+    const cards = document.querySelectorAll('.apple-card') as NodeListOf<HTMLElement>;
+    const indicators = document.querySelectorAll('.indicator-progress') as NodeListOf<HTMLElement>;
+    const zoneLeft = document.getElementById('zone-left') as HTMLElement | null;
+    const zoneRight = document.getElementById('zone-right') as HTMLElement | null;
+    
+    if (!track || cards.length === 0) return;
+
+    let currentIndex = 0;
+    let isMoving = false;
+    let interval: ReturnType<typeof setInterval> | undefined = undefined;
+
+    function updateCarousel() {
+      if (!track) return;
+      isMoving = true;
+      
+      const viewportCenter = window.innerWidth / 2;
+      const currentCard = cards[currentIndex];
+      
+      if (!currentCard) return;
+
+      const cardOffset = currentCard.offsetLeft;
+      const cardWidth = currentCard.offsetWidth;
+      
+      const move = viewportCenter - cardOffset - (cardWidth / 2);
+      
+      track.style.transform = `translateX(${move}px)`;
+      
+      cards.forEach((card, i) => card.classList.toggle('is-active', i === currentIndex));
+      indicators.forEach((ind, i) => ind.classList.toggle('is-active', i === currentIndex));
+      
+      setTimeout(() => { isMoving = false; }, 1100); 
+    }
+
+    function startAutoMove(direction: 'left' | 'right') {
+      if (interval) return;
+      interval = setInterval(() => {
+        if (isMoving) return;
+        
+        if (direction === 'right' && currentIndex < cards.length - 1) {
+          currentIndex++;
+          updateCarousel();
+        } else if (direction === 'left' && currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        } else {
+          stopAutoMove();
+        }
+      }, 150); // Speed of the auto-scroll hover
+    }
+
+    function stopAutoMove() {
+      if (interval) {
+        clearInterval(interval);
+        interval = undefined;
+      }
+    }
+
+    zoneRight?.addEventListener('mouseenter', () => startAutoMove('right'));
+    zoneRight?.addEventListener('mouseleave', stopAutoMove);
+    zoneLeft?.addEventListener('mouseenter', () => startAutoMove('left'));
+    zoneLeft?.addEventListener('mouseleave', stopAutoMove);
+
+    // Initial Reveal Observer
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    window.addEventListener('resize', updateCarousel);
+    setTimeout(updateCarousel, 100);
+  }
+
+  document.addEventListener('DOMContentLoaded', initHoverCarousel);
+  document.addEventListener('astro:page-load', initHoverCarousel);
+</script>

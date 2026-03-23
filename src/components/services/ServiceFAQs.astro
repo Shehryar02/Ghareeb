@@ -1,0 +1,111 @@
+---
+/**
+ * ServiceFAQ.astro
+ * Aesthetic: Obsidian High-Contrast / Technical Manual
+ */
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  tag?: string;
+  title?: string;
+  titleAccent?: string;
+  faqs: FAQItem[];
+}
+
+const { 
+  tag = "Support_Documentation_v1.0",
+  title = "COMMON",
+  titleAccent = "QUERIES.",
+  faqs = [] 
+} = Astro.props;
+---
+
+<section id="service-faq" class="py-40 bg-white text-black relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
+       style="background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px); background-size: 80px 80px;">
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 lg:px-24 relative z-10">
+    
+    <div class="mb-24 reveal text-center lg:text-left">
+        <div class="flex items-center justify-center lg:justify-start gap-4 mb-6">
+            <span class="w-12 h-[2px] bg-orange-500"></span>
+            <span class="text-black font-mono font-black uppercase text-[10px] tracking-[0.5em]">{tag}</span>
+        </div>
+        <h2 class="text-6xl md:text-8xl font-[1000] text-black uppercase tracking-tighter leading-[0.85]">
+          {title} <br/> <span class="text-orange-500 italic">{titleAccent}</span>
+        </h2>
+    </div>
+
+    <div class="divide-y divide-black/10 border-t border-black/10">
+      {faqs.map((faq, index) => (
+        <details class="group reveal" style={`transition-delay: ${index * 100}ms`}>
+          <summary class="flex items-center justify-between cursor-pointer list-none py-10 outline-none">
+            <div class="flex items-start gap-6">
+              <span class="font-mono text-orange-500 font-bold text-xs pt-1">0{index + 1}</span>
+              <h3 class="text-xl md:text-2xl font-[1000] uppercase tracking-tighter text-black group-hover:text-orange-500 transition-colors duration-300 pr-8">
+                {faq.question}
+              </h3>
+            </div>
+            
+            <div class="relative flex-shrink-0 w-6 h-6">
+              <div class="absolute top-1/2 left-0 w-full h-[2px] bg-black group-hover:bg-orange-500 transition-colors"></div>
+              <div class="absolute top-0 left-1/2 w-[2px] h-full bg-black group-hover:bg-orange-500 transition-all duration-500 group-open:rotate-90 group-open:opacity-0"></div>
+            </div>
+          </summary>
+
+          <div class="pb-10 pl-14 md:pl-20 transition-all duration-500 ease-in-out">
+            <div class="max-w-2xl border-l-2 border-orange-500/20 pl-8">
+              <p class="text-gray-500 text-lg font-medium leading-relaxed">
+                {faq.answer}
+              </p>
+              
+              <div class="mt-6 flex items-center gap-2">
+                <div class="w-1 h-1 rounded-full bg-orange-500"></div>
+                <span class="font-mono text-[9px] uppercase tracking-widest text-black/30">End_of_Response</span>
+              </div>
+            </div>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  #service-faq .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  #service-faq .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Smooth summary removal of default arrows */
+  #service-faq summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
+
+<script is:inline>
+  function initFAQ() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('#service-faq .reveal').forEach(el => observer.observe(el));
+  }
+  document.addEventListener('DOMContentLoaded', initFAQ);
+  document.addEventListener('astro:page-load', initFAQ);
+</script>

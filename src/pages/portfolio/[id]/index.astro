@@ -1,0 +1,30 @@
+---
+import Hero from '@/components/portfolio/Hero.astro';
+import ClientContext from '@/components/portfolio/ClientContext.astro';
+import Layout from '@/layouts/Layout.astro';
+import Problems from '@/components/portfolio/Problems.astro';
+import Constraints from '@/components/portfolio/Constraints.astro';
+import Strategy from '@/components/portfolio/Strategy.astro';
+import Execution from '@/components/portfolio/Execution.astro';
+import Thumbnail from '@/components/portfolio/Thumbnail.astro';
+
+export async function getStaticPaths() {
+  return [
+    { params: { id: '01' } },
+    { params: { id: '02' } },
+    { params: { id: '03' } },
+  ];
+}
+
+const { id } = Astro.params;
+---
+
+<Layout>
+    <Hero />
+    <!-- <ClientContext /> -->
+    <Problems />
+    <Constraints />
+    <Strategy />
+    <Execution />
+    <Thumbnail />
+</Layout>

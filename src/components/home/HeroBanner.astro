@@ -1,169 +1,127 @@
 ---
-import { Image } from 'astro:assets';
-
-// Imports remain the same
-import imageA from '../../assets/seo.jpg';
-import imageB from '../../assets/web1.jpg';
-import imageC from '../../assets/web2.jpg';
-
-import Security from "../../assets/backend-services/security.jpg";
-import Scaling from "../../assets/backend-services/scaling.jpg";
-import API from "../../assets/backend-services/api.jpg";
+// Reliable Unsplash URLs for Futuristic Tech & Architecture
+const slides = [
+  // "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop", // Deep space/tech
+  // "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1920&auto=format&fit=crop", // Cyber security
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop",  // Modern Architecture
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop",  // Modern Architecture
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop",  // Modern Architecture
+];
 ---
 
-<section class="relative w-full min-h-screen bg-white flex flex-col lg:flex-row overflow-hidden">
+<section class="py-12 relative w-full min-h-screen bg-black overflow-hidden flex items-center justify-center">
   
-  <div class="flex-1 relative flex flex-col justify-center px-10 lg:px-24 py-20 z-20 bg-[#fafafa] ">
-    <div class="absolute inset-0 opacity-[0.4] pointer-events-none" style="background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 40px 40px;"></div>
-    
-    <div class="relative">
-      <div class="flex items-center gap-4 mb-10">
-        <span class="h-0.5 w-10 bg-[#FB8500]"></span>
-        <span class="font-poppins text-[11px] uppercase tracking-[0.4em] text-gray-400 font-bold">Phase 01 // Strategy</span>
+  <div class="absolute inset-0 z-0">
+    {slides.map((img, index) => (
+      <div 
+        class="absolute inset-0 opacity-0 animate-crossfade"
+        style={`animation-delay: ${index * 3}s; z-index: ${10 - index};`}
+      >
+        <img 
+          src={img} 
+          alt="Background Slide" 
+          class="w-full h-full object-cover animate-slow-zoom" 
+          loading={index === 0 ? "eager" : "lazy"}
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black"></div>
       </div>
+    ))}
+  </div>
 
-<h1 class="text-black text-6xl font-semibold md:text-8xl lg:text-[100px] font-inter tracking-tighter mb-8">
-  Your vision, <br />
-  <span class="inline-flex flex-col h-[1em] overflow-hidden align-bottom">
-    <span class="animate-text-slide text-left w-lg">
-      <span class="block italic font-bold text-[#FB8500] h-[1em] leading-none">precisely</span>
-      <span class="block italic font-bold text-purple-500 h-[1em] leading-none">precisely</span>
-      <span class="block italic font-bold text-blue-500 h-[1em] leading-none">precisely</span>
-      <span class="block italic font-bold text-[#FB8500] h-[1em] leading-none">precisely</span>
-    </span>
-  </span> 
-  scaled.
+  <div class="relative z-20 text-center px-6 max-w-6xl">
+    <div class="flex items-center justify-center gap-4 mb-8 opacity-0 animate-fade-in" style="animation-delay: 0.2s;">
+        <span class="h-[1px] w-10 bg-orange-500"></span>
+        <span class="font-mono text-[14px] uppercase tracking-[0.5em] text-orange-400 font-bold">Development for Growing Businesses</span>
+        <span class="h-[1px] w-10 bg-orange-500"></span>
+    </div>
+
+<h1 class="relative z-10 text-7xl md:text-[140px] font-black tracking-[-0.04em] leading-[0.85] mb-12 opacity-0 animate-fade-in" style="animation-delay: 0.4s;">
+  
+  <span class="text-white text-outline  drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
+    YOUR VISION
+  </span> <br />
+
+  <span class="text-white bg-clip-text pe-6 drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
+    ELEVATED
+  </span> <br />
+
+  <span class="text-orange-400 font-extrabold ">
+    SCALED.
+  </span>
+
 </h1>
-
-      <div class="max-w-md border-l-2 border-[#FB8500]/20 pl-8 mb-14">
-        <p class="text-gray-500 text-lg leading-relaxed font-sans">
-          We turn complex problems into seamless digital products. Ready to build something that lasts?
+    
+    <div class="opacity-0 animate-fade-in" style="animation-delay: 0.6s;">
+        <p class="text-white/50 text-xl md:text-2xl italic font-medium max-w-xl mx-auto mb-14 leading-relaxed">
+          "Modernizing digital infrastructure for market-leading results."
         </p>
-      </div>
 
-      <div class="flex flex-col sm:flex-row gap-6">
-      <a href="/contact" class="group border border-[#FB8500] text-[#FB8500] text-[16px] rounded-md relative px-10 py-5 font-bold uppercase tracking-widest overflow-hidden transition-all hover:text-white hover:border-transparent">
+<div class="group relative inline-block p-[1.5px] rounded-full overflow-hidden bg-gradient-to-r from-white/5 via-[#FB8500]/50 to-white/5 shadow-2xl">
+    <div class="absolute -inset-2 bg-[#FB8500]/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    
+    <a href="/contact" class="relative flex items-center justify-between gap-16 pl-4 pr-10 py-3.5 bg-[#0a0a0a] rounded-full hover:bg-black transition-all duration-300">
         
-        <span class="relative z-10">Start a Project</span>
-
-        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-blue-500 via-purple-500 to-[#FB8500] bg-[length:200%_200%] group-hover:animate-gradient-shift"></div>
-
-      </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="flex-1 relative flex items-center justify-center bg-[#fafafa] z-30 group/right">
-    
-
-  <div class="relative w-full h-full flex items-center justify-center perspective-[2000px] transform-style-3d pointer-events-none overflow-visible">
-      
-  <div class="absolute w-64 h-80 lg:w-80 lg:h-[450px] animate-shuffle-1 pointer-events-auto group">
-    <div class="absolute -inset-10 bg-[#FB8500]/30 blur-[60px] rounded-full opacity-0 opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-    
-    <div class="relative w-full h-full p-2 bg-white shadow-2xl rounded-[32px] border border-black/5 z-10 overflow-hidden">
-      <Image src={Security} alt="Portfolio 1" width={1600} height={1600} class="w-full h-full object-cover rounded-[24px]" loading="eager" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-          <span class="text-[#FB8500] font-sans text-xs mb-2 font-bold uppercase tracking-widest">SEO Case Study</span>
-          <h3 class="text-white font-inter font-bold text-2xl">Digital Nexus</h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="absolute w-64 h-80 lg:w-80 lg:h-[450px] animate-shuffle-2 pointer-events-auto group">
-    <div class="absolute -inset-10 bg-blue-500/20 blur-[60px] rounded-full opacity-0 opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-    
-    <div class="relative w-full h-full p-2 bg-white shadow-2xl rounded-[32px] border border-black/5 z-10 overflow-hidden">
-      <Image src={Scaling} alt="Portfolio 2" width={1600} height={1600} class="w-full h-full object-cover rounded-[24px]" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-        <span class="text-[#FB8500] font-sans text-xs mb-2 font-bold uppercase tracking-widest">Growth Strategy</span>
-        <h3 class="text-white font-inter font-bold text-2xl">Solaris Interface</h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="absolute w-64 h-80 lg:w-80 lg:h-[450px] animate-shuffle-3 pointer-events-auto group">
-    <div class="absolute -inset-10 bg-purple-500/20 blur-[60px] rounded-full opacity-0 opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-    
-    <div class="relative w-full h-full p-2 bg-white shadow-2xl rounded-[32px] border border-black/5 z-10 overflow-hidden">
-      <Image src={API} alt="Portfolio 3" width={1600} height={1600} class="w-full h-full object-cover rounded-[24px]" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-        <span class="text-[#FB8500] font-sans text-xs mb-2 font-bold uppercase tracking-widest">UX Engineering</span>
-        <h3 class="text-white font-inter font-bold text-2xl">Ether Protocol</h3>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-    <a href="/work" class="absolute bottom-12 px-8 py-4 bg-white/80 backdrop-blur-md border border-black/5 rounded-full shadow-lg pointer-events-auto hover:scale-105 transition-transform group/btn">
-        <div class="flex items-center gap-3">
-            <span class="font-bold uppercase tracking-widest text-[10px] text-black">See Portfolio</span>
-            <div class="w-2 h-2 rounded-full bg-[#FB8500] btn:animate-ping"></div>
+        <div class="w-14 h-14 rounded-full bg-[#FB8500] flex items-center justify-center text-black shadow-[0_0_20px_rgba(251,133,0,0.3)] group-hover:rotate-[360deg] transition-transform duration-700">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
         </div>
+        
+        <div class="flex flex-col text-left">
+            <p class="text-[11px] font-black tracking-[.3em] text-[#FB8500] uppercase mb-1">
+                Ready to Scale?
+            </p>
+            <span class="text-white font-bold text-xl tracking-tight whitespace-nowrap">
+                Start Your Journey
+            </span>
+        </div>
+        
     </a>
+</div>
+    </div>
   </div>
 
 </section>
 
-
-<!-- Animation Section -->
-
 <style>
-
-
-  @keyframes position-1 {
-    0%, 33.33% { transform: translateZ(160px) translateX(0) rotateY(0deg); opacity: 1; z-index: 50; }
-    38.33%, 66.66% { transform: translateZ(0) translateX(180px) rotateY(-25deg); opacity: 0.4; z-index: 10; }
-    71.66%, 95% { transform: translateZ(0) translateX(-180px) rotateY(25deg); opacity: 0.4; z-index: 10; }
-    100% { transform: translateZ(160px) translateX(0) rotateY(0deg); opacity: 1; z-index: 50; }
-  }
-
-  @keyframes position-2 {
-    0%, 33.33% { transform: translateZ(0) translateX(180px) rotateY(-25deg); opacity: 0.4; z-index: 10; }
-    38.33%, 66.66% { transform: translateZ(0) translateX(-180px) rotateY(25deg); opacity: 0.4; z-index: 10; }
-    71.66%, 95% { transform: translateZ(160px) translateX(0) rotateY(0deg); opacity: 1; z-index: 50; }
-    100% { transform: translateZ(0) translateX(180px) rotateY(-25deg); opacity: 0.4; z-index: 10; }
-  }
-
-  @keyframes position-3 {
-    0%, 33.33% { transform: translateZ(0) translateX(-180px) rotateY(25deg); opacity: 0.4; z-index: 10; }
-    38.33%, 66.66% { transform: translateZ(160px) translateX(0) rotateY(0deg); opacity: 1; z-index: 50; }
-    71.66%, 95% { transform: translateZ(0) translateX(180px) rotateY(-25deg); opacity: 0.4; z-index: 10; }
-    100% { transform: translateZ(0) translateX(-180px) rotateY(25deg); opacity: 0.4; z-index: 10; }
-  }
-
-
-  .animate-shuffle-1 { animation: position-1 9s infinite cubic-bezier(0.42, 0, 0.58, 1); }
-  .animate-shuffle-2 { animation: position-2 9s infinite cubic-bezier(0.42, 0, 0.58, 1); }
-  .animate-shuffle-3 { animation: position-3 9s infinite cubic-bezier(0.42, 0, 0.58, 1); }
-
-  .perspective-[2000px] { 
-    perspective: 2000px; 
-    transform-style: preserve-3d;
-    overflow: visible !important;
+  /* Outlined text effect */
+  .text-outline {
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
+    color: transparent;
+    transition: all 0.5s ease;
   }
   
-
-
-@keyframes text-slide {
-  0%, 33.33% { transform: translateY(-2%); filter: blur(0px); }
-  35% { filter: blur(2px); } /* Blur during the jump */
-  38.33%, 66.66% { transform: translateY(-27%); filter: blur(0px); }
-  68% { filter: blur(2px); }
-  71.66%, 95% { transform: translateY(-52%); filter: blur(0px); }
-  100% { transform: translateY(-77%); }
-}
-
-  .animate-text-slide {
-    /* Match the 9s duration and the image cubic-bezier for a perfect lock */
-    animation: text-slide 9s infinite cubic-bezier(0.42, 0, 0.58, 1);
-  }
-
-  /* Ensure the container height matches the line height of your H1 */
-  .h-\[1\.1em\] {
-    height: 1.1em;
-  }
-
   
+  /* h1:hover .text-outline {
+    -webkit-text-stroke: 1.5px rgba(249, 115, 22, 1);
+  } */
+
+  /* Reveal animation */
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 1s forwards cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Smooth Crossfade Logic */
+  @keyframes crossfade {
+    0% { opacity: 0; visibility: hidden; }
+    5%, 33% { opacity: 1; visibility: visible; }
+    38%, 100% { opacity: 0; visibility: hidden; }
+  }
+  .animate-crossfade {
+    animation: crossfade 9s infinite linear;
+  }
+
+  /* Subtle zoom effect */
+  @keyframes slow-zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+  }
+  .animate-slow-zoom {
+    animation: slow-zoom 15s infinite alternate ease-in-out;
+  }
 </style>

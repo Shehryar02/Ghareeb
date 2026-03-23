@@ -7,7 +7,7 @@ const testimonials = [
     role: "CTO, Global Finance",
     metric: "0.08s",
     label: "Avg Latency",
-    size: "large" // md:col-span-8
+    size: "large" 
   },
   {
     quote: "Expert-level understanding of the Astro ecosystem.",
@@ -15,7 +15,7 @@ const testimonials = [
     role: "Founder, Vanguard",
     metric: "+310%",
     label: "Traffic",
-    size: "small" // md:col-span-4
+    size: "small"
   },
   {
     quote: "Precision engineering. The attention to detail is something you rarely see in modern web dev.",
@@ -23,7 +23,7 @@ const testimonials = [
     role: "Product Lead, Apex",
     metric: "100/100",
     label: "Vitals",
-    size: "full" // md:col-span-12
+    size: "full"
   }
 ];
 ---
@@ -31,18 +31,24 @@ const testimonials = [
 <section class="py-32 bg-white overflow-hidden font-inter">
   <div class="max-w-7xl mx-auto px-6">
     
-    <div class="relative mb-24">
-      <div class="absolute -left-6 top-0 w-1 h-full bg-[#FB8500]"></div>
-      <p class="text-[10px] font-black uppercase tracking-[0.5em] text-[#FB8500] mb-4 pl-4">Engineering Success</p>
-      <h2 class="text-6xl md:text-9xl font-black text-black uppercase tracking-tighter leading-[0.8] pl-4">
-        The <br />Standard.
+    <!-- Centered Header Section -->
+    <div class="text-center mb-24 relative z-10">
+      <p class="text-[14px] font-mono font-black uppercase tracking-[0.5em] text-[#FB8500] mb-6">
+        Engineering Success
+      </p>
+      <h2 class="text-7xl md:text-9xl font-black text-black uppercase tracking-tighter leading-[0.8] mb-8">
+        The <span class="text-[#FB8500] italic">Standard.</span>
       </h2>
+      <p class="text-black/60 max-w-2xl mx-auto font-medium text-lg md:text-xl leading-relaxed tracking-tight">
+        <span class="text-black font-bold">A proven track record</span> 
+        of transforming complex technical requirements into 
+        <span class="text-[#FB8500] font-bold">high-performance revenue assets.</span>
+      </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-      
       {testimonials.map((t) => (
-        <div class={`relative group overflow-hidden rounded-[2.5rem] bg-[#f8f8f8] border border-cta transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 
+        <div class={`relative group overflow-hidden rounded-[3rem] bg-[#f8f8f8] border border-black/5 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 
           ${t.size === 'large' ? 'md:col-span-8' : t.size === 'full' ? 'md:col-span-12' : 'md:col-span-4'}`}>
           
           {t.size === 'full' && (
@@ -85,10 +91,18 @@ const testimonials = [
         </div>
       ))}
 
-      <div class="md:col-span-12 bg-black rounded-[2.5rem] p-12 flex flex-col md:flex-row items-center justify-between gap-8 mt-6">
-        <h4 class="text-white text-3xl font-bold tracking-tight">Ready to engineer your next breakthrough?</h4>
-        <a href="#contact" class="px-10 py-5 bg-[#FB8500] text-black font-black uppercase text-xs tracking-[0.2em] rounded-full hover:bg-white transition-all whitespace-nowrap">
-          Get Started
+      <!-- Final CTA Block -->
+      <div class="md:col-span-12 bg-black rounded-[3rem] p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-8 mt-6 overflow-hidden relative">
+        <div class="relative z-10 text-center md:text-left">
+          <h4 class="text-white text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-4">
+            Engineer your <span class="text-[#FB8500]">breakthrough.</span>
+          </h4>
+          <p class="text-white/40 font-medium uppercase tracking-[0.2em] text-[10px]">Ready to build the next market-dominant asset?</p>
+        </div>
+
+        <!-- Updated Button to match Apple Carousel style -->
+        <a href="#contact" class="relative z-10 inline-flex items-center gap-4 px-12 py-6 bg-[#FB8500] text-black font-black uppercase text-[10px] tracking-[0.2em] rounded-full hover:bg-white transition-all transform hover:-translate-y-1 active:scale-95 shadow-2xl">
+          Get Started Now
         </a>
       </div>
     </div>
@@ -97,6 +111,6 @@ const testimonials = [
 
 <style>
   h2, h3 {
-    letter-spacing: -0.04em;
+    letter-spacing: -0.05em;
   }
 </style>

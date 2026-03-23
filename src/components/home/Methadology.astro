@@ -4,36 +4,36 @@ const steps = [
   { 
     id: '01', 
     date: 'Phase One',
-    title: 'Technical Audit', 
-    desc: 'Eliminating architecture "silent killers" like indexing loops and crawl budget waste.',
+    title: 'Technical Discovery', 
+    desc: 'Translating high-level business goals into a robust architectural roadmap for long-term scalability.',
     position: 'top'
   },
   { 
     id: '02', 
     date: 'Phase Two',
-    title: 'Semantic Mapping', 
-    desc: 'Aligning user intent with your high-revenue sales funnels through deep keyword research.',
+    title: 'System Architecture', 
+    desc: 'Mapping out high-performance data structures and user logic before writing any production code.',
     position: 'bottom'
   },
   { 
     id: '03', 
     date: 'Phase Three',
-    title: 'Content Scaling', 
-    desc: 'Building high-authority ranking content engines to outpace competitors efficiently.',
+    title: 'Agile Engineering', 
+    desc: 'Building core infrastructure through rapid sprint cycles for consistent and transparent delivery.',
     position: 'top'
   },
   {
     id: '04',
     date: 'Phase Four',
-    title: 'Conversion Optimization',
-    desc: 'Fine-tuning user journeys and on-page elements to maximize your sales conversions.',
+    title: 'Performance Tuning',
+    desc: 'Eliminating technical debt and optimizing critical rendering paths for lightning-fast load speeds.',
     position: 'bottom'
   },
   {
     id: '05',
     date: 'Phase Five',
-    title: 'Performance Analytics',
-    desc: 'Continuous monitoring, reporting, and adaptive strategy adjustments for sustained growth.',
+    title: 'Production Launch', // Changed from Adaptive Scaling
+    desc: 'Deploying a high-availability digital asset engineered for immediate market impact and growth.',
     position: 'top'
   }
 ];
@@ -42,22 +42,25 @@ const steps = [
 const totalSteps = steps.length;
 ---
 
-<section class="py-32 bg-[#0a0a0a] text-white overflow-hidden" id="roadmap-section">
+<section class="py-20 bg-[#0a0a0a] text-white overflow-hidden" id="roadmap-section">
   <div class="max-w-7xl mx-auto px-6 lg:px-24">
     
     <div class="text-center mb-24 reveal opacity-0 transition-all duration-1000">
-        <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-4 leading-tight">
-            Your Path to <span class="text-[#FB8500] relative inline-block">
-                Digital Dominance
-                <span class="absolute -bottom-2 left-0 w-full h-1 bg-[#FB8500] opacity-30 rounded-full"></span>
+        <p class="text-[#FB8500] font-mono text-[14px] md:text-xs font-bold tracking-[0.5em] uppercase  opacity-80">
+          ENGINEERING LIFECYCLE
+        </p>
+        <h2 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-4 leading-tight">
+            Mastering <span class="text-[#FB8500] relative inline-block">
+                Technical Evolution
+                <span class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-60 h-1 bg-[#FB8500] opacity-50 rounded-full"></span>
             </span>
         </h2>
         <p class="text-gray-400 max-w-2xl mx-auto text-lg mt-6 font-light">
-            We don't just optimize; we engineer a comprehensive strategy, meticulously moving from foundational audits to market leadership.
+            A precision-engineered lifecycle designed to transition your product from initial concept to market-dominant scale.
         </p>
     </div>
 
-    <div class="relative pb-20">
+    <div class="relative py-16">
       <div class="absolute top-1/2 left-0 w-full h-[1px] bg-white/10 -translate-y-1/2"></div>
       
       <div 

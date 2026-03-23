@@ -2,21 +2,24 @@
 // IntegrationSection.astro
 const layers = [
   {
-    title: "Technical SEO",
-    desc: "JSON-LD, Semantic HTML, and Dynamic OpenGraph generation baked into the core.",
-    icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+    title: "Structural Integrity",
+    id: "SYS_01",
+    desc: "A rigorous architectural foundation built for long-term stability and effortless feature expansion as your business scales.",
+    icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
     rotation: "md:rotate-y-12 md:translate-x-6"
   },
   {
-    title: "Front-End Flow",
-    desc: "Astro-powered Islands architecture for zero-latency user interaction.",
-    icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
-    rotation: "z-20 md:scale-105" 
+    title: "Instant Response",
+    id: "SYS_02",
+    desc: "Ultra-lean delivery systems that eliminate loading friction, ensuring your users experience sub-second interactions across every device.",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    rotation: "z-20 md:scale-110" 
   },
   {
-    title: "Back-End Engine",
-    desc: "PostgreSQL and Edge functions providing real-time data with global availability.",
-    icon: "M4 7v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7",
+    title: "Global Reliability",
+    id: "SYS_03",
+    desc: "Enterprise-grade data synchronization and high-concurrency engines designed for 24/7 uptime and secure global availability.",
+    icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
     rotation: "md:-rotate-y-12 md:-translate-x-6"
   }
 ];
@@ -37,22 +40,31 @@ const stackLogos = [
   <div class="max-w-7xl mx-auto relative z-10">
     
     <div id="reveal-text-zone" class="text-center mb-24 opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-      <div class="flex items-center justify-center gap-3 mb-6">
+      <!-- <div class="flex items-center justify-center gap-3 mb-6">
         <span class="h-[1px] w-8 bg-[#FB8500]"></span>
         <span class="text-[10px] font-black uppercase tracking-[0.4em] text-black/40">Infrastructure v4.0</span>
         <span class="h-[1px] w-8 bg-[#FB8500]"></span>
-      </div>
+      </div> -->
 
-      <h2 class="text-6xl md:text-8xl font-black font-inter text-black uppercase tracking-[-0.04em] leading-[0.85] mb-8">
-        <span class="block mb-2">Triple <span class="">Threat.</span></span>
-        <span class="relative inline-block text-black">
-           <span class=" text-cta outline-text">Single</span> Stack.
-        </span>
-      </h2>
+<div class="mb-10 flex flex-col items-center text-center">
+  <p class="text-[#FB8500] font-mono text-[14px] md:text-xs font-bold tracking-[0.5em] uppercase mb-6 ">
+    Efficiency Optimized
+  </p>
+  
+  <h2 class="text-7xl md:text-9xl font-black uppercase tracking-[-0.05em] leading-[0.85] text-black">
+    Triple Threat <br/> 
+    <span class="text-[#FB8500] italic inline-block mt-2">
+      Single Stack.
+    </span>
+  </h2>
+  
+  <div class="w-60 h-1 bg-[#FB8500] mt-8 rounded-full opacity-50"></div>
+</div>
 
-      <p class="text-gray-400 max-w-xl mx-auto font-medium text-lg leading-relaxed tracking-tight">
-        Proprietary infrastructure <span class="text-black font-bold">engineered</span> for high-output delivery and absolute architectural clarity.
-      </p>
+      <p class="text-black/70 max-w-2xl mx-auto font-medium text-lg md:text-xl leading-relaxed tracking-tight text-center mb-36">
+      High-performance <span class="text-black/90 font-bold">infrastructure</span> 
+      engineered for rapid-output delivery and absolute <span class="text-[#FB8500] font-bold">architectural dominance.</span>
+    </p>
     </div>
 
     <div id="reveal-cards-zone" class="perspective-container relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-stretch">
@@ -77,7 +89,7 @@ const stackLogos = [
               </div>
               
               <h3 class="text-2xl font-black text-black uppercase mb-4 tracking-tighter leading-tight">{layer.title}</h3>
-              <p class="text-black/60 text-sm leading-relaxed font-medium group-hover:text-black transition-colors">
+              <p class="text-black/60 text-sm leading-relaxed group-hover:text-black transition-colors">
                   {layer.desc}
               </p>
             </div>
@@ -103,8 +115,8 @@ const stackLogos = [
                 ))}
             </div>
             <div>
-              <p class="text-black font-black text-sm uppercase tracking-tighter leading-none">Standardized Architecture</p>
-              <p class="text-[9px] text-black/40 font-bold uppercase tracking-widest mt-1 italic">Vetted Enterprise Stack</p>
+              <p class="text-black font-black text-sm uppercase tracking-tighter leading-none">SCALABLE FRAMEWORK</p>
+              <p class="text-[9px] text-black/40 font-bold uppercase tracking-widest mt-1 italic">ENTERPRISE-READY DELIVERY</p>
             </div>
         </div>
         
@@ -115,8 +127,8 @@ const stackLogos = [
                 </svg>
             </div>
             <div class="pr-8">
-                <p class="text-[9px] font-black tracking-[0.25em] text-black/40 uppercase mb-0.5 group-hover:text-[#FB8500]">Project Inquiry</p>
-                <span class="text-black font-black text-xl tracking-tighter uppercase leading-none">Deploy Now</span>
+                <p class="text-[9px] font-black tracking-[0.25em] text-black/40 uppercase mb-0.5 group-hover:text-[#FB8500]">Sleepless Performance</p>
+                <span class="text-black font-black text-xl tracking-tighter uppercase leading-none">Initiate Build</span>
             </div>
         </a>
     </div>
