@@ -1,0 +1,65 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ServiceHero from '@/components/services/ServiceHero.astro';
+import ServiceWhoIsThisFor from '@/components/services/ServiceWhoIsThisFor.astro';
+import ServiceWhatIsIncluded from '@/components/services/ServiceWhatIsIncluded.astro';
+import ServiceDeliverables from '@/components/services/ServiceDeliverables.astro';
+import ServiceTechStack from '@/components/services/ServiceTechStack.astro';
+import ServiceCaseStudies from '@/components/services/ServiceCaseStudies.astro';
+import ServiceFAQs from '@/components/services/ServiceFAQs.astro';
+import ServiceCTA from '@/components/services/ServiceCTA.astro';
+import { getService, getAllServiceSlugs } from '@/data/services';
+
+export async function getStaticPaths() {
+  return getAllServiceSlugs().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const service = getService(slug!);
+
+if (!service) {
+  return Astro.redirect('/services');
+}
+---
+
+<Layout title={service.seo.title}>
+
+  <ServiceHero
+    title={service.hero.title}
+    subtitle={service.hero.subtitle}
+    tag={service.hero.tag}
+    description={service.hero.description}
+    mainImage={service.hero.image}
+    specs={service.hero.specs}
+  />
+
+  <ServiceWhoIsThisFor
+    personas={service.personas}
+    requirementsList={service.requirementsList}
+  />
+
+  <ServiceWhatIsIncluded items={service.features} />
+
+  <ServiceDeliverables deliverables={service.deliverables} />
+
+  <ServiceTechStack
+    title={service.techStack.title}
+    titleAccent={service.techStack.titleAccent}
+    categories={service.techStack.categories}
+  />
+
+  <ServiceCaseStudies
+    title={service.caseStudies.title}
+    titleAccent={service.caseStudies.titleAccent}
+    projects={service.caseStudies.projects}
+  />
+
+  <ServiceFAQs
+    title={service.faqs.title}
+    titleAccent={service.faqs.titleAccent}
+    faqs={service.faqs.items}
+  />
+
+  <ServiceCTA />
+
+</Layout>

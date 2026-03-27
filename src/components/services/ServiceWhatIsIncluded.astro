@@ -21,29 +21,29 @@ const {
 } = Astro.props;
 ---
 
-<section class="py-40 bg-[#050505] text-white relative overflow-hidden">
+<section class="py-14 sm:py-20 md:py-28 lg:py-40 bg-[#050505] text-white relative overflow-hidden">
   <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-orange-500/10 blur-[150px] rounded-full animate-pulse"></div>
   
-  <div class="max-w-7xl mx-auto px-6 lg:px-24 relative z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-24 relative z-10">
     
-    <div class="mb-32 reveal">
-      <div class="flex items-center gap-4 mb-8">
+    <div class="mb-12 sm:mb-16 md:mb-24 lg:mb-32 reveal">
+      <div class="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-8">
         <div class="flex gap-1">
           <span class="w-1 h-1 bg-orange-500 rounded-full"></span>
           <span class="w-1 h-1 bg-white/20 rounded-full"></span>
           <span class="w-1 h-1 bg-white/20 rounded-full"></span>
         </div>
-        <span class="text-orange-500 font-mono text-[10px] tracking-[0.6em] uppercase">{subtitle}</span>
+        <span class="text-orange-500 font-mono text-[9px] sm:text-[10px] tracking-[0.4em] sm:tracking-[0.6em] uppercase">{subtitle}</span>
       </div>
-      <h2 class="text-7xl md:text-9xl font-[1000] text-white uppercase tracking-tighter leading-[0.8]">
+      <h2 class="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-[1000] text-white uppercase tracking-tighter leading-[0.8]">
         CORE <br/> <span class="text-orange-500 italic">SYSTEMS.</span>
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
       {items.map((item, index) => (
         <div 
-          class="reveal group relative aspect-[4/5] md:aspect-square bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-12 transition-all duration-700 hover:bg-white/[0.04] hover:border-white/10 overflow-hidden"
+          class="reveal group relative bg-white/[0.02] border border-white/5 rounded-xl sm:rounded-2xl md:rounded-[2rem] lg:rounded-[2.5rem] p-4 sm:p-5 md:p-8 lg:p-12 transition-all duration-700 hover:bg-white/[0.04] hover:border-white/10 overflow-hidden"
           style={`transition-delay: ${index * 100}ms`}
         >
           <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -53,37 +53,33 @@ const {
 
           <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-48 h-48 bg-orange-500/10 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
-          <div class="relative z-10 h-full flex flex-col justify-between">
-            <div class="space-y-6">
-              <div class="flex justify-between items-center">
-                <div class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg">
-                   <span class="text-[9px] font-mono text-white/40 uppercase tracking-widest">Mdl_{index + 1}</span>
-                </div>
-                {item.icon && (
-                  <div class="text-orange-500 group-hover:text-orange-500 transition-colors duration-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                      <path d={item.icon}></path>
-                    </svg>
-                  </div>
-                )}
+          <div class="relative z-10 flex flex-col gap-4 sm:gap-5 md:gap-8">
+            <div class="flex justify-between items-center">
+              <div class="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/5 border border-white/10 rounded-md sm:rounded-lg">
+                 <span class="text-[7px] sm:text-[8px] md:text-[9px] font-mono text-white/40 uppercase tracking-widest">Mdl_{index + 1}</span>
               </div>
-              
-              <h3 class="text-3xl font-black text-white uppercase tracking-tighter leading-none group-hover:text-orange-500 transition-colors">
-                {item.title}
-              </h3>
+              {item.icon && (
+                <div class="text-orange-500 transition-colors duration-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7">
+                    <path d={item.icon}></path>
+                  </svg>
+                </div>
+              )}
             </div>
+            
+            <h3 class="text-sm sm:text-base md:text-xl lg:text-3xl font-black text-white uppercase tracking-tighter leading-tight group-hover:text-orange-500 transition-colors">
+              {item.title}
+            </h3>
 
-            <div class="space-y-6">
-              <p class="text-gray-500 text-sm leading-relaxed font-medium group-hover:text-gray-300 transition-colors">
-                {item.description}
-              </p>
-              
-              <div class="flex items-center gap-2">
-                <div class="flex-1 h-[2px] bg-white/5 rounded-full overflow-hidden">
-                  <div class="h-full bg-orange-500 w-0 group-hover:w-full transition-all duration-1000 delay-300 ease-out"></div>
-                </div>
-                <span class="text-[8px] font-mono text-white/10 group-hover:text-orange-500 transition-colors tracking-tighter uppercase">Ready</span>
+            <p class="text-gray-500 text-[10px] sm:text-[11px] md:text-xs lg:text-sm leading-snug sm:leading-relaxed font-medium group-hover:text-gray-300 transition-colors line-clamp-3 sm:line-clamp-4 lg:line-clamp-none">
+              {item.description}
+            </p>
+            
+            <div class="flex items-center gap-2">
+              <div class="flex-1 h-[1.5px] sm:h-[2px] bg-white/5 rounded-full overflow-hidden">
+                <div class="h-full bg-orange-500 w-0 group-hover:w-full transition-all duration-1000 delay-300 ease-out"></div>
               </div>
+              <span class="text-[7px] sm:text-[8px] font-mono text-white/10 group-hover:text-orange-500 transition-colors tracking-tighter uppercase">Ready</span>
             </div>
           </div>
         </div>

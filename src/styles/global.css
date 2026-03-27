@@ -1,29 +1,146 @@
 /* global.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@700&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* --- DARK GREEN BRAND PALETTE --- */
   --color-primary: #020D0A;
   --color-secondary: #0A2F1F;
   --color-cta: #f98502;
   --color-neutral: #D1D9D6;
   --color-body-bg: #05140F;
 
-  /* --- UPDATED TYPOGRAPHY --- */
-   --font-poppins: "Poppins", sans-serif;
-   --font-inter: "Inter", sans-serif;
-   --font-mono: "Space Mono", monospace;
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-[#fafafa] text-neutral antialiased font-sans;
   }
 
-  /* Professional Heading Defaults */
-  h1, h2, h3 {
-    /* Use the new display font (Poppins) for headers */
-    @apply font-poppins text-white tracking-tight;
+  h1, h2, h3, h4 {
+    @apply font-heading tracking-tight;
   }
+}
+
+/* ═══════════════════════════════════════════
+   VIEW TRANSITIONS (Page switching)
+   ═══════════════════════════════════════════ */
+::view-transition-old(root) {
+  animation: vt-fade-out 0.15s ease both;
+}
+
+::view-transition-new(root) {
+  animation: vt-fade-in 0.2s ease both;
+}
+
+@keyframes vt-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes vt-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* ═══════════════════════════════════════════
+   GLOBAL SCROLL REVEAL SYSTEM
+   ═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-stagger .reveal-child {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.is-visible .reveal-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ═══════════════════════════════════════════
+   SMOOTH SECTION TRANSITIONS
+   ═══════════════════════════════════════════ */
+section {
+  position: relative;
+}
+
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+}
+
+img[loading="lazy"].loaded,
+img:not([loading="lazy"]) {
+  opacity: 1;
+}
+
+
+/* ═══════════════════════════════════════════
+   GLOBAL INTERACTIVE MICRO-ANIMATIONS
+   ═══════════════════════════════════════════ */
+a, button {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+[class*="transition"] {
+  will-change: auto;
 }

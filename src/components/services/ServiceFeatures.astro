@@ -11,36 +11,37 @@ interface Props {
 const { title = "Key Features", features } = Astro.props;
 ---
 
-<section class="py-32 bg-[#0a0a0a] text-white relative overflow-hidden">
+<section class="py-14 sm:py-20 md:py-28 lg:py-32 bg-[#0a0a0a] text-white relative overflow-hidden">
   <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
        style="background-image: radial-gradient(#FB8500 0.5px, transparent 0.5px); background-size: 30px 30px;">
   </div>
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-24 relative z-10">
-    <div class="mb-16">
-      <p class="text-[#FB8500] font-black tracking-[0.4em] uppercase text-[10px] mb-4">Features</p>
-      <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-none uppercase">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-24 relative z-10">
+    <div class="mb-10 sm:mb-12 md:mb-16">
+      <p class="text-[#FB8500] font-black tracking-[0.3em] sm:tracking-[0.4em] uppercase text-[9px] sm:text-[10px] mb-3 sm:mb-4">Features</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-none uppercase">
         {title}
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6 items-start">
       {features.map((feature, index) => (
         <div 
-          class="group relative bg-[#0a0a0a] border border-[#FB8500]/30 p-8 hover:border-[#FB8500] transition-all duration-500"
+          class="group relative bg-[#111111] border border-white/[0.08] rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 lg:p-8 hover:border-[#FB8500]/50 transition-all duration-500 h-fit w-full flex flex-col"
         >
-          <div class="absolute top-0 right-0 w-0 h-0 border-t-20 border-t-[#FB8500] border-l-[20px] border-l-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+          <div class="flex items-start justify-between mb-2 sm:mb-3 md:mb-5">
+            <span class="text-[7px] sm:text-[8px] font-mono font-bold text-white/20 uppercase tracking-wider">DEL_{index + 1}</span>
+            {feature.icon && (
+              <div class="text-[#FB8500] group-hover:scale-110 transition-transform duration-500 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7">
+                  <path d={feature.icon}></path>
+                </svg>
+              </div>
+            )}
+          </div>
 
-          {feature.icon && (
-            <div class="text-[#FB8500] mb-6 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d={feature.icon}></path>
-              </svg>
-            </div>
-          )}
-
-          <h3 class="text-2xl font-bold uppercase tracking-tight mb-4">{feature.title}</h3>
-          <p class="text-gray-400 text-sm leading-relaxed font-light">
+          <h3 class="text-xs sm:text-sm md:text-base lg:text-xl font-bold uppercase tracking-tight mb-1.5 sm:mb-2 md:mb-3 leading-tight group-hover:text-[#FB8500] transition-colors duration-300">{feature.title}</h3>
+          <p class="text-gray-500 text-[10px] sm:text-[11px] md:text-xs lg:text-sm leading-snug sm:leading-relaxed font-light line-clamp-4 sm:line-clamp-4 lg:line-clamp-none">
             {feature.description}
           </p>
         </div>

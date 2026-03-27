@@ -45,34 +45,35 @@ const totalSteps = steps.length;
 <section class="py-20 bg-[#0a0a0a] text-white overflow-hidden" id="roadmap-section">
   <div class="max-w-7xl mx-auto px-6 lg:px-24">
     
-    <div class="text-center mb-24 reveal opacity-0 transition-all duration-1000">
-        <p class="text-[#FB8500] font-mono text-[14px] md:text-xs font-bold tracking-[0.5em] uppercase  opacity-80">
+    <div class="text-center mb-16 md:mb-24 meth-reveal opacity-0 transition-all duration-1000">
+        <p class="text-[#FB8500] font-mono text-[10px] md:text-xs font-bold tracking-[0.5em] uppercase  opacity-80">
           ENGINEERING LIFECYCLE
         </p>
-        <h2 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-4 leading-tight">
+        <h2 class="text-4xl sm:text-5xl md:text-8xl font-extrabold tracking-tighter mb-4 leading-tight mt-4">
             Mastering <span class="text-[#FB8500] relative inline-block">
                 Technical Evolution
-                <span class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-60 h-1 bg-[#FB8500] opacity-50 rounded-full"></span>
+                <span class="absolute -bottom-2 md:-bottom-4 left-1/2 -translate-x-1/2 w-40 md:w-60 h-1 bg-[#FB8500] opacity-50 rounded-full"></span>
             </span>
         </h2>
-        <p class="text-gray-400 max-w-2xl mx-auto text-lg mt-6 font-light">
+        <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg mt-6 font-light">
             A precision-engineered lifecycle designed to transition your product from initial concept to market-dominant scale.
         </p>
     </div>
 
-    <div class="relative py-16">
-      <div class="absolute top-1/2 left-0 w-full h-[1px] bg-white/10 -translate-y-1/2"></div>
-      
-      <div 
-        id="progress-line"
-        class="absolute top-1/2 left-0 h-[2px] bg-[#FB8500] -translate-y-1/2 shadow-[0_0_20px_#FB8500] transition-all duration-[2500ms] ease-out w-0"
-      ></div>
+    <div class="overflow-x-auto pb-8 hide-scrollbar -mx-6 px-6 lg:mx-0 lg:px-0">
+      <div class="relative py-16 min-w-[900px] lg:min-w-0">
+        <div class="absolute top-1/2 left-0 w-full h-[1px] bg-white/10 -translate-y-1/2"></div>
+        
+        <div 
+          id="progress-line"
+          class="absolute top-1/2 left-0 h-[2px] bg-[#FB8500] -translate-y-1/2 shadow-[0_0_20px_#FB8500] transition-all duration-[2500ms] ease-out w-0"
+        ></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-0 relative">
+        <div class="grid grid-cols-5 gap-0 relative">
         {steps.map((step, index) => (
-          <div class="relative h-72 flex flex-col justify-center items-center milestone opacity-0 translate-y-10 transition-all duration-700" style={`transition-delay: ${index * 300 + 500}ms`}>
+          <div class="relative h-72 flex flex-col justify-center items-center milestone opacity-0 translate-y-10 transition-all duration-700 snap-center" data-idx={index} style={`transition-delay: ${index * 300 + 500}ms`}>
             
-            <div class={`w-4 h-4 rounded-full border-4 border-[#0a0a0a] z-20 ring-1 transition-colors duration-1000 ${index < 2 ? 'bg-[#FB8500] ring-[#FB8500]' : 'bg-gray-800 ring-white/20'}`}></div>
+            <div class={`milestone-dot w-4 h-4 rounded-full border-4 border-[#0a0a0a] z-20 ring-1 transition-colors duration-1000 bg-gray-800 ring-white/20`}></div>
 
             <div class={`absolute w-full px-4 transition-all duration-500 hover:scale-105 ${step.position === 'top' ? 'bottom-[55%]' : 'top-[55%]'}`}>
               
@@ -90,69 +91,102 @@ const totalSteps = steps.length;
           </div>
         ))}
       </div>
+      </div>
     </div>
 
-<div class="mt-16 flex flex-col items-center reveal opacity-0 transition-all duration-1000">
+<div class="mt-12 md:mt-16 flex flex-col items-center meth-reveal opacity-0 transition-all duration-1000">
         <div class="relative group p-[1px] rounded-full overflow-hidden bg-gradient-to-r from-white/10 via-[#FB8500]/50 to-white/10">
             <div class="absolute -inset-1 bg-[#FB8500]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <a href="/contact" class="relative flex items-center gap-6 px-4 py-3 bg-[#0a0a0a] rounded-full hover:bg-black transition-all duration-300">
-                <div class="w-12 h-12 rounded-full bg-[#FB8500] flex items-center justify-center text-white shadow-[0_0_15px_#FB8500]/40 group-hover:rotate-[360deg] transition-transform duration-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <a href="/contact" class="relative flex items-center gap-4 md:gap-6 px-3 md:px-4 py-2 md:py-3 bg-[#0a0a0a] rounded-full hover:bg-black transition-all duration-300">
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FB8500] flex items-center justify-center text-white shadow-[0_0_15px_#FB8500]/40 group-hover:rotate-[360deg] transition-transform duration-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </div>
                 
-                <div class="pr-6">
-                    <p class="text-[10px] font-black tracking-[.25em] text-[#FB8500] uppercase mb-0.5">Ready to Scale?</p>
-                    <span class="text-white font-bold text-lg tracking-tight">Start Your Journey</span>
+                <div class="pr-4 md:pr-6">
+                    <p class="text-[8px] md:text-[10px] font-black tracking-[.2em] md:tracking-[.25em] text-[#FB8500] uppercase mb-0.5">Ready to Scale?</p>
+                    <span class="text-white font-bold text-base md:text-lg tracking-tight">Start Your Journey</span>
                 </div>
             </a>
         </div>
         
-        <p class="mt-6 text-gray-500 text-xs font-medium tracking-wide">Join 50+ high-growth brands dominating search today.</p>
+        <p class="mt-6 text-gray-500 text-[10px] md:text-xs font-medium tracking-wide">Join 50+ high-growth brands dominating search today.</p>
     </div>
 
   </div>
 </section>
 
 <script define:vars={{ totalSteps }}>
-  const observerOptions = { 
-    threshold: 0.1, // Trigger earlier so the user sees the animation
-    rootMargin: "0px 0px -50px 0px" 
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const progressLine = document.getElementById('progress-line');
-        if (progressLine) {
-            // progressLine now uses 'totalSteps' correctly from define:vars
-            progressLine.style.width = `${(2 / totalSteps) * 100}%`;
+  function initMethodology() {
+    const section = document.querySelector('#roadmap-section');
+    if (!section) return;
+
+    const progressLine = document.getElementById('progress-line');
+    const milestones = section.querySelectorAll('.milestone');
+    const dots = section.querySelectorAll('.milestone-dot');
+
+    const sectionObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const reveals = entry.target.querySelectorAll('.meth-reveal, .milestone');
+          reveals.forEach(el => {
+            el.classList.remove('opacity-0', 'translate-y-10', 'translate-y-30');
+            el.classList.add('opacity-100', 'translate-y-0');
+          });
+          sectionObs.unobserve(entry.target);
         }
-        
-        // Find all hidden elements in this section and show them
-        const reveals = entry.target.querySelectorAll('.reveal, .milestone');
-        reveals.forEach(el => {
-          el.classList.remove('opacity-0', 'translate-y-10', 'translate-y-30');
-          el.classList.add('opacity-100', 'translate-y-0');
-        });
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+    sectionObs.observe(section);
 
-  const section = document.querySelector('#roadmap-section');
-  if (section) observer.observe(section);
+    let highestReached = -1;
+    const milestoneObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const idx = Number(entry.target.dataset.idx);
+          if (idx > highestReached) {
+            highestReached = idx;
+            if (progressLine) {
+              const pct = ((idx + 1) / totalSteps) * 100;
+              progressLine.style.width = pct + '%';
+            }
+            dots.forEach((d, di) => {
+              if (di <= idx) {
+                d.classList.remove('bg-gray-800', 'ring-white/20');
+                d.classList.add('bg-[#FB8500]', 'ring-[#FB8500]');
+              }
+            });
+          }
+        }
+      });
+    }, { threshold: 0.5, rootMargin: "0px 0px -20% 0px" });
+
+    milestones.forEach(m => milestoneObs.observe(m));
+  }
+
+  initMethodology();
+  document.addEventListener('astro:page-load', initMethodology);
 </script>
 
 <style>
   /* Base hidden states */
-  .reveal {
+  .meth-reveal {
     transform: translateY(30px);
   }
 
   .milestone {
     transform: translateY(10px);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 
   /* Active node glow */

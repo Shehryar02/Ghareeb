@@ -30,38 +30,38 @@ const problem = {
       </a>
     </nav>
 
-    <div class="grid md:grid-cols-2 gap-12 mb-24 items-start">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-24 items-start">
       <div>
-        <h1 class="text-7xl md:text-[10rem] text-black font-black uppercase leading-[0.8] tracking-tighter mb-6 italic">
+        <h1 class="text-5xl sm:text-7xl md:text-[10rem] text-black font-black uppercase leading-[0.9] md:leading-[0.8] tracking-tighter mb-4 md:mb-6 italic break-words">
           {problem.title_1st_half}<span class="text-orange-500">{problem.title_2nd_half}.</span>
         </h1>
-        <p class="text-3xl font-bold text-neutral-400 uppercase tracking-widest leading-none">
+        <p class="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-400 uppercase tracking-widest leading-tight md:leading-none">
           {problem.subtitle}
         </p>
       </div>
       <div class="md:pt-4">
-        <p class="text-xl md:text-2xl text-neutral-800 font-medium leading-tight max-w-md border-l-4 border-orange-600 pl-6">
+        <p class="text-lg md:text-xl lg:text-2xl text-neutral-800 font-medium leading-tight max-w-md border-l-4 border-orange-600 pl-4 md:pl-6">
           Gym owners are trapped in a cycle of <span class="underline decoration-orange-600 underline-offset-4">manual friction</span>, losing athletes to smarter facilities every single day.
         </p>
       </div>
     </div>
 
-    <div class="relative h-[600px] mb-32">
-      <div class="absolute top-0 left-0 w-3/5 h-[450px] rounded-2xl overflow-hidden shadow-2xl  hover:grayscale-0 transition-all duration-700 z-10 shadow-black rotate-[-2deg]">
+    <div class="relative h-[400px] md:h-[600px] mb-20 md:mb-32">
+      <div class="absolute top-0 left-0 w-[65%] md:w-3/5 h-[250px] md:h-[450px] rounded-2xl overflow-hidden shadow-2xl hover:grayscale-0 transition-all duration-700 z-10 shadow-black rotate-[-2deg]">
         <img src={problem.images[1]} class="w-full h-full object-cover" alt="The stress" />
         <div class="absolute inset-0 bg-orange-900/10 mix-blend-multiply"></div>
       </div>
 
-      <div class="absolute top-20 right-0 w-2/5 h-[380px] rounded-2xl overflow-hidden shadow-2xl  brightness-50 z-20 rotate-[3deg] translate-x-4 shadow-black">
+      <div class="absolute top-16 md:top-20 right-0 w-[45%] md:w-2/5 h-[220px] md:h-[380px] rounded-2xl overflow-hidden shadow-2xl brightness-50 z-20 rotate-[3deg] md:translate-x-4 shadow-black">
         <img src={problem.images[0]} class="w-full h-full object-cover" alt="Clutter" />
       </div>
 
-      <div class="absolute bottom-0 left-1/4 w-1/4 h-[220px] rounded-2xl overflow-hidden shadow-2xl z-30 -translate-y-4 border-2 border-black/20 shadow-black rotate-[-5deg]">
+      <div class="absolute bottom-0 left-1/4 w-[35%] md:w-1/4 h-[150px] md:h-[220px] rounded-2xl overflow-hidden shadow-2xl z-30 -translate-y-4 border-2 border-black/20 shadow-black rotate-[-5deg]">
         <img src={problem.images[2]} class="w-full h-full object-cover" alt="Old tech" />
       </div>
     </div>
 
-<div class="mt-32 grid md:grid-cols-3 gap-8 relative">
+<div class="mt-16 md:mt-32 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
       {/* Background Glow Orbs for Glass Effect Depth */}
       <div class="absolute -top-20 left-10 w-64 h-64 bg-orange-500/10 blur-[120px] rounded-full"></div>
       <div class="absolute -bottom-20 right-10 w-64 h-64 bg-orange-600/10 blur-[120px] rounded-full"></div>
@@ -114,16 +114,16 @@ const problem = {
         <div class="absolute inset-0 bg-orange-600 rounded-full blur-md opacity-20 group-hover:opacity-60 group-hover:blur-xl transition-all duration-500"></div>
 
         {/* The Obsidian Button */}
-        <button class="relative flex items-center gap-6 px-16 py-7 bg-black rounded-full border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-orange-500/50 group-hover:scale-[1.02] active:scale-[0.98]">
+        <button class="relative flex items-center gap-4 md:gap-6 px-8 md:px-16 py-5 md:py-7 bg-black rounded-full border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-orange-500/50 group-hover:scale-[1.02] active:scale-[0.98]">
           
           {/* Internal Reflection Sweep */}
           <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none"></div>
 
           <div class="flex flex-col items-start">
-            <span class="text-[10px] font-black uppercase tracking-[0.5em] text-orange-500 mb-1">
+            <span class="text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] md:tracking-[0.5em] text-orange-500 mb-1">
               Initiate Protocol
             </span>
-            <span class="text-white text-xl font-black uppercase tracking-[0.2em]">
+            <span class="text-white text-base md:text-xl font-black uppercase tracking-[0.1em] md:tracking-[0.2em]">
               Fix the System
             </span>
           </div>

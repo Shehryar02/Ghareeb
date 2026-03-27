@@ -3,14 +3,12 @@
  * ServiceHero.astro
  * Aesthetic: Obsidian Glass on Surgical White
  */
-import { Image } from "astro:assets";
-
 interface Props {
-  title: string; // e.g., "BACKEND"
-  subtitle?: string; // e.g., "SYSTEMS."
-  tag?: string; // e.g., "Core_Infrastructure_v2"
+  title: string;
+  subtitle?: string;
+  tag?: string;
   description: string;
-  mainImage: ImageMetadata;
+  mainImage: string;
   imageAlt?: string;
   specs?: Array<{ label: string; value: string }>;
   primaryCTA?: { text: string; link: string };
@@ -38,7 +36,7 @@ const {
   <div class="absolute inset-0 bg-[radial-gradient(#00000005_1px,transparent_1px)] [background-size:32px_32px]"></div>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-24 w-full relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-48 xl:gap-64 items-center">
       
       <div class="space-y-8 reveal">
         <div class="inline-flex items-center gap-3 px-4 py-2 bg-black/[0.03] border border-black/[0.05] rounded-full">
@@ -46,7 +44,7 @@ const {
             <span class="text-[10px] font-black uppercase tracking-[0.3em] text-black">{tag}</span>
         </div>
 
-        <h1 class="text-7xl md:text-8xl font-[1000] text-black uppercase tracking-tighter leading-[0.85]">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-[1000] text-black uppercase tracking-tighter leading-[0.85]">
           {title} <br />
           {subtitle && <span class="text-orange-500 italic">{subtitle}</span>}
         </h1>
@@ -64,7 +62,7 @@ const {
           </a>
         </div>
 
-        <div class="grid grid-cols-3 gap-8 pt-12 border-t border-black/[0.05]">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 pt-12 border-t border-black/[0.05]">
             {specs.map((spec) => (
               <div>
                 <span class="block text-[10px] font-black text-gray-300 uppercase mb-1">{spec.label}</span>
@@ -74,13 +72,14 @@ const {
         </div>
       </div>
 
-      <div class="relative reveal" style="transition-delay: 300ms;">
-        <div class="relative aspect-square w-full max-w-[500px] mx-auto group">
+      <div class="relative reveal w-full" style="transition-delay: 300ms;">
+        <div class="relative aspect-square w-full max-w-[420px] mx-auto lg:ml-auto lg:mr-0 group">
           <div class="absolute inset-0 bg-black rounded-[3rem] shadow-2xl rotate-3 transition-transform hover:rotate-0 duration-1000 overflow-hidden">
-              <Image
+              <img
                   src={mainImage}
                   alt={imageAlt}
                   class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-[1s]"
+                  loading="eager"
               />
           </div>
 
@@ -88,10 +87,6 @@ const {
               <span class="text-orange-500 font-black text-2xl">01</span>
           </div>
           
-          <div class="absolute -top-6 -right-6 w-40 h-16 bg-black backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl flex items-center justify-center gap-3 px-4 z-20">
-              <div class="w-2 h-2 rounded-full bg-green-500"></div>
-              <span class="text-white font-black text-[10px] tracking-widest uppercase italic">Scalability_ON</span>
-          </div>
         </div>
       </div>
 
@@ -127,6 +122,6 @@ const {
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
-  document.addEventListener('DOMContentLoaded', initHeroReveal);
+  document.addEventListener('astro:page-load', initHeroReveal);
   document.addEventListener('astro:page-load', initHeroReveal);
 </script>

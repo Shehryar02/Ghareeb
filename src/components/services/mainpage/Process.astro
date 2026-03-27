@@ -8,40 +8,40 @@ const phases = [
 ];
 ---
 
-<section id="tactical-white" class="bg-white py-40 overflow-hidden relative">
+<section id="tactical-white" class="bg-white py-24 md:py-40 overflow-hidden relative">
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-24 relative z-10">
     
-    <div class="mb-32 reveal">
-        <div class="flex items-center gap-4 mb-6">
+    <div class="mb-16 md:mb-32 reveal">
+        <div class="flex items-center gap-4 mb-4 md:mb-6">
             <span class="w-12 h-[2px] bg-orange-500"></span>
             <span class="text-black font-black uppercase text-[10px] tracking-[0.5em]">Workflow_v4.0</span>
         </div>
-        <h2 class="text-6xl md:text-8xl font-[1000] text-black uppercase tracking-tighter leading-none">
+        <h2 class="text-5xl sm:text-6xl md:text-8xl font-[1000] text-black uppercase tracking-tighter leading-none">
             THE <span class="text-orange-500 italic">SYSTEM.</span>
         </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-6 gap-6 mb-24">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-6 mb-16 md:mb-24">
       {phases.map((phase, index) => (
-        <div class={`reveal group relative ${index < 3 ? 'md:col-span-2' : 'md:col-span-3'}`} style={`transition-delay: ${index * 100}ms`}>
+        <div class={`reveal group relative ${index < 3 ? 'sm:col-span-1 md:col-span-2' : 'sm:col-span-1 md:col-span-3'}`} style={`transition-delay: ${index * 100}ms`}>
           
-          <div class="h-full bg-white/40 backdrop-blur-xl rounded-[2.5rem] p-10 border border-black/[0.1] shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-700 group-hover:-translate-y-4 group-hover:bg-white group-hover:border-orange-500/30 group-hover:shadow-[0_40px_80px_rgba(251,133,0,0.1)]">
+          <div class="h-full bg-white/40 backdrop-blur-xl rounded-[2rem] lg:rounded-[2.5rem] p-8 lg:p-10 border border-black/[0.1] shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-700 group-hover:-translate-y-4 group-hover:bg-white group-hover:border-orange-500/30 group-hover:shadow-[0_40px_80px_rgba(251,133,0,0.1)]">
             
-            <div class="flex justify-between items-start mb-16">
-                <div class="w-14 h-14 rounded-2xl bg-black flex items-center justify-center text-white group-hover:bg-orange-500 transition-all duration-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <div class="flex justify-between items-start mb-12 md:mb-16">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-black flex items-center justify-center text-white group-hover:bg-orange-500 transition-all duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-7 md:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d={phase.icon} />
                     </svg>
                 </div>
                 <span class="text-sm font-black text-black/10 group-hover:text-orange-500/20 transition-colors italic">{phase.id}</span>
             </div>
 
-            <h3 class="text-2xl font-black text-black uppercase tracking-tight mb-4 group-hover:text-orange-500 transition-colors">
+            <h3 class="text-xl md:text-2xl font-black text-black uppercase tracking-tight mb-3 md:mb-4 group-hover:text-orange-500 transition-colors">
                 {phase.label}
             </h3>
-            <p class="text-[13px] text-black/40 font-medium leading-relaxed mb-10">
+            <p class="text-[13px] text-black/40 font-medium leading-relaxed mb-8 md:mb-10">
                 {phase.desc}
             </p>
 
@@ -55,17 +55,17 @@ const phases = [
     </div>
 
     <div class="reveal mt-12">
-        <a href="#contact" class="group relative block w-full bg-black rounded-[3rem] p-12 overflow-hidden transition-all duration-700 hover:shadow-[0_40px_100px_rgba(251,133,0,0.3)] hover:-translate-y-2">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/20 rounded-full blur-[120px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+        <a href="#contact" class="group relative block w-full bg-black rounded-[2.5rem] lg:rounded-[3rem] p-8 md:p-12 overflow-hidden transition-all duration-700 hover:shadow-[0_40px_100px_rgba(251,133,0,0.3)] hover:-translate-y-2">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-orange-500/20 rounded-full blur-[80px] md:blur-[120px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
             
-            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left px-4">
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left px-2 md:px-4">
                 <div class="space-y-2">
-                    <span class="text-orange-500 font-black uppercase text-[12px] tracking-[0.6em] block mb-2">Ready to initiate?</span>
-                    <h4 class="text-4xl md:text-6xl font-[1000] text-white uppercase tracking-tighter">START YOUR <span class="italic text-orange-500">PROJECT.</span></h4>
+                    <span class="text-orange-500 font-black uppercase text-[10px] md:text-[12px] tracking-[0.6em] block mb-2">Ready to initiate?</span>
+                    <h4 class="text-3xl sm:text-4xl md:text-6xl font-[1000] text-white uppercase tracking-tighter">START YOUR <span class="italic text-orange-500">PROJECT.</span></h4>
                 </div>
                 
-                <div class="w-24 h-24 rounded-full border-2 border-white/20 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white group-hover:rotate-45 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <div class="w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-white/20 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-700 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-10 md:h-10 text-white group-hover:rotate-45 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </div>
@@ -101,6 +101,6 @@ const phases = [
 
     document.querySelectorAll('#tactical-white .reveal').forEach(el => observer.observe(el));
   }
-  document.addEventListener('DOMContentLoaded', initTactical);
+  document.addEventListener('astro:page-load', initTactical);
   document.addEventListener('astro:page-load', initTactical);
 </script>

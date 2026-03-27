@@ -32,14 +32,14 @@ const stackLogos = [
 ];
 ---
 
-<section class="py-32 px-6 lg:px-32 bg-white overflow-hidden relative" id="integration-section">
+<section class="py-20 md:py-32 px-6 lg:px-32 bg-white overflow-hidden relative" id="integration-section">
   <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
        style="background-image: radial-gradient(#000 1.5px, transparent 1.5px); background-size: 60px 60px;">
   </div>
 
   <div class="max-w-7xl mx-auto relative z-10">
     
-    <div id="reveal-text-zone" class="text-center mb-24 opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+    <div id="reveal-text-zone" class="text-center mb-16 md:mb-24 opacity-0 translate-y-10 transition-all duration-1000 ease-out">
       <!-- <div class="flex items-center justify-center gap-3 mb-6">
         <span class="h-[1px] w-8 bg-[#FB8500]"></span>
         <span class="text-[10px] font-black uppercase tracking-[0.4em] text-black/40">Infrastructure v4.0</span>
@@ -47,54 +47,55 @@ const stackLogos = [
       </div> -->
 
 <div class="mb-10 flex flex-col items-center text-center">
-  <p class="text-[#FB8500] font-mono text-[14px] md:text-xs font-bold tracking-[0.5em] uppercase mb-6 ">
+  <p class="text-[#FB8500] font-mono text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.5em] uppercase mb-4 md:mb-6 ">
     Efficiency Optimized
   </p>
   
-  <h2 class="text-7xl md:text-9xl font-black uppercase tracking-[-0.05em] leading-[0.85] text-black">
+  <h2 class="text-5xl sm:text-6xl md:text-9xl font-black uppercase tracking-[-0.05em] leading-[0.85] text-black">
     Triple Threat <br/> 
     <span class="text-[#FB8500] italic inline-block mt-2">
       Single Stack.
     </span>
   </h2>
   
-  <div class="w-60 h-1 bg-[#FB8500] mt-8 rounded-full opacity-50"></div>
+  <div class="w-40 md:w-60 h-1 bg-[#FB8500] mt-6 md:mt-8 rounded-full opacity-50"></div>
 </div>
 
-      <p class="text-black/70 max-w-2xl mx-auto font-medium text-lg md:text-xl leading-relaxed tracking-tight text-center mb-36">
+      <p class="text-black/70 max-w-2xl mx-auto font-medium text-base md:text-xl leading-relaxed tracking-tight text-center mb-16 md:mb-36">
       High-performance <span class="text-black/90 font-bold">infrastructure</span> 
       engineered for rapid-output delivery and absolute <span class="text-[#FB8500] font-bold">architectural dominance.</span>
     </p>
     </div>
 
-    <div id="reveal-cards-zone" class="perspective-container relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-stretch">
+    <div id="reveal-cards-zone" class="perspective-container relative grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 items-stretch">
       {layers.map((layer, i) => (
         <div 
-          class={`integration-layer group relative cursor-pointer transition-all duration-700 ease-out ${layer.rotation}`}
+          class={`integration-layer group relative cursor-pointer transition-all duration-700 ease-out md:${layer.rotation}`}
+          data-card-idx={i}
           style={`--index: ${i};`}
         >
           <div class="absolute inset-x-12 inset-y-16 bg-[#FB8500] opacity-0 blur-[20px] rounded-full group-hover:opacity-20 transition-opacity duration-300"></div>
           
-          <div class="relative h-full bg-white/70 backdrop-blur-md border border-black/10 p-10 flex flex-col justify-between rounded-[2.5rem] shadow-sm group-hover:shadow-2xl transition-all duration-300 will-change-transform">
+          <div class="relative h-full bg-white/70 backdrop-blur-md border border-black/10 p-6 sm:p-8 md:p-10 flex flex-col justify-between rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] shadow-sm group-hover:shadow-2xl transition-all duration-300 will-change-transform">
             <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/90 to-transparent opacity-30 pointer-events-none"></div>
 
             <div class="relative z-10">
-              <div class="flex justify-between items-start mb-12">
-                 <div class={`p-3 rounded-xl shadow-lg transition-colors duration-200 ${i === 1 ? 'bg-cta text-white' : 'bg-black text-white group-hover:bg-[#FB8500] group-hover:text-black'}`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <div class="flex justify-between items-start mb-6 sm:mb-8 md:mb-12">
+                 <div class={`p-2.5 sm:p-3 rounded-lg sm:rounded-xl shadow-lg transition-colors duration-200 ${i === 1 ? 'bg-cta text-white' : 'bg-black text-white group-hover:bg-[#FB8500] group-hover:text-black'}`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <path d={layer.icon} />
                     </svg>
                  </div>
-                 <div class="font-mono text-[9px] tracking-widest text-black/30 font-bold italic">SYS_0{i + 1}</div>
+                 <div class="font-mono text-[9px] tracking-widest text-black/30 font-bold italic">{layer.id}</div>
               </div>
               
-              <h3 class="text-2xl font-black text-black uppercase mb-4 tracking-tighter leading-tight">{layer.title}</h3>
-              <p class="text-black/60 text-sm leading-relaxed group-hover:text-black transition-colors">
+              <h3 class="text-lg sm:text-xl md:text-2xl font-black text-black uppercase mb-3 sm:mb-4 tracking-tighter leading-tight">{layer.title}</h3>
+              <p class="text-black/60 text-xs sm:text-sm leading-relaxed group-hover:text-black transition-colors">
                   {layer.desc}
               </p>
             </div>
 
-            <div class="mt-10 flex items-center gap-2">
+            <div class="mt-6 sm:mt-8 md:mt-10 flex items-center gap-2">
               <div class="h-1 w-8 bg-[#FB8500] rounded-full group-hover:w-12 transition-all duration-300"></div>
               <div class="h-1 w-1 bg-black/10 rounded-full"></div>
             </div>
@@ -103,11 +104,11 @@ const stackLogos = [
       ))}
     </div>
 
-    <div class="mt-24 flex flex-col md:flex-row justify-between items-center gap-12 border-t border-black/5 pt-12">
-        <div class="flex items-center gap-8">
+    <div class="mt-16 md:mt-24 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12 border-t border-black/5 pt-12">
+        <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
             <div class="flex -space-x-3">
                 {stackLogos.map((logo) => (
-                    <div class="w-12 h-12 bg-white border border-black/10 rounded-2xl shadow-sm flex items-center justify-center p-2.5 transition-all hover:-translate-y-2 hover:z-30 hover:border-black/30 group/logo">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-white border border-black/10 rounded-2xl shadow-sm flex items-center justify-center p-2 md:p-2.5 transition-all hover:-translate-y-2 hover:z-30 hover:border-black/30 group/logo">
                       <svg viewBox="0 0 24 24" class="w-full h-full text-black/40 group-hover/logo:text-[#FB8500] transition-colors" fill="none" stroke="currentColor" stroke-width="2">
                         <path d={logo.path} stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
@@ -115,20 +116,20 @@ const stackLogos = [
                 ))}
             </div>
             <div>
-              <p class="text-black font-black text-sm uppercase tracking-tighter leading-none">SCALABLE FRAMEWORK</p>
-              <p class="text-[9px] text-black/40 font-bold uppercase tracking-widest mt-1 italic">ENTERPRISE-READY DELIVERY</p>
+              <p class="text-black font-black text-xs md:text-sm uppercase tracking-tighter leading-none">SCALABLE FRAMEWORK</p>
+              <p class="text-[8px] md:text-[9px] text-black/40 font-bold uppercase tracking-widest mt-1 italic">ENTERPRISE-READY DELIVERY</p>
             </div>
         </div>
         
-        <a href="/contact" class="group relative flex items-center gap-6 px-4 py-3 bg-white/40 backdrop-blur-md border border-black/[0.15] rounded-full hover:border-[#FB8500]/30 hover:bg-white/80 transition-all duration-500 shadow-sm">
-            <div class="relative w-12 h-12 rounded-full bg-black flex items-center justify-center text-[#FB8500] group-hover:bg-[#FB8500] group-hover:text-black transition-all duration-500 overflow-hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="relative z-10 w-6 h-6 group-hover:rotate-[360deg] transition-transform duration-700 ease-in-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <a href="/contact" class="group relative flex items-center gap-4 md:gap-6 px-3 md:px-4 py-2 md:py-3 bg-white/40 backdrop-blur-md border border-black/[0.15] rounded-full hover:border-[#FB8500]/30 hover:bg-white/80 transition-all duration-500 shadow-sm">
+            <div class="relative w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center text-[#FB8500] group-hover:bg-[#FB8500] group-hover:text-black transition-all duration-500 overflow-hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="relative z-10 w-5 h-5 md:w-6 md:h-6 group-hover:rotate-[360deg] transition-transform duration-700 ease-in-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
                 </svg>
             </div>
-            <div class="pr-8">
-                <p class="text-[9px] font-black tracking-[0.25em] text-black/40 uppercase mb-0.5 group-hover:text-[#FB8500]">Sleepless Performance</p>
-                <span class="text-black font-black text-xl tracking-tighter uppercase leading-none">Initiate Build</span>
+            <div class="pr-6 md:pr-8">
+                <p class="text-[8px] md:text-[9px] font-black tracking-[0.2em] md:tracking-[0.25em] text-black/40 uppercase mb-0.5 group-hover:text-[#FB8500]">Sleepless Performance</p>
+                <span class="text-black font-black text-lg md:text-xl tracking-tighter uppercase leading-none">Initiate Build</span>
             </div>
         </a>
     </div>
@@ -161,7 +162,6 @@ const stackLogos = [
     transform-style: preserve-3d;
   }
 
-  /* Cards Animation Logic */
   .integration-layer {
     opacity: 0;
     transform: translateY(40px);
@@ -169,16 +169,35 @@ const stackLogos = [
     transition-delay: calc(var(--index) * 150ms);
   }
 
-  /* Specific 3D Positions when scrolled into view */
-  .cards-revealed .integration-layer:nth-child(1) { transform: rotateY(30deg) translateZ(0); }
-  .cards-revealed .integration-layer:nth-child(2) { transform: scale(1.05) translateZ(40px); }
-  .cards-revealed .integration-layer:nth-child(3) { transform: rotateY(-30deg) translateZ(0); }
+  @media (min-width: 768px) {
+    .cards-revealed .integration-layer:nth-child(1) { transform: rotateY(30deg) translateZ(0); }
+    .cards-revealed .integration-layer:nth-child(2) { transform: scale(1.05) translateZ(40px); }
+    .cards-revealed .integration-layer:nth-child(3) { transform: rotateY(-30deg) translateZ(0); }
 
-  /* Hover interactivity */
-  .integration-layer:hover {
-    transform: translateY(-10px) rotateY(0deg) translateZ(100px) !important;
-    z-index: 50 !important;
-    transition: transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    .integration-layer:hover,
+    .integration-layer.is-active {
+      transform: translateY(-10px) rotateY(0deg) translateZ(100px) !important;
+      z-index: 50 !important;
+      transition: transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .perspective-container {
+      perspective: none;
+      transform-style: flat;
+    }
+    .cards-revealed .integration-layer {
+      transform: translateY(0) !important;
+    }
+    .integration-layer.is-active {
+      transform: translateY(-6px) !important;
+      z-index: 50 !important;
+    }
+    .integration-layer.is-active > div:last-child {
+      border-color: rgba(251, 133, 0, 0.4);
+      box-shadow: 0 20px 60px rgba(251,133,0,0.12);
+    }
   }
 
   .backdrop-blur-md {
@@ -218,5 +237,18 @@ const stackLogos = [
   }
 
   setupScrollAnimations();
-  document.addEventListener('astro:after-swap', setupScrollAnimations);
+  document.addEventListener('astro:page-load', setupScrollAnimations);
+
+  function initCardClicks() {
+    const cards = document.querySelectorAll('#integration-section .integration-layer');
+    cards.forEach(card => {
+      card.onclick = () => {
+        const wasActive = card.classList.contains('is-active');
+        cards.forEach(c => c.classList.remove('is-active'));
+        if (!wasActive) card.classList.add('is-active');
+      };
+    });
+  }
+  initCardClicks();
+  document.addEventListener('astro:page-load', initCardClicks);
 </script>

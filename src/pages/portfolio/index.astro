@@ -10,7 +10,7 @@ const categories = [
     subheading: "High-performance dashboards & cloud infrastructure.",
     projects: [
       { id: "01", title: "Vortex Analytics", tech: "Next.js // AWS", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" },
-      { id: "02", title: "Lumina Admin", tech: "Vue // Firebase", img: "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=800" },
+      { id: "02", title: "Lumina Admin", tech: "Vue // Firebase", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800" },
       { id: "03", title: "ScaleFlow CRM", tech: "React // Node", img: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800" }
     ]
   },
@@ -29,8 +29,8 @@ const categories = [
     heading: "Headless E-Commerce",
     subheading: "Custom Shopify Plus storefronts and API scaling.",
     projects: [
-      { id: "07", title: "Aura Home", tech: "Remix // Shopify", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800" },
-      { id: "08", title: "Velo Gear", tech: "Hydrogen // Node", img: "https://images.unsplash.com/photo-1556740734-7f9a2b774159?q=80&w=800" },
+      { id: "07", title: "Aura Home", tech: "Remix // Shopify", img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800" },
+      { id: "08", title: "Velo Gear", tech: "Hydrogen // Node", img: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=800" },
       { id: "09", title: "Moda Global", tech: "Next.js // Shopify", img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800" }
     ]
   }
@@ -45,14 +45,14 @@ const filters = [
 ---
 
 <Layout title="Service Catalog | Engineering">
-  <section class="relative min-h-screen bg-white py-24 lg:py-32 overflow-x-clip" x-data="{ activeFilter: 'all' }">
+  <section class="relative min-h-screen bg-white py-16 sm:py-20 md:py-24 lg:py-32 overflow-x-clip" x-data="{ activeFilter: 'all' }">
     
     <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#FB8500]/5 rounded-full blur-[120px] -z-10"></div>
     <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gray-100 rounded-full blur-[100px] -z-10"></div>
 
     <div class="max-w-7xl mx-auto px-6">
       
-<header class="mb-32 flex flex-col items-center text-center">
+<header class="mb-16 sm:mb-20 md:mb-32 flex flex-col items-center text-center">
   <div class="flex items-center gap-4 mb-8">
     <span class="h-[1px] w-8 bg-[#FB8500]"></span>
     <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400">Portfolio Archive</span>
@@ -61,12 +61,12 @@ const filters = [
   
 <div class="relative w-full flex flex-col items-center">
 
-  <h1 class="relative z-10 text-7xl md:text-[9.5rem] font-black tracking-tighter leading-[0.8] uppercase text-[#111]">
+  <h1 class="relative z-10 text-5xl sm:text-6xl md:text-8xl lg:text-[9.5rem] font-black tracking-tighter leading-[0.8] uppercase text-[#111]">
       Our <span class="text-[#FB8500]">Projects</span>
   </h1>
 
-    <div class="mt-12 max-w-3xl">
-    <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-500">
+    <div class="mt-8 sm:mt-10 md:mt-12 max-w-3xl">
+    <p class="text-base sm:text-lg md:text-2xl font-light leading-relaxed text-gray-500">
       A curated showcase of <span class="text-[#111] font-medium italic">digital craftsmanship</span>. 
       Bridging the gap between complex engineering and 
       <span class="text-[#FB8500] font-semibold">intuitive user experiences</span>.
@@ -88,12 +88,12 @@ const filters = [
 </header>
 
 <!-- <div class="sticky top-30 z-[100]  w-full flex justify-center pointer-events-none mb-24"> -->
-<div class="w-full flex justify-center pointer-events-none mb-24">
-  <nav class="pointer-events-auto inline-flex p-1.5 bg-white/80 backdrop-blur-xl border border-gray-300 rounded-full shadow-lg transition-all duration-500">
+<div class="w-full flex justify-center pointer-events-none mb-14 sm:mb-18 md:mb-24 px-2 sm:px-0">
+  <nav class="pointer-events-auto inline-flex flex-wrap justify-center p-1 sm:p-1.5 bg-white/80 backdrop-blur-xl border border-gray-300 rounded-2xl sm:rounded-full shadow-lg transition-all duration-500 gap-0.5 sm:gap-0">
       {filters.map((f) => (
           <button 
               @click={`activeFilter = '${f.value}'`}
-              class="px-8 md:px-12 py-4 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 rounded-full cursor-pointer"
+              class="px-4 sm:px-6 md:px-10 lg:px-12 py-2.5 sm:py-3 md:py-4 text-[8px] sm:text-[9px] md:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-500 rounded-xl sm:rounded-full cursor-pointer whitespace-nowrap"
               :class={`activeFilter === '${f.value}' ? 'bg-[#111] text-white shadow-xl' : 'text-gray-500 hover:text-[#111]'`}
           >
               {f.label}
@@ -104,15 +104,18 @@ const filters = [
 
       {categories.map((group) => (
         <div 
-            class="mb-40 last:mb-0" 
+            class="mb-20 sm:mb-28 md:mb-40 last:mb-0" 
             x-show={`activeFilter === 'all' || activeFilter === '${group.id}'`}
-            x-transition:enter="transition ease-out duration-700"
-            x-transition:enter-start="opacity-0 translate-y-12"
-            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:enter="transition ease-out duration-500"
+            x-transition:enter-start="opacity-0 translate-y-8 scale-[0.98]"
+            x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+            x-transition:leave-end="opacity-0 -translate-y-4 scale-[0.98]"
             x-cloak
         >
-<div class="flex flex-col items-center mb-20 group/title">
-  <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-[#111] text-center leading-none">
+<div class="flex flex-col items-center mb-10 sm:mb-14 md:mb-20 group/title">
+  <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#111] text-center leading-none">
     {group.heading.split(' ').slice(0, -1).join(' ')} 
     <span class="text-[#FB8500] block md:inline">
       {group.heading.split(' ').pop()}
@@ -122,9 +125,9 @@ const filters = [
   {/* <div class="mt-4 h-1.5 w-24 bg-[#111] transition-all duration-500 group-hover/title:w-48 group-hover/title:bg-[#FB8500]"></div> */}
 </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-10">
             {group.projects.map((post) => (
-              <a href={`/portfolio/${post.id}`} class="group relative aspect-[16/10] overflow-hidden rounded-[3rem] bg-gray-100 cursor-pointer shadow-sm transition-all duration-700 hover:shadow-2xl hover:shadow-[#FB8500]/10 hover:-translate-y-2">
+              <a href={`/portfolio/${post.id}`} class="group relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-[3rem] bg-gray-100 cursor-pointer shadow-sm transition-all duration-700 hover:shadow-2xl hover:shadow-[#FB8500]/10 hover:-translate-y-2">
                 
                 <img 
                   src={post.img} 
@@ -132,22 +135,22 @@ const filters = [
                   class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
                 />
 
-                <div class="absolute inset-x-4 bottom-4">
-                    <div class="bg-white/60 backdrop-blur-2xl border border-white/40 p-8 rounded-[2rem] flex flex-col md:flex-row md:items-end justify-between gap-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="absolute inset-x-2.5 bottom-2.5 sm:inset-x-3 sm:bottom-3 md:inset-x-4 md:bottom-4">
+                    <div class="bg-white/60 backdrop-blur-2xl border border-white/40 p-4 sm:p-5 md:p-8 rounded-xl sm:rounded-2xl md:rounded-[2rem] flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                         <div>
-                            <span class="text-[9px] font-black text-[#FB8500] uppercase tracking-[0.3em] mb-2 block">ID_{post.id}</span>
-                            <h3 class="text-3xl font-black text-[#111] uppercase tracking-tighter">
+                            <span class="text-[8px] sm:text-[9px] font-black text-[#FB8500] uppercase tracking-[0.3em] mb-1 sm:mb-2 block">ID_{post.id}</span>
+                            <h3 class="text-lg sm:text-xl md:text-3xl font-black text-[#111] uppercase tracking-tighter">
                                 {post.title}
                             </h3>
-                            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-2">
+                            <p class="text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1 sm:mt-2">
                                 // {post.tech}
                             </p>
                         </div>
                         
-                        <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-3 sm:gap-4">
                             <span class="hidden md:block text-[9px] font-black uppercase tracking-widest text-[#111] opacity-0 group-hover:opacity-100 transition-opacity duration-700">Explore_Project</span>
-                            <div class="w-12 h-12 rounded-2xl bg-[#111] flex items-center justify-center text-white group-hover:bg-[#FB8500] transition-colors duration-300">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl sm:rounded-2xl bg-[#111] flex items-center justify-center text-white group-hover:bg-[#FB8500] transition-colors duration-300 shrink-0">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                             </div>
                         </div>
                     </div>
@@ -163,7 +166,6 @@ const filters = [
     </div>
   </section>
 </Layout>
-
 <style>
   [x-cloak] { display: none !important; }
   
@@ -177,4 +179,4 @@ const filters = [
   }
 </style>
 
-<script is:inline src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script is:inline src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer data-astro-rerun></script>

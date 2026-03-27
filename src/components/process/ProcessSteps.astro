@@ -27,7 +27,7 @@ const steps = [
 ];
 ---
 
-<section class="bg-[#020202] py-32 px-6 font-sans antialiased text-white overflow-hidden scroll-mt-20">
+<section class="bg-[#020202] py-16 md:py-32 px-6 font-sans antialiased text-white overflow-hidden scroll-mt-20">
   
   <div class="fixed inset-0 pointer-events-none -z-10">
     <div class="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-orange-600/10 blur-[200px] rounded-full"></div>
@@ -36,33 +36,33 @@ const steps = [
 
   <div class="max-w-7xl mx-auto relative z-10 opacity-0 translate-y-10 transition-all duration-[1200ms]" id="main-container">
     
-    <div class="mb-56 text-center max-w-4xl mx-auto">
+    <div class="mb-24 md:mb-56 text-center max-w-4xl mx-auto">
       <div class="flex items-center justify-center gap-4 mb-6">
         <div class="w-12 h-[1px] bg-orange-500/40"></div>
         <span class="text-orange-500 font-black text-xs uppercase tracking-[0.6em]">Process Framework</span>
         <div class="w-12 h-[1px] bg-orange-500/40"></div>
       </div>
-      <h2 class="text-6xl md:text-[140px] font-black tracking-tighter leading-none uppercase">
+      <h2 class="text-5xl sm:text-6xl md:text-[140px] font-black tracking-tighter leading-none uppercase">
         The <span class="text-orange-500">Method</span>
       </h2>
     </div>
 
-    <div class="space-y-40">
+    <div class="space-y-20 md:space-y-40">
       {steps.map((step) => (
-        <div class="process-phase relative flex flex-col lg:flex-row items-center gap-16 lg:gap-24 transition-all duration-1000 opacity-20 blur-[2px] scale-[0.98]">
+        <div class="process-phase relative flex flex-col lg:flex-row items-center gap-8 md:gap-16 lg:gap-24 transition-all duration-1000 opacity-20 blur-[2px] scale-[0.98]">
           
           <div class="absolute left-0 top-1/2 -translate-y-1/2 -z-10 transition-all duration-1000 phase-bg-id opacity-[0.05]">
-            <span class="text-[12rem] md:text-[16rem] font-black leading-none text-orange-500 italic select-none">
+            <span class="text-[8rem] sm:text-[12rem] md:text-[16rem] font-black leading-none text-orange-500 italic select-none">
               {step.id}
             </span>
           </div>
 
-          <div class="lg:w-[40%] space-y-6">
+          <div class="lg:w-[40%] space-y-4 md:space-y-6">
             <div class="flex items-center gap-3">
               <span class="text-orange-500 font-mono text-sm font-bold">{step.id}</span>
               <div class="w-10 h-[1px] bg-white/10"></div>
             </div>
-            <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
+            <h3 class="text-2xl md:text-4xl font-black text-white uppercase tracking-tight">
               {step.phase}
             </h3>
             <p class="text-gray-500 text-base md:text-lg leading-relaxed max-w-sm">
@@ -71,7 +71,7 @@ const steps = [
           </div>
 
           <div class="lg:w-[60%] w-full">
-            <div class="glass-card p-10 md:p-14 rounded-[3rem] relative overflow-hidden border border-white/5 bg-white/[0.01]">
+            <div class="glass-card p-6 md:p-14 rounded-[2rem] md:rounded-[3rem] relative overflow-hidden border border-white/5 bg-white/[0.01]">
               
               <div class="absolute -top-1/2 -right-1/2 w-full h-full bg-orange-500/10 blur-[100px] rounded-full"></div>
               
@@ -85,7 +85,7 @@ const steps = [
                   <span class="text-orange-500 font-bold text-[10px] uppercase tracking-[0.4em]">Client Deliverable</span>
                 </div>
                 
-                <p class="text-white text-xl md:text-3xl font-bold leading-tight tracking-tight">
+                <p class="text-white text-lg md:text-3xl font-bold leading-tight tracking-tight">
                   "{step.value}"
                 </p>
               </div>
@@ -172,6 +172,6 @@ const steps = [
     phases.forEach(p => focusObs.observe(p));
   }
 
-  // Window load ensures no "jumpy" calculation during the fast transition
   window.addEventListener('load', initStickyFastObserver);
+  document.addEventListener('astro:page-load', initStickyFastObserver);
 </script>

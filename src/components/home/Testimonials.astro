@@ -28,27 +28,26 @@ const testimonials = [
 ];
 ---
 
-<section class="py-32 bg-white overflow-hidden font-inter">
+<section class="py-20 md:py-32 bg-white overflow-hidden font-inter">
   <div class="max-w-7xl mx-auto px-6">
     
-    <!-- Centered Header Section -->
-    <div class="text-center mb-24 relative z-10">
-      <p class="text-[14px] font-mono font-black uppercase tracking-[0.5em] text-[#FB8500] mb-6">
+    <div class="text-center mb-16 md:mb-24 relative z-10 reveal">
+      <p class="text-[10px] md:text-[14px] font-mono font-black uppercase tracking-[0.2em] md:tracking-[0.5em] text-[#FB8500] mb-4 md:mb-6">
         Engineering Success
       </p>
-      <h2 class="text-7xl md:text-9xl font-black text-black uppercase tracking-tighter leading-[0.8] mb-8">
+      <h2 class="text-5xl sm:text-7xl md:text-9xl font-black text-black uppercase tracking-tighter leading-[0.8] mb-6 md:mb-8">
         The <span class="text-[#FB8500] italic">Standard.</span>
       </h2>
-      <p class="text-black/60 max-w-2xl mx-auto font-medium text-lg md:text-xl leading-relaxed tracking-tight">
+      <p class="text-black/60 max-w-2xl mx-auto font-medium text-base md:text-xl leading-relaxed tracking-tight px-4 md:px-0">
         <span class="text-black font-bold">A proven track record</span> 
         of transforming complex technical requirements into 
         <span class="text-[#FB8500] font-bold">high-performance revenue assets.</span>
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch reveal-stagger">
       {testimonials.map((t) => (
-        <div class={`relative group overflow-hidden rounded-[3rem] bg-[#f8f8f8] border border-black/5 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 
+        <div class={`reveal-child relative group overflow-hidden rounded-3xl md:rounded-[3rem] bg-[#f8f8f8] border border-black/5 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 
           ${t.size === 'large' ? 'md:col-span-8' : t.size === 'full' ? 'md:col-span-12' : 'md:col-span-4'}`}>
           
           {t.size === 'full' && (
@@ -57,18 +56,18 @@ const testimonials = [
             </div>
           )}
 
-          <div class="absolute -right-4 -top-8 text-[12rem] font-black text-black/[0.03] select-none uppercase tracking-tighter group-hover:text-[#FB8500]/5 transition-colors">
+          <div class="absolute -right-4 -top-8 text-[8rem] md:text-[12rem] font-black text-black/[0.03] select-none uppercase tracking-tighter group-hover:text-[#FB8500]/5 transition-colors">
             {t.label.split(' ')[0]}
           </div>
 
-          <div class="relative p-10 md:p-14 h-full flex flex-col justify-between z-10">
+          <div class="relative p-8 md:p-14 h-full flex flex-col justify-between z-10">
             <div>
-              <div class="flex items-center gap-3 mb-12">
+              <div class="flex items-center gap-3 mb-8 md:mb-12">
                 <span class="h-px w-8 bg-[#FB8500]"></span>
                 <span class="text-[10px] font-black uppercase tracking-widest text-[#FB8500]">{t.label}</span>
               </div>
               
-              <h3 class={`${t.size === 'full' ? 'text-4xl md:text-6xl max-w-4xl' : t.size === 'large' ? 'text-3xl md:text-5xl' : 'text-2xl'} font-bold font-inter text-black leading-[1.1] mb-12`}>
+              <h3 class={`${t.size === 'full' ? 'text-2xl sm:text-4xl md:text-6xl max-w-4xl' : t.size === 'large' ? 'text-2xl sm:text-3xl md:text-5xl' : 'text-xl sm:text-2xl'} font-bold font-inter text-black leading-[1.1] mb-10 md:mb-12`}>
                 "{t.quote}"
               </h3>
             </div>
@@ -91,17 +90,16 @@ const testimonials = [
         </div>
       ))}
 
-      <!-- Final CTA Block -->
-      <div class="md:col-span-12 bg-black rounded-[3rem] p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-8 mt-6 overflow-hidden relative">
+      <div class="reveal-child md:col-span-12 bg-black rounded-3xl md:rounded-[3rem] p-8 md:p-20 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 mt-4 md:mt-6 overflow-hidden relative">
         <div class="relative z-10 text-center md:text-left">
-          <h4 class="text-white text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-4">
+          <h4 class="text-white text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-3 md:mb-4">
             Engineer your <span class="text-[#FB8500]">breakthrough.</span>
           </h4>
-          <p class="text-white/40 font-medium uppercase tracking-[0.2em] text-[10px]">Ready to build the next market-dominant asset?</p>
+          <p class="text-white/40 font-medium uppercase tracking-[0.1em] md:tracking-[0.2em] text-[8px] md:text-[10px]">Ready to build the next market-dominant asset?</p>
         </div>
 
         <!-- Updated Button to match Apple Carousel style -->
-        <a href="#contact" class="relative z-10 inline-flex items-center gap-4 px-12 py-6 bg-[#FB8500] text-black font-black uppercase text-[10px] tracking-[0.2em] rounded-full hover:bg-white transition-all transform hover:-translate-y-1 active:scale-95 shadow-2xl">
+        <a href="#contact" class="relative z-10 inline-flex items-center gap-4 px-8 py-4 md:px-12 md:py-6 bg-[#FB8500] text-black font-black uppercase text-[9px] md:text-[10px] tracking-[0.2em] rounded-full hover:bg-white transition-all transform hover:-translate-y-1 active:scale-95 shadow-2xl whitespace-nowrap">
           Get Started Now
         </a>
       </div>

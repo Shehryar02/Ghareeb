@@ -7,22 +7,22 @@ const titleWords = post.title ? post.title.split(' ') : [];
 ---
 
 <header class="max-w-7xl px-6 mx-auto pt-32 pb-12">
-  <div class="flex items-center gap-4 mb-10">
-    <div class="relative group">
+  <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
+    <div class="relative group shrink-0">
       <div class="absolute -inset-1 bg-gradient-to-r from-[#FB8500] to-orange-300 rounded-full blur opacity-25"></div>
-      <span class="relative bg-[#111111] text-[#FB8500] px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-white/10">
+      <span class="relative bg-[#111111] text-[#FB8500] px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-white/10 inline-block">
         {post.category}
       </span>
     </div>
     
-    <div class="h-[1px] w-8 bg-gray-200"></div>
+    <div class="hidden sm:block h-[1px] w-8 bg-gray-200"></div>
     
-    <span class="text-gray-400 text-[10px] font-black uppercase tracking-widest">
-      {post.date} <span class="mx-2 text-gray-200">|</span> {post.time} READ
+    <span class="text-gray-400 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shrink-0">
+      {post.date} <span class="mx-1 sm:mx-2 text-gray-200">|</span> {post.time} READ
     </span>
   </div>
 
-  <h1 class="text-6xl md:text-[120px] font-black uppercase leading-[0.85] tracking-[-0.04em] text-[#111111]">
+  <h1 class="text-5xl sm:text-6xl md:text-[90px] lg:text-[120px] font-black uppercase leading-[0.9] lg:leading-[0.85] tracking-[-0.04em] text-[#111111]">
     {titleWords.map((word: string) => {
       const cleanWord = word.replace(/[^\w\s]|_/g, "");
       const isPower = powerWords.includes(cleanWord);

@@ -7,9 +7,16 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
+  // Phone / tablet se same Wi‑Fi par test karne ke liye (http://<PC-IP>:4321)
+  server: {
+    host: true,
+    port: 4321,
+    strictPort: false,
   },
 
-  integrations: [react()]
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
+  integrations: [react()],
 });

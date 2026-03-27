@@ -21,14 +21,14 @@ const needs = [
 ];
 ---
 
-<section class="bg-[#F8F9FA] py-32 px-6 font-sans antialiased text-slate-900 overflow-hidden relative">
+<section class="bg-[#F8F9FA] py-16 md:py-32 px-6 font-sans antialiased text-slate-900 overflow-hidden relative">
   
   <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-200/30 blur-[120px] rounded-full -z-10"></div>
   <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-100/40 blur-[100px] rounded-full -z-10"></div>
 
   <div class="max-w-7xl mx-auto relative z-10">
     
-    <div class="mb-28 text-center opacity-0 translate-y-6 transition-all duration-1000" id="needs-header">
+    <div class="mb-16 md:mb-28 text-center opacity-0 translate-y-6 transition-all duration-1000" id="needs-header">
       <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white shadow-sm border border-slate-100 mb-8">
         <span class="relative flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
@@ -36,12 +36,12 @@ const needs = [
         </span>
         <span class="text-slate-600 font-bold text-[10px] uppercase tracking-[0.2em]">Workflow Requirements</span>
       </div>
-      <h2 class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] text-slate-950">
+      <h2 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] text-slate-950">
         Client <span class="text-orange-500 italic">Responsibility</span>
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-32">
       {needs.map((item, index) => (
         <div class="needs-card group relative opacity-0 translate-y-12 transition-all duration-700">
           
@@ -62,11 +62,11 @@ const needs = [
               </div>
 
               <div class="space-y-4">
-                <h3 class="text-3xl font-black uppercase tracking-tighter text-slate-900 group-hover:text-orange-600 transition-colors">
+                <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter text-slate-900 group-hover:text-orange-600 transition-colors">
                   {item.title}
                 </h3>
                 <div class="h-1 w-10 bg-orange-500 rounded-full transition-all duration-500 group-hover:w-20"></div>
-                <p class="text-slate-500 text-lg leading-relaxed font-medium pt-4">
+                <p class="text-slate-500 text-base md:text-lg leading-relaxed font-medium pt-4">
                   {item.description}
                 </p>
               </div>
@@ -115,6 +115,6 @@ const needs = [
     });
   }
 
-  // Initialize once the DOM is ready
   window.addEventListener('load', initGlassLayout);
+  document.addEventListener('astro:page-load', initGlassLayout);
 </script>

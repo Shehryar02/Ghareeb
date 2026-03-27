@@ -5,40 +5,40 @@ const projects = [
     tag: "FinTech Architecture",
     title: "Apex Ledger",
     desc: "Engineered a high-frequency banking dashboard for sub-100ms latency and real-time asset tracking.",
-    image: "https://images.unsplash.com/photo-1551288049-bbda4833effb?q=80&w=1200",
-    link: "#"
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+    link: "/portfolio"
   },
   {
     tag: "E-Commerce Engine",
-    title: "Vanguard ",
+    title: "Vanguard",
     desc: "A headless commerce solution handling 50k+ daily transactions with a focus on conversion optimization.",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200",
-    link: "#"
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
+    link: "/portfolio"
   },
   {
     tag: "Search Dominance",
     title: "SEO Core v4",
     desc: "Custom semantic HTML architecture that boosted organic reach by 300% for enterprise-scale platforms.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
-    link: "#"
+    link: "/portfolio"
   }
 ];
 ---
 
-<section class="py-24 bg-white overflow-hidden relative" id="apple-hover-carousel">
+<section class="py-16 md:py-24 bg-white overflow-hidden relative" id="apple-hover-carousel">
   <div id="zone-left" class="absolute left-0 top-0 w-[15%] h-full z-30 cursor-west-resize"></div>
   <div id="zone-right" class="absolute right-0 top-0 w-[15%] h-full z-30 cursor-east-resize"></div>
 
-  <div class="max-w-7xl mx-auto px-6 mb-20 relative z-10 text-center">
-    <p class="text-[14px] font-mono font-black uppercase tracking-[0.5em] text-[#FB8500] mb-6">
+  <div class="max-w-7xl mx-auto px-6 mb-12 md:mb-20 relative z-10 text-center">
+    <p class="text-[10px] md:text-[14px] font-mono font-black uppercase tracking-[0.2em] md:tracking-[0.5em] text-[#FB8500] mb-4 md:mb-6">
       Precision Engineering
     </p>
     
-    <h2 class="text-7xl md:text-9xl font-black text-black uppercase tracking-tighter leading-[0.85] mb-8">
+    <h2 class="text-5xl sm:text-6xl md:text-9xl font-black text-black uppercase tracking-tighter leading-[0.85] mb-6 md:mb-8">
       Digital <span class="text-[#FB8500] italic">Mastery.</span>
     </h2>
 
-    <p class="text-black/60 max-w-2xl mx-auto font-medium text-lg md:text-xl leading-relaxed tracking-tight text-center">
+    <p class="text-black/60 max-w-2xl mx-auto font-medium text-base md:text-xl leading-relaxed tracking-tight text-center px-4 md:px-0">
       <span class="text-black font-bold">A proven track record</span> 
       of transforming complex technical requirements into 
       <span class="text-[#FB8500] font-bold">high-performance revenue assets.</span>
@@ -56,27 +56,24 @@ const projects = [
   <div class="relative w-full overflow-visible">
     <div id="apple-track" class="flex transition-transform duration-[1000ms] ease-[cubic-bezier(0.23,1,0.32,1)]">
       {projects.map((project, i) => (
-        <div class="apple-card min-w-[90vw] md:min-w-[75vw] lg:min-w-[70vw] px-4 transition-all duration-1000" data-index={i}>
-          <div class="relative rounded-[3rem] overflow-hidden aspect-[16/9] bg-black group border border-black/5 shadow-2xl">
+        <div class="apple-card min-w-[92vw] sm:min-w-[85vw] md:min-w-[75vw] lg:min-w-[70vw] px-3 sm:px-4" data-index={i}>
+          <div class="relative rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[3rem] overflow-hidden aspect-[4/3] md:aspect-[16/9] bg-black group border border-black/5 shadow-2xl">
             <img src={project.image} alt={project.title} class="w-full h-full object-cover opacity-50 grayscale-[20%] transition-transform duration-1000 group-hover:scale-105" />
             
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent flex flex-col justify-end p-10 md:p-20">
-              <p class="text-[#FB8500] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs mb-4">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent flex flex-col justify-end p-5 sm:p-6 md:p-10 lg:p-20">
+              <p class="text-[#FB8500] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs mb-2 sm:mb-2 md:mb-3 lg:mb-4">
                 {project.tag}
               </p>
-              <h3 class="text-white text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8 leading-none">
+              <h3 class="text-white text-3xl sm:text-3xl md:text-4xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tighter mb-2 sm:mb-3 md:mb-4 lg:mb-8 leading-none">
                 {project.title}
               </h3>
               
-              <!-- THE REVEAL SECTION -->
-              <div class="apple-reveal opacity-0 translate-y-10 transition-all duration-700 delay-300">
-                <p class="text-white/70 text-lg md:text-2xl max-w-2xl mb-12 font-medium leading-relaxed">
-                  {project.desc}
-                </p>
-                <a href={project.link} class="inline-flex items-center gap-4 px-12 py-5 bg-[#FB8500] text-black font-black uppercase text-[10px] tracking-[0.2em] rounded-full hover:bg-white transition-all transform hover:-translate-y-1 active:scale-95 shadow-2xl">
-                    Explore Case Study
-                </a>
-              </div>
+              <p class="text-white/70 text-[11px] sm:text-xs md:text-sm lg:text-lg max-w-xl mb-3 sm:mb-4 md:mb-5 lg:mb-6 font-medium leading-relaxed line-clamp-2 sm:line-clamp-3 lg:line-clamp-none">
+                {project.desc}
+              </p>
+              <a href={project.link} class="inline-flex items-center gap-2 sm:gap-3 md:gap-4 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-12 lg:py-5 bg-[#FB8500] text-black font-black uppercase text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.2em] rounded-full hover:bg-white transition-all transform hover:-translate-y-1 active:scale-95 shadow-2xl w-fit">
+                  Explore Case Study
+              </a>
             </div>
           </div>
         </div>
@@ -87,24 +84,16 @@ const projects = [
 
 <style>
   .apple-card {
-    opacity: 0.15;
-    transform: scale(0.85);
+    opacity: 0.25;
     filter: blur(8px);
     pointer-events: none;
-    transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), filter 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .apple-card.is-active {
     opacity: 1;
-    transform: scale(1);
     filter: blur(0);
     pointer-events: auto;
-  }
-
-  /* REVEAL LOGIC FIX */
-  .apple-card.is-active .apple-reveal {
-    opacity: 1;
-    transform: translateY(0);
   }
 
   .indicator-progress.is-active {
@@ -126,9 +115,11 @@ const projects = [
     const zoneLeft = document.getElementById('zone-left');
     const zoneRight = document.getElementById('zone-right');
     
-    let currentIndex = 1; // Starts on the second project
+    let currentIndex = window.innerWidth < 768 ? 0 : 1;
     let isMoving = false;
     let interval: any = null;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     function updateCarousel() {
       if (!track || cards.length === 0) return;
@@ -139,14 +130,24 @@ const projects = [
       const cardOffset = currentCard.offsetLeft;
       const cardWidth = currentCard.offsetWidth;
       
+      // Calculate based strictly on parent container bounds, ignoring previous transforms
       const move = viewportCenter - cardOffset - (cardWidth / 2);
       
       track.style.transform = `translateX(${move}px)`;
       
-      cards.forEach((card, i) => card.classList.toggle('is-active', i === currentIndex));
+      cards.forEach((card, i) => {
+        if (i === currentIndex) {
+          card.classList.add('is-active');
+          card.style.transform = 'scale(1)';
+        } else {
+          card.classList.remove('is-active');
+          card.style.transform = 'scale(0.85)';
+        }
+      });
+      
       indicators.forEach((ind, i) => ind.classList.toggle('is-active', i === currentIndex));
       
-      setTimeout(() => { isMoving = false; }, 1000); 
+      setTimeout(() => { isMoving = false; }, 800); 
     }
 
     function startAutoMove(direction: 'left' | 'right') {
@@ -177,10 +178,36 @@ const projects = [
     zoneLeft?.addEventListener('mouseenter', () => startAutoMove('left'));
     zoneLeft?.addEventListener('mouseleave', stopAutoMove);
 
+    // Touch support for mobile
+    track?.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track?.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      if (isMoving) return;
+      const swipeDistance = touchStartX - touchEndX;
+      const threshold = 50; // minimum distance to be considered a swipe
+
+      if (swipeDistance > threshold && currentIndex < cards.length - 1) {
+        // swipe left, move right
+        currentIndex++;
+        updateCarousel();
+      } else if (swipeDistance < -threshold && currentIndex > 0) {
+        // swipe right, move left
+        currentIndex--;
+        updateCarousel();
+      }
+    }
+
     window.addEventListener('resize', updateCarousel);
     setTimeout(updateCarousel, 150);
   }
 
   initHoverCarousel();
-  document.addEventListener('astro:after-swap', initHoverCarousel);
+  document.addEventListener('astro:page-load', initHoverCarousel);
 </script>

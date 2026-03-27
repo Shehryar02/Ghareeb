@@ -36,7 +36,7 @@ const {
 } = Astro.props;
 ---
 
-<section id="who-is-this-for" class="bg-[#FFFFFF] py-40 overflow-hidden relative">
+<section id="who-is-this-for" class="bg-[#FFFFFF] py-20 lg:py-40 overflow-hidden relative">
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-24 relative z-10">
@@ -46,7 +46,7 @@ const {
             <span class="w-12 h-[2px] bg-orange-500"></span>
             <span class="text-black font-black uppercase text-[10px] tracking-[0.5em]">{tag}</span>
         </div>
-        <h2 class="text-6xl md:text-8xl font-[1000] text-black uppercase tracking-tighter leading-none">
+        <h2 class="text-5xl md:text-6xl lg:text-8xl font-[1000] text-black uppercase tracking-tighter leading-none">
           {title} <span class="text-orange-500 italic">{subtitle}</span>
         </h2>
     </div>
@@ -81,13 +81,13 @@ const {
       </div>
 
       <div class="lg:col-span-5 reveal" style="transition-delay: 400ms">
-        <div class="bg-[#0a0a0a] rounded-[4rem] p-12 relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)]">
+        <div class="bg-[#0a0a0a] rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-12 relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)]">
           <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/20 via-transparent to-transparent opacity-40"></div>
           
           <div class="relative z-10 space-y-12">
             <div>
               <span class="text-orange-500 font-black uppercase text-[10px] tracking-[0.5em] block mb-4">Qualification_Metrics</span>
-              <h4 class="text-4xl font-[1000] text-white uppercase tracking-tighter leading-none">
+              <h4 class="text-3xl md:text-4xl font-[1000] text-white uppercase tracking-tighter leading-none">
                 {requirementsTitle} <br/> <span class="italic text-orange-500">{requirementsSubtitle}</span>
               </h4>
             </div>
@@ -151,6 +151,6 @@ const {
 
     document.querySelectorAll('#who-is-this-for .reveal').forEach(el => observer.observe(el));
   }
-  document.addEventListener('DOMContentLoaded', initWhoIsFor);
+  document.addEventListener('astro:page-load', initWhoIsFor);
   document.addEventListener('astro:page-load', initWhoIsFor);
 </script>

@@ -1,116 +1,216 @@
 ---
 const categories = [
   {
-    name: "Operational Timeline",
-    id: "time",
+    name: "Engagement & Discovery",
+    id: "engagement",
+    faqs: [
+      {
+        question: "How does the initial discovery phase work?",
+        answer: "Every engagement begins with a 2-week Strategic Discovery sprint. This includes stakeholder interviews, competitive audits, user persona mapping, and technical feasibility assessments. The output is a comprehensive Project Blueprint — a living document that defines scope, architecture, milestones, and success metrics before a single line of code is written."
+      },
+      {
+        question: "What information do you need from us to get started?",
+        answer: "We need a clear understanding of your business objectives, target audience, existing brand guidelines, and any technical constraints. During our onboarding session, we walk you through a structured questionnaire covering everything from revenue goals to preferred technology stacks. The more context you provide, the more precise our engineering solution."
+      },
+      {
+        question: "Can we integrate with our existing CRM or ERP system?",
+        answer: "Absolutely. Our architecture is designed to be 'Integration-First.' We have deep experience connecting with Salesforce, HubSpot, SAP, and custom enterprise APIs. We use a middleware layer to ensure data flows are reliable, auditable, and secure — so your new platform works in harmony with your existing operational ecosystem."
+      },
+      {
+        question: "Do you work with startups or only enterprise clients?",
+        answer: "We partner with both. For startups, we focus on building a Minimum Lovable Product (MLP) — a polished, investor-ready experience that validates market hypothesis. For enterprise clients, we focus on scalable architecture, complex integrations, and performance optimization. The common thread is our commitment to engineering excellence, regardless of scale."
+      }
+    ]
+  },
+  {
+    name: "Technical Architecture",
+    id: "technical",
+    faqs: [
+      {
+        question: "What technology stack do you primarily use?",
+        answer: "Our core stack includes React, Next.js, Astro, and Vue.js on the front end, with Node.js, Python, and Go powering the back end. We use PostgreSQL, MongoDB, and Redis for data layers, deploying on AWS, Vercel, and Docker-based infrastructure. However, we are stack-agnostic — we choose technologies based on your project's specific requirements, not personal preference."
+      },
+      {
+        question: "How do you ensure platforms are scalable and performant?",
+        answer: "Performance is engineered from the foundation. We implement server-side rendering (SSR) and static site generation (SSG) for optimal load times, use edge caching for global content delivery, and design database schemas for horizontal scaling. Every deployment includes Lighthouse audits, Core Web Vitals optimization, and load testing to ensure 10x headroom above current traffic."
+      },
+      {
+        question: "Do you follow a specific development methodology?",
+        answer: "We operate on a hybrid Agile-Kanban model. Work is organized into 2-week sprints with clearly defined deliverables, but we maintain the flexibility to reprioritize based on real-time feedback. You'll have full visibility into our project board, daily async standups, and bi-weekly demo sessions where you interact with the latest build."
+      },
+      {
+        question: "How do you handle security and data protection?",
+        answer: "Security is baked into our development lifecycle through DevSecOps. We implement OWASP Top 10 protections, end-to-end encryption for data in transit and at rest, role-based access control (RBAC), and regular penetration testing. For regulated industries, we ensure full compliance with GDPR, HIPAA, SOC 2, and other relevant frameworks."
+      }
+    ]
+  },
+  {
+    name: "Timelines & Delivery",
+    id: "timelines",
     faqs: [
       {
         question: "How long does a typical project take?",
-        answer: "Most high-fidelity digital solutions are delivered within 6 to 12 weeks. This includes the full Strategic Discovery and Agile Development cycles."
-      }
-    ]
-  },
-  {
-    name: "Strategic Process",
-    id: "process",
-    faqs: [
-      {
-        question: "Can we integrate with our existing CRM?",
-        answer: "Yes. Our architecture is built to be 'Modular First,' allowing seamless API integrations with platforms like Salesforce, HubSpot, and custom tools."
+        answer: "Timelines vary based on complexity. A high-fidelity marketing website typically takes 4–6 weeks. A full-stack SaaS application ranges from 8–16 weeks. Complex enterprise platforms with deep integrations can extend to 16–24 weeks. We provide a detailed timeline during Discovery, complete with milestones and buffer periods for review cycles."
       },
       {
-        question: "Do you provide post-launch support?",
-        answer: "Absolutely. We offer dedicated maintenance tiers to ensure your systems stay updated, secure, and optimized for new market conditions."
+        question: "What does the communication cadence look like during the project?",
+        answer: "You'll receive daily async updates via Slack or your preferred channel, bi-weekly video demos of the latest features, and a shared project dashboard with real-time progress tracking. We assign a dedicated Project Lead as your single point of contact, ensuring you never chase down information or wait for status reports."
+      },
+      {
+        question: "What happens if the project scope needs to change mid-development?",
+        answer: "Change is expected and managed through our formal Change Request Protocol. Any new requirement is assessed for impact on timeline, budget, and architecture. We provide a transparent impact analysis within 24 hours, and nothing changes without your explicit written approval. This ensures zero scope creep and complete budget predictability."
       }
     ]
   },
   {
-    name: "Legal & IP",
+    name: "Investment & Pricing",
+    id: "pricing",
+    faqs: [
+      {
+        question: "What is your pricing model?",
+        answer: "We offer two primary models: Fixed-Price for projects with clearly defined scope, and Time & Materials (T&M) for ongoing engagements or evolving requirements. Both models are fully transparent — you receive a detailed cost breakdown before work begins. We don't believe in hidden fees or surprise invoices."
+      },
+      {
+        question: "What does a typical project investment look like?",
+        answer: "Investment ranges depend on the project type. High-end marketing websites start from $15,000. Full-stack web applications range from $30,000 to $120,000+. Enterprise platforms with complex integrations are custom-quoted. During our Discovery session, we provide a precise estimate tailored to your specific requirements and objectives."
+      },
+      {
+        question: "What are the payment terms?",
+        answer: "We typically structure payments across three milestones: 40% at project kickoff, 30% at mid-project review, and 30% upon final delivery and approval. For larger engagements, we customize the payment schedule to align with your fiscal planning. All terms are clearly documented in the Master Service Agreement (MSA)."
+      }
+    ]
+  },
+  {
+    name: "Legal & Ownership",
     id: "legal",
     faqs: [
       {
         question: "Who owns the final intellectual property?",
-        answer: "You do. Upon project completion and final payment, 100% of the code, design assets, and IP are transferred to your organization."
+        answer: "You do — completely. Upon project completion and final payment, 100% of all source code, design assets, documentation, and intellectual property are transferred to your organization. We retain zero proprietary claims. This is non-negotiable and clearly stated in every contract we execute."
+      },
+      {
+        question: "Do you sign NDAs and non-compete agreements?",
+        answer: "Yes. We sign mutual NDAs before any sensitive information is exchanged. We also accommodate non-compete clauses within reasonable scope. Your competitive advantage and proprietary data are treated with the highest level of confidentiality throughout and beyond the engagement."
+      },
+      {
+        question: "What happens if something goes wrong after launch?",
+        answer: "Every project includes a 30-day post-launch warranty covering any bugs or defects within the delivered scope. Beyond that, we offer structured maintenance retainers with defined SLAs. Our goal is long-term partnership, not transactional delivery — if an issue arises, our response protocol ensures it's triaged and resolved within guaranteed timelines."
+      }
+    ]
+  },
+  {
+    name: "Post-Launch & Growth",
+    id: "growth",
+    faqs: [
+      {
+        question: "Do you provide post-launch support and maintenance?",
+        answer: "We offer tiered maintenance plans — Essential (security patches & bug fixes), Growth (performance monitoring & feature enhancements), and Enterprise (dedicated engineering hours & 24/7 SLA). Each tier ensures your platform remains secure, performant, and continuously optimized for evolving business needs."
+      },
+      {
+        question: "Can you help us scale the platform after launch?",
+        answer: "Scaling is where we excel. Our architecture is designed for growth from day one. Post-launch, we help onboard new user segments, integrate additional services, optimize database performance for higher loads, and implement advanced analytics. We treat your platform as a living product, not a finished deliverable."
+      },
+      {
+        question: "Do you offer training for our internal team?",
+        answer: "Yes. We provide comprehensive knowledge transfer that includes technical documentation, recorded codebase walkthroughs, CMS training for content editors, and hands-on workshops for your development team. The goal is full empowerment — your team should be able to manage and evolve the platform independently."
       }
     ]
   }
 ];
+
+const totalFaqs = categories.reduce((sum, cat) => sum + cat.faqs.length, 0);
 ---
 
+<section class="relative bg-[#f5f7fa] font-sans text-slate-900 overflow-hidden">
+  <div class="faq-grid-bg absolute inset-0 pointer-events-none opacity-[0.15]"></div>
 
-<section class="bg-white py-22 px-6 font-sans text-slate-900 relative">
-  <div class="max-w-4xl mx-auto relative z-10">
-    
-<div class="text-center mb-24">
-  <div class="flex items-center justify-center gap-3 mb-6">
-    <span class="h-[1px] w-8 bg-orange-500/40"></span>
-    <span class="text-[10px] font-black uppercase tracking-[0.5em] text-orange-500">Information Desk</span>
-    <span class="h-[1px] w-8 bg-orange-500/40"></span>
+  <div class="relative py-20 md:py-36 bg-[#0A0A0A] text-white overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[60%] h-[80%] md:h-[60%] bg-orange-900/10 blur-[120px] md:blur-[180px] rounded-full"></div>
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 60px 60px;"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center">
+      <div class="flex items-center justify-center gap-2 md:gap-3 mb-6 md:mb-8">
+        <span class="h-[1px] w-6 md:w-10 bg-orange-500/40"></span>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] md:tracking-[0.5em] text-orange-500">Knowledge Base</span>
+        <span class="h-[1px] w-6 md:w-10 bg-orange-500/40"></span>
+      </div>
+
+      <h1 class="text-5xl sm:text-7xl lg:text-[120px] font-black tracking-tighter uppercase leading-[0.9] md:leading-[0.85] mb-6 md:mb-8">
+        Frequently<br/>
+        <span class="text-orange-500">Asked.</span>
+      </h1>
+
+      <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg font-light leading-relaxed mb-8 md:mb-12 px-2 md:px-0">
+        Transparency is our default operating mode. We've compiled answers to the most critical questions our partners ask before, during, and after an engagement.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-gray-500">
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+          <span class="font-mono">{categories.length} Categories</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 bg-white/30 rounded-full"></div>
+          <span class="font-mono">{totalFaqs} Questions</span>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <h2 class="text-7xl md:text-[140px] font-black tracking-tighter uppercase leading-[0.8] text-black">
-    FA<span class="text-orange-500">Q<sub class="text-[35px] md:text-[45px] lowercase italic font-light tracking-tighter -ml-2">s</sub></span>
-  </h2>
-
-  <div class="mt-10 relative inline-block">
-    <h3 class="text-xl md:text-2xl font-bold text-slate-900 uppercase tracking-tight">
-      Frequently Asked <span class="text-orange-500 ">Questions</span>
-    </h3>
-    <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-black rounded-full"></div>
-  </div>
-</div>
-
-    <div class="flex flex-wrap justify-center gap-4 mb-20">
+  <div class="relative z-10 max-w-5xl mx-auto px-4 md:px-6 py-8 md:py-10">
+    <div class="flex flex-wrap justify-center gap-2 md:gap-3">
       {categories.map((cat) => (
-        <a 
-          href={`#${cat.id}`} 
-          class="px-8 py-4 border- rounded-2xl bg-orange-500 border-black text-[12px] text-white uppercase tracking-widest hover:bg-orange-600 transition-all"
+        <a
+          href={`#${cat.id}`}
+          class="px-4 py-2.5 md:px-6 md:py-3 rounded-full border border-slate-200/80 bg-white/70 backdrop-blur-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.1em] md:tracking-[0.15em] text-slate-600 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 whitespace-nowrap"
         >
           {cat.name}
         </a>
       ))}
     </div>
+  </div>
 
-    <div class="space-y-24">
-      {categories.map((cat) => (
-        <div id={cat.id} class="category-group">
-          <div class="flex items-center gap-4 mb-10">
-            <div class="h-[2px] w-8 bg-orange-500"></div>
-            <h4 class="text-xs font-black uppercase tracking-[0.4em] text-slate-400">{cat.name}</h4>
+  <div class="relative z-10 max-w-5xl mx-auto px-4 md:px-6 pb-20 md:pb-28">
+    <div class="space-y-16 md:space-y-20">
+      {categories.map((cat, catIndex) => (
+        <div id={cat.id} class="category-group faq-section">
+          <div class="flex items-center gap-3 md:gap-4 mb-8 md:mb-10">
+            <span class="text-4xl md:text-5xl font-black text-slate-100 font-mono select-none">0{catIndex + 1}</span>
+            <div>
+              <div class="w-6 md:w-8 h-[2px] bg-orange-500 mb-1.5 md:mb-2"></div>
+              <h2 class="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-slate-800">{cat.name}</h2>
+            </div>
           </div>
 
-          <div class="space-y-4">
+          <div class="space-y-3 md:space-y-4">
             {cat.faqs.map((faq, index) => (
-              <div class="faq-card group bg-[#0A0A0A] border border-orange-500/20 rounded-[2rem] overflow-hidden transition-all duration-500 hover:border-orange-500 cursor-pointer">
-                
-                <div class="px-8 py-8 md:px-12 flex items-center justify-between pointer-events-none">
-                  <div class="flex items-center gap-6">
-                    <span class="text-orange-500 font-mono text-xl font-bold opacity-50 group-hover:opacity-100 transition-opacity">
-                      {cat.id.toUpperCase()}-0{index + 1}
+              <div class="faq-card group bg-white border border-slate-200/60 rounded-2xl overflow-hidden transition-all duration-500 hover:border-orange-500/30 cursor-pointer shadow-sm hover:shadow-lg hover:shadow-orange-500/5">
+
+                <div class="p-5 md:px-8 md:py-6 flex items-start md:items-center justify-between pointer-events-none gap-4">
+                  <div class="flex items-start md:items-center gap-3 md:gap-5">
+                    <span class="text-orange-500/40 font-mono text-xs md:text-sm font-bold group-hover:text-orange-500 transition-colors min-w-[32px] md:min-w-[40px] pt-0.5 md:pt-0">
+                      {cat.id.substring(0, 3).toUpperCase()}.{String(index + 1).padStart(2, '0')}
                     </span>
-                    <h3 class="text-xl md:text-2xl font-bold tracking-tight text-white group-hover:text-orange-100 transition-colors">
+                    <h3 class="text-[15px] md:text-lg font-bold tracking-tight text-slate-800 group-hover:text-slate-950 transition-colors pr-2 md:pr-0">
                       {faq.question}
                     </h3>
                   </div>
 
-                  <div class="relative w-6 h-6 flex items-center justify-center">
-                    <div class="absolute w-full h-[2px] bg-orange-500"></div>
-                    <div class="absolute w-[2px] h-full bg-orange-500 transform origin-center rotate-icon transition-transform duration-500"></div>
+                  <div class="relative w-4 h-4 md:w-5 md:h-5 flex items-center justify-center flex-shrink-0 mt-1 md:mt-0">
+                    <div class="absolute w-full h-[2px] bg-orange-500 rounded-full"></div>
+                    <div class="absolute w-[2px] h-full bg-orange-500 rounded-full transform origin-center rotate-icon transition-transform duration-500"></div>
                   </div>
                 </div>
 
-                <div class="faq-content grid grid-rows-[0fr] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] bg-white">
+                <div class="faq-content grid grid-rows-[0fr] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]">
                   <div class="overflow-hidden">
-                    <div class="px-8 py-12 md:px-12 md:ml-[68px]">
-                      <div class="h-[3px] w-12 bg-orange-500 mb-8"></div>
-                      <p class="text-slate-700 text-xl leading-relaxed font-semibold max-w-2xl">
+                    <div class="px-5 pb-6 pt-0 md:px-8 md:pb-8 md:pl-[85px]">
+                      <div class="h-[2px] w-8 md:w-10 bg-orange-500 mb-4 md:mb-6"></div>
+                      <p class="text-slate-600 text-sm md:text-[15px] leading-relaxed md:leading-[1.8] max-w-2xl">
                         {faq.answer}
                       </p>
-                      
-                      <div class="mt-10 flex items-center gap-4">
-                        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Protocol Secure</span>
-                        <div class="flex-1 h-[1px] bg-slate-100"></div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -121,59 +221,67 @@ const categories = [
       ))}
     </div>
   </div>
+
+  <div class="relative bg-[#0A0A0A] py-16 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/30 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto px-4 md:px-6 text-center">
+      <h3 class="text-3xl md:text-5xl font-black tracking-tighter uppercase text-white mb-4 md:mb-6 leading-tight md:leading-none">
+        Still have <span class="text-orange-500">questions?</span>
+      </h3>
+      <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-md mx-auto px-4 md:px-0">
+        Our team is available for a no-obligation consultation. Let's discuss your project in detail.
+      </p>
+
+      <div class="relative group p-[1px] rounded-full overflow-hidden bg-gradient-to-r from-white/10 via-orange-500/50 to-white/10 inline-block w-full sm:w-auto max-w-[280px] sm:max-w-none">
+        <div class="absolute -inset-1 bg-orange-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <a href="/contact" class="relative flex items-center justify-center sm:justify-start gap-4 md:gap-6 px-3 py-2 md:px-4 md:py-3 bg-[#0a0a0a] rounded-full hover:bg-black transition-all duration-300">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-orange-500 flex items-center justify-center text-white shadow-[0_0_20px_rgba(251,133,0,0.4)] group-hover:rotate-[360deg] transition-transform duration-700 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="md:w-[22px] md:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="pr-4 md:pr-8 text-left">
+            <p class="text-[8px] md:text-[9px] font-black tracking-[.2em] md:tracking-[.3em] text-orange-500 uppercase mb-0.5">Initialize</p>
+            <span class="text-white font-bold text-base md:text-lg tracking-tight block">Book a Call</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
 
 <style>
+  .faq-grid-bg {
+    background-image:
+      linear-gradient(#b0bac6 1px, transparent 1px),
+      linear-gradient(90deg, #b0bac6 1px, transparent 1px);
+    background-size: 52px 52px;
+    animation: grid-drift 25s linear infinite;
+  }
+
+  @keyframes grid-drift {
+    0%   { background-position: 0 0, 0 0; }
+    100% { background-position: 52px 52px, 52px 52px; }
+  }
+
   .faq-card.is-active .rotate-icon { transform: rotate(90deg); }
   .faq-card.is-active .faq-content { grid-template-rows: 1fr; }
   .faq-card.is-active {
     border-color: #f97316;
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
+    background: #FFFBF5;
+    box-shadow: 0 20px 50px -12px rgba(249, 115, 22, 0.08);
   }
-  .faq-card.is-active h3 { color: #f18316; }
-  
-  /* Smooth scroll for the category anchors */
+
   html { scroll-behavior: smooth; }
-  
+
   .category-group {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 80px;
   }
-</style>
 
-
-
-<script>
-  // Function to handle the accordion logic
-  const initInversionFAQ = () => {
-    const cards = document.querySelectorAll('.faq-card');
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        const isActive = card.classList.contains('is-active');
-        
-        // 1. Close all other cards
-        cards.forEach(c => c.classList.remove('is-active'));
-        
-        // 2. If the clicked card wasn't active, open it
-        if (!isActive) {
-          card.classList.add('is-active');
-        }
-      });
-    });
-  };
-
-  // Run on initial load
-  initInversionFAQ();
-
-  // Run every time the page swaps (Astro specific)
-  document.addEventListener('astro:after-swap', initInversionFAQ);
-  document.addEventListener('astro:page-load', initInversionFAQ);
-</script>
-
-<style>
-  /* Ensure the content is hidden by default and expands smoothly */
   .faq-content {
     grid-template-rows: 0fr;
     display: grid;
@@ -184,8 +292,51 @@ const categories = [
     grid-template-rows: 1fr;
   }
 
-  /* Prevent icon from blocking clicks */
-  .rotate-icon, .relative.w-6.h-6 {
+  .rotate-icon, .relative.w-5.h-5, .relative.w-4.h-4 {
     pointer-events: none;
   }
+
+  .faq-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .faq-section.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
+
+
+<script>
+  const initFAQs = () => {
+    const cards = document.querySelectorAll('.faq-card');
+
+    cards.forEach(card => {
+      const newCard = card.cloneNode(true) as HTMLElement;
+      card.parentNode?.replaceChild(newCard, card);
+
+      newCard.addEventListener('click', () => {
+        const isActive = newCard.classList.contains('is-active');
+        document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('is-active'));
+        if (!isActive) {
+          newCard.classList.add('is-active');
+        }
+      });
+    });
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.faq-section').forEach(el => sectionObserver.observe(el));
+  };
+
+  initFAQs();
+  document.addEventListener('astro:page-load', initFAQs);
+</script>

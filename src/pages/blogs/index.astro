@@ -3,22 +3,24 @@ import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 
 import BlogImg1 from '../../assets/backend-services/cloud.jpg'; 
-import BlogImg2 from '../../assets/backend-services/security.jpg'; 
-import BlogImg3 from '../../assets/backend-services/Backend.jpg'; 
+import BlogImg2 from '../../assets/frontend-services/frontend.jpg'; 
+import BlogImg3 from '../../assets/backend-services/api.jpg'; 
 import BlogImg4 from '../../assets/backend-services/scaling.jpg'; 
+import BlogImg5 from '../../assets/backend-services/backend2.jpg'; 
+import BlogImg6 from '../../assets/frontend-services/frontend2.jpg'; 
 
 const genres = [
-  "All", "Engineering Deep Dives", "Frontend Systems", "Performance & Web Vitals", 
-  "Architecture & Scalability"
+  "All", "Engineering", "Frontend Systems", "Performance", 
+  "Architecture"
 ];
 
 const blogs = [
-  { id: "01", title: "Garbage Collection in High-Load Systems", img: BlogImg1, description: "Analyzing memory management overhead in Node.js clusters.", category: "Engineering Deep Dives", date: "JAN 14", time: "12 MIN" },
-  { id: "02", title: "Atomic Design at Scale", img: BlogImg2, description: "Managing 500+ components in a multi-tenant environment.", category: "Frontend Systems", date: "JAN 08", time: "8 MIN" },
-  { id: "03", title: "Crushing Interaction to Next Paint", img: BlogImg3, description: "Technical strategies to reduce INP for heavy e-commerce.", category: "Performance & Web Vitals", date: "DEC 28", time: "6 MIN" },
-  { id: "04", title: "Event-Driven Microservices", img: BlogImg4, description: "Building resilient systems using Kafka and RabbitMQ.", category: "Architecture & Scalability", date: "DEC 15", time: "14 MIN" },
-  { id: "05", title: "The Anatomy of a Compiler", img: BlogImg1, description: "How modern JIT engines optimize JavaScript at runtime.", category: "Engineering Deep Dives", date: "JAN 12", time: "15 MIN" },
-  { id: "06", title: "State Machines in React", img: BlogImg2, description: "Why XState is replacing useEffect for complex logic.", category: "Frontend Systems", date: "JAN 05", time: "9 MIN" },
+  { id: "01", title: "Garbage Collection in High-Load Systems", img: BlogImg1, description: "Analyzing memory management overhead in Node.js clusters processing 4.2B daily events.", category: "Engineering", date: "JAN 14", time: "25 MIN" },
+  { id: "02", title: "Atomic Design at Scale", img: BlogImg2, description: "Managing 500+ components across 12 product teams in a multi-tenant design system.", category: "Frontend Systems", date: "JAN 08", time: "22 MIN" },
+  { id: "03", title: "Crushing Interaction to Next Paint", img: BlogImg3, description: "Surgical strategies to reduce INP below 200ms for high-traffic e-commerce platforms.", category: "Performance", date: "DEC 28", time: "18 MIN" },
+  { id: "04", title: "Event-Driven Microservices", img: BlogImg4, description: "Building resilient distributed systems with Kafka, outbox patterns, and saga orchestration.", category: "Architecture", date: "DEC 15", time: "28 MIN" },
+  { id: "05", title: "The Anatomy of a Compiler", img: BlogImg5, description: "How V8's Ignition and TurboFan pipeline transforms your JavaScript into native machine code.", category: "Engineering", date: "JAN 12", time: "30 MIN" },
+  { id: "06", title: "State Machines in React", img: BlogImg6, description: "Why XState is replacing useEffect for complex UI flows and eliminating impossible states.", category: "Frontend Systems", date: "JAN 05", time: "20 MIN" },
 ];
 ---
 

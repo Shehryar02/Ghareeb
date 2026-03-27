@@ -24,7 +24,7 @@ const {
 } = Astro.props;
 ---
 
-<section id="service-faq" class="py-40 bg-white text-black relative overflow-hidden">
+<section id="service-faq" class="py-20 md:py-40 bg-white text-black relative overflow-hidden">
   <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
        style="background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px); background-size: 80px 80px;">
   </div>
@@ -36,7 +36,7 @@ const {
             <span class="w-12 h-[2px] bg-orange-500"></span>
             <span class="text-black font-mono font-black uppercase text-[10px] tracking-[0.5em]">{tag}</span>
         </div>
-        <h2 class="text-6xl md:text-8xl font-[1000] text-black uppercase tracking-tighter leading-[0.85]">
+        <h2 class="text-5xl md:text-6xl lg:text-8xl font-[1000] text-black uppercase tracking-tighter leading-[0.85]">
           {title} <br/> <span class="text-orange-500 italic">{titleAccent}</span>
         </h2>
     </div>
@@ -47,7 +47,7 @@ const {
           <summary class="flex items-center justify-between cursor-pointer list-none py-10 outline-none">
             <div class="flex items-start gap-6">
               <span class="font-mono text-orange-500 font-bold text-xs pt-1">0{index + 1}</span>
-              <h3 class="text-xl md:text-2xl font-[1000] uppercase tracking-tighter text-black group-hover:text-orange-500 transition-colors duration-300 pr-8">
+              <h3 class="text-lg md:text-xl lg:text-2xl font-[1000] uppercase tracking-tighter text-black group-hover:text-orange-500 transition-colors duration-300 pr-8">
                 {faq.question}
               </h3>
             </div>
@@ -106,6 +106,6 @@ const {
 
     document.querySelectorAll('#service-faq .reveal').forEach(el => observer.observe(el));
   }
-  document.addEventListener('DOMContentLoaded', initFAQ);
+  document.addEventListener('astro:page-load', initFAQ);
   document.addEventListener('astro:page-load', initFAQ);
 </script>

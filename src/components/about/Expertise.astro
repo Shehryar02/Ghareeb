@@ -1,156 +1,163 @@
 ---
-// TechStack.astro High-End Orange Columnar Stack
+const stacks = [
+  {
+    title: "Front End",
+    subtitle: "Interface Architecture",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-5 sm:h-5 md:w-7 md:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+    techs: [
+      { name: "React", slug: "react", color: "61DAFB" },
+      { name: "Next.js", slug: "nextdotjs", color: "000000" },
+      { name: "Vue.js", slug: "vuedotjs", color: "4FC08D" },
+      { name: "TypeScript", slug: "typescript", color: "3178C6" },
+      { name: "Tailwind", slug: "tailwindcss", color: "06B6D4" },
+      { name: "Astro", slug: "astro", color: "BC52EE" },
+    ]
+  },
+  {
+    title: "Back End",
+    subtitle: "Server & Runtime",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-5 sm:h-5 md:w-7 md:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>`,
+    techs: [
+      { name: "Node.js", slug: "nodedotjs", color: "5FA04E" },
+      { name: "Python", slug: "python", color: "3776AB" },
+      { name: "Go", slug: "go", color: "00ADD8" },
+      { name: "GraphQL", slug: "graphql", color: "E10098" },
+      { name: "Express", slug: "express", color: "000000" },
+      { name: "Rust", slug: "rust", color: "000000" },
+    ]
+  },
+  {
+    title: "Data Layer",
+    subtitle: "Storage & Caching",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-5 sm:h-5 md:w-7 md:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>`,
+    techs: [
+      { name: "PostgreSQL", slug: "postgresql", color: "4169E1" },
+      { name: "MongoDB", slug: "mongodb", color: "47A248" },
+      { name: "Redis", slug: "redis", color: "FF4438" },
+      { name: "Supabase", slug: "supabase", color: "3FCF8E" },
+      { name: "Firebase", slug: "firebase", color: "DD2C00" },
+      { name: "Prisma", slug: "prisma", color: "2D3748" },
+    ]
+  },
+  {
+    title: "Infrastructure",
+    subtitle: "Cloud & DevOps",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-5 sm:h-5 md:w-7 md:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>`,
+    techs: [
+      { name: "AWS", slug: "amazonaws", color: "FF9900" },
+      { name: "Docker", slug: "docker", color: "2496ED" },
+      { name: "Kubernetes", slug: "kubernetes", color: "326CE5" },
+      { name: "Vercel", slug: "vercel", color: "000000" },
+      { name: "GitHub Actions", slug: "githubactions", color: "2088FF" },
+      { name: "Terraform", slug: "terraform", color: "844FBA" },
+    ]
+  }
+];
 ---
 
-<section class="relative w-full py-24 bg-[#FCFCFC] text-slate-900 font-sans overflow-hidden border-t border-gray-100">
-  
-  <div class="max-w-7xl mx-auto px-6">
-    
-    <div class="text-center mb-24 space-y-4">
-      <h2 class="text-5xl md:text-8xl font-black tracking-tighter text-slate-900 uppercase">
-        The <span class="text-orange-600">Technical</span> Stack
+<section class="relative w-full py-14 sm:py-16 md:py-28 bg-[#FAFAFA] text-slate-900 font-sans overflow-hidden">
+
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+
+    <div class="text-center mb-10 sm:mb-12 md:mb-20 space-y-3 sm:space-y-4 md:space-y-5">
+      <div class="flex items-center justify-center gap-3">
+        <span class="h-[1px] w-6 sm:w-10 bg-orange-500/40"></span>
+        <span class="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.4em] sm:tracking-[0.5em] text-orange-500">Engineering Ecosystem</span>
+        <span class="h-[1px] w-6 sm:w-10 bg-orange-500/40"></span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter text-slate-900 uppercase leading-[0.9]">
+        The Technical <span class="text-orange-600">Stack.</span>
       </h2>
-      <div class="w-24 h-1 bg-orange-600 mx-auto"></div>
-      <p class="text-slate-500 max-w-xl mx-auto font-medium pt-4">
-        A high-performance ecosystem engineered for precision and psychological impact.
+      <p class="text-slate-500 max-w-xl mx-auto font-medium text-sm sm:text-base pt-1 sm:pt-2">
+        A curated ecosystem of industry-grade tools, engineered for precision, performance, and psychological impact.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-      
-      <div class="flex flex-col items-center">
-        <div class="mb-8 text-center">
-          <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center shadow-xl shadow-orange-200 mb-4 mx-auto ">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3 class="font-black uppercase tracking-widest text-sm text-slate-800">Front End</h3>
-        </div>
-
-        <div class="w-full bg-white border border-slate-100 rounded-[2.5rem] p-10 shadow-xl shadow-slate-200/50 relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-1.5 h-full bg-orange-600"></div>
-          <div class="grid grid-cols-2 gap-y-10 gap-x-6">
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" class="h-10 w-10 object-contain" alt="React" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">React</span>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-5 md:gap-8">
+      {stacks.map((stack) => (
+        <div class="group tech-column">
+          <div class="mb-4 sm:mb-4 md:mb-6 flex items-center gap-3 sm:gap-3 md:gap-4">
+            <div class="w-11 h-11 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-[#0A0A0A] rounded-xl flex items-center justify-center shadow-lg group-hover:bg-orange-600 transition-colors duration-500 shrink-0">
+              <Fragment set:html={stack.icon} />
             </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" class="h-10 w-10 object-contain" alt="HTML" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">HTML5</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/astro-1.svg" class="h-10 w-10 object-contain" alt="Astro" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Astro</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg" class="h-10 w-10 object-contain" alt="Tailwind" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Tailwind</span>
+            <div class="min-w-0">
+              <h3 class="font-black uppercase tracking-wide text-sm sm:text-xs md:text-sm text-slate-900 leading-tight">{stack.title}</h3>
+              <p class="text-[10px] sm:text-[9px] md:text-[10px] font-medium text-slate-400 uppercase tracking-widest truncate">{stack.subtitle}</p>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="flex flex-col items-center">
-        <div class="mb-8 text-center">
-          <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center shadow-xl shadow-orange-200 mb-4 mx-auto ">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-          </div>
-          <h3 class="font-black uppercase tracking-widest text-sm text-slate-800">Back End</h3>
-        </div>
+          <div class="bg-white border border-slate-100 rounded-2xl sm:rounded-2xl md:rounded-3xl p-5 sm:p-4 md:p-6 lg:p-8 shadow-sm group-hover:shadow-xl group-hover:shadow-orange-500/5 group-hover:border-orange-500/20 transition-all duration-500 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-        <div class="w-full bg-white border border-slate-100 rounded-[2.5rem] p-10 shadow-xl shadow-slate-200/50 relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-1.5 h-full bg-orange-600"></div>
-          <div class="grid grid-cols-2 gap-y-10 gap-x-6">
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" class="h-10 w-10 object-contain" alt="Node" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Node.js</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" class="h-10 w-10 object-contain" alt="TS" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">TS</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" class="h-10 w-10 object-contain" alt="Python" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Python</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/go-6.svg" class="h-10 w-10 object-contain" alt="Go" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Golang</span>
+            <div class="grid grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-5 sm:gap-x-4 sm:gap-y-5 md:gap-x-5 md:gap-y-7">
+              {stack.techs.map((tech) => (
+                <div class="flex flex-col items-center gap-2 sm:gap-2 md:gap-2.5 tech-item">
+                  <div class="w-12 h-12 sm:w-9 sm:h-9 md:w-11 md:h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:border-orange-500/10 transition-colors duration-300">
+                    <img
+                      src={`https://cdn.simpleicons.org/${tech.slug}/${tech.color}`}
+                      class="w-6 h-6 sm:w-5 sm:h-5 md:w-6 md:h-6 object-contain"
+                      alt={tech.name}
+                      loading="lazy"
+                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                    />
+                    <div class="hidden w-6 h-6 sm:w-5 sm:h-5 md:w-6 md:h-6 items-center justify-center text-[10px] sm:text-[10px] font-black text-slate-400">
+                      {tech.name.substring(0, 2)}
+                    </div>
+                  </div>
+                  <span class="text-[11px] sm:text-[9px] md:text-[10px] font-bold text-slate-500 uppercase tracking-wider text-center leading-tight">{tech.name}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
 
-      <div class="flex flex-col items-center">
-        <div class="mb-8 text-center">
-          <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center shadow-xl shadow-orange-200 mb-4 mx-auto ">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-            </svg>
-          </div>
-          <h3 class="font-black uppercase tracking-widest text-sm text-slate-800">Database</h3>
-        </div>
-
-        <div class="w-full bg-white border border-slate-100 rounded-[2.5rem] p-10 shadow-xl shadow-slate-200/50 relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-1.5 h-full bg-orange-600"></div>
-          <div class="grid grid-cols-2 gap-y-10 gap-x-6">
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/postgresql.svg" class="h-10 w-10 object-contain" alt="Postgres" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Postgres</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" class="h-10 w-10 object-contain" alt="Mongo" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Mongo</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/redis.svg" class="h-10 w-10 object-contain" alt="Redis" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Redis</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/mysql-6.svg" class="h-10 w-10 object-contain" alt="MySQL" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">MySQL</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-col items-center">
-        <div class="mb-8 text-center">
-          <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center shadow-xl shadow-orange-200 mb-4 mx-auto ">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-          </div>
-          <h3 class="font-black uppercase tracking-widest text-sm text-slate-800">Server</h3>
-        </div>
-
-        <div class="w-full bg-white border border-slate-100 rounded-[2.5rem] p-10 shadow-xl shadow-slate-200/50 relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-1.5 h-full bg-orange-600"></div>
-          <div class="grid grid-cols-2 gap-y-10 gap-x-6">
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/vercel.svg" class="h-10 w-10 object-contain" alt="Vercel" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Vercel</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" class="h-10 w-10 object-contain" alt="AWS" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">AWS</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/nginx-1.svg" class="h-10 w-10 object-contain" alt="Nginx" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Nginx</span>
-            </div>
-            <div class="flex flex-col items-center gap-3">
-                <img src="https://cdn.worldvectorlogo.com/logos/docker.svg" class="h-10 w-10 object-contain" alt="Docker" />
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter">Docker</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div class="mt-8 sm:mt-12 md:mt-16 text-center">
+      <p class="text-[10px] sm:text-xs text-slate-400 font-medium uppercase tracking-widest">
+        Stack-agnostic by principle — we choose technologies that serve your product, not our preference.
+      </p>
     </div>
 
   </div>
 </section>
+
+<style>
+  .tech-column {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .tech-column.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const initTechStack = () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const columns = entry.target.querySelectorAll('.tech-column');
+          columns.forEach((col, i) => {
+            setTimeout(() => col.classList.add('active'), i * 150);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    const grid = document.querySelector('.tech-column')?.parentElement;
+    if (grid) observer.observe(grid);
+  };
+
+  initTechStack();
+  document.addEventListener('astro:page-load', initTechStack);
+</script>
